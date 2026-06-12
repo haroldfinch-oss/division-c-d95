@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>District 95 · Division C | Toastmasters</title>
+  <meta name="description" content="District 95 Division C — Toastmasters clubs across your region. Find your voice." />
+  <meta property="og:title" content="District 95 Division C" />
+  <meta property="og:description" content="Find your voice. — Toastmasters District 95, Division C." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#004165" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --tm-navy: #004165;
+      --tm-red: #D5202C;
+      --tm-light: #f4f6f8;
+      --tm-white: #ffffff;
+      --tm-text: #1a1a1a;
+      --tm-muted: #5a6472;
+      --tm-border: #dde3e9;
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      color: var(--tm-text);
+      background: var(--tm-white);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--tm-navy);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 60px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-brand img {
+      height: 32px;
+      width: auto;
+    }
+
+    .nav-brand .divider {
+      opacity: 0.4;
+      font-weight: 300;
+      margin: 0 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: white; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--tm-navy);
+      color: white;
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 span {
+      color: #ffd100;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      opacity: 0.8;
+      max-width: 480px;
+      margin: 0 auto 2rem;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: opacity 0.15s, transform 0.1s;
+    }
+
+    .btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+
+    .btn-primary {
+      background: var(--tm-red);
+      color: white;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: white;
+      border: 1.5px solid rgba(255,255,255,0.5);
+    }
+
+    /* ── SECTION SHARED ── */
+    section {
+      padding: 4rem 2rem;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--tm-red);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+    }
+
+    /* ── WHAT IS TM ── */
+    .what-section {
+      background: var(--tm-light);
+    }
+
+    .what-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .what-card {
+      background: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      border: 1px solid var(--tm-border);
+    }
+
+    .what-card-icon {
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .what-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .what-card p {
+      font-size: 14px;
+      color: var(--tm-muted);
+      line-height: 1.55;
+    }
+
+    /* ── CLUBS ── */
+    .clubs-intro {
+      font-size: 1.05rem;
+      color: var(--tm-muted);
+      max-width: 600px;
+      margin-bottom: 2.5rem;
+    }
+
+    .clubs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .club-card {
+      border: 1px solid var(--tm-border);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      text-decoration: none;
+      color: var(--tm-text);
+      transition: border-color 0.15s, box-shadow 0.15s;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .club-card:hover {
+      border-color: var(--tm-navy);
+      box-shadow: 0 2px 12px rgba(0,65,101,0.08);
+    }
+
+    .club-name {
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .club-area {
+      font-size: 12px;
+      color: var(--tm-red);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .club-location {
+      font-size: 13px;
+      color: var(--tm-muted);
+      margin-top: 4px;
+    }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      background: var(--tm-navy);
+      color: white;
+      text-align: center;
+    }
+
+    .contact-section h2 { color: white; }
+
+    .contact-section p {
+      opacity: 0.75;
+      margin-bottom: 1.75rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-email {
+      display: inline-block;
+      color: #ffd100;
+      font-size: 1.05rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1.5px solid rgba(255,209,0,0.4);
+      padding-bottom: 2px;
+      transition: border-color 0.15s;
+    }
+
+    .contact-email:hover { border-color: #ffd100; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #001f30;
+      color: rgba(255,255,255,0.55);
+      padding: 2rem;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    footer a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    footer a:hover { color: white; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      nav { padding: 0 1rem; }
+      .nav-links { gap: 1.25rem; }
+      section { padding: 3rem 1.25rem; }
+      .hero { padding: 3.5rem 1.25rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="top">
+    <a class="nav-brand" href="#">
+      <img src="https://www.toastmasters.org/~/media/Images/logos/TM_logo_color_RGB.png"
+           onerror="this.style.display='none'"
+           alt="Toastmasters logo" />
+      District 95
+      <span class="divider">·</span>
+      Division C
+    </a>
+    <ul class="nav-links">
+      <li><a href="#toastmasters">About</a></li>
+      <li><a href="#clubs">Clubs</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <p class="hero-eyebrow">District 95 · Division C</p>
+    <h1>Find your <span>voice.</span></h1>
+    <p class="hero-sub">Toastmasters clubs across Division C — supporting speakers and leaders at every level.</p>
+    <div class="hero-cta">
+      <a href="#clubs" class="btn btn-primary">Find a club</a>
+      <a href="https://toastmasters-95.org" class="btn btn-outline" target="_blank" rel="noopener">Visit District 95</a>
+    </div>
+  </section>
+
+  <!-- WHAT IS TOASTMASTERS -->
+  <section class="what-section" id="toastmasters">
+    <div class="container">
+      <p class="section-label">New here?</p>
+      <h2>What is Toastmasters?</h2>
+      <p style="color: var(--tm-muted); max-width: 580px;">
+        Toastmasters International is a world-leading communication and leadership organisation
+        with over 300,000 members in 145 countries. Members grow their confidence, sharpen their
+        public speaking skills, and discover their voice — in a supportive, non-judgmental community.
+      </p>
+
+      <div class="what-grid">
+        <div class="what-card">
+          <div class="what-card-icon">🎤</div>
+          <h3>Public speaking</h3>
+          <p>Prepare and deliver speeches in a safe, encouraging environment at every meeting.</p>
+        </div>
+        <div class="what-card">
+          <div class="what-card-icon">💬</div>
+          <h3>Impromptu speaking</h3>
+          <p>Build confidence thinking on your feet with Table Topics — short, spontaneous speeches.</p>
+        </div>
+        <div class="what-card">
+          <div class="what-card-icon">🏆</div>
+          <h3>Leadership</h3>
+          <p>Take on club roles and grow your leadership skills alongside your speaking ability.</p>
+        </div>
+        <div class="what-card">
+          <div class="what-card-icon">🌍</div>
+          <h3>Community</h3>
+          <p>Connect with a diverse, welcoming group of people who share your goals.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 2.5rem; display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="https://toastmasters-95.org" class="btn btn-primary" target="_blank" rel="noopener">Visit District 95</a>
+        <a href="https://www.toastmasters.org" class="btn" style="border: 1.5px solid var(--tm-border); color: var(--tm-text);" target="_blank" rel="noopener">Toastmasters International</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLUBS -->
+  <section id="clubs">
+    <div class="container">
+      <p class="section-label">Division C</p>
+      <h2>Our clubs</h2>
+      <p class="clubs-intro">
+        Division C brings together Toastmasters clubs across the region. Each club meets regularly —
+        visit as a guest before committing. All are welcome.
+      </p>
+
+      <div class="clubs-grid">
+        <!-- Placeholder clubs — replace with real Division C clubs -->
+        <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
+          <span class="club-area">Area C1</span>
+          <span class="club-name">Club name here</span>
+          <span class="club-location">📍 City, Country</span>
+        </a>
+        <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
+          <span class="club-area">Area C1</span>
+          <span class="club-name">Club name here</span>
+          <span class="club-location">📍 City, Country</span>
+        </a>
+        <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
+          <span class="club-area">Area C2</span>
+          <span class="club-name">Club name here</span>
+          <span class="club-location">📍 City, Country</span>
+        </a>
+        <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
+          <span class="club-area">Area C2</span>
+          <span class="club-name">Club name here</span>
+          <span class="club-location">📍 City, Country</span>
+        </a>
+        <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
+          <span class="club-area">Area C3</span>
+          <span class="club-name">Club name here</span>
+          <span class="club-location">📍 City, Country</span>
+        </a>
+        <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
+          <span class="club-area">Area C3</span>
+          <span class="club-name">Club name here</span>
+          <span class="club-location">📍 City, Country</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <p class="section-label" style="color: rgba(255,255,255,0.5);">Get in touch</p>
+      <h2>Questions?</h2>
+      <p>Reach out to the Division C director or your nearest club. We're happy to help.</p>
+      <a href="mailto:division-c@toastmasters-95.org" class="contact-email">
+        division-c@toastmasters-95.org
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-links">
+      <a href="https://toastmasters-95.org" target="_blank" rel="noopener">District 95</a>
+      <a href="https://www.toastmasters.org" target="_blank" rel="noopener">Toastmasters International</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <p>© 2026 Toastmasters District 95, Division C</p>
+  </footer>
+
+</body>
+</html>
