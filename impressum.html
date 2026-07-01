@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impressum | District 95 · Division C | Toastmasters</title>
+  <meta name="description" content="Impressum — District 95 Division C, Toastmasters." />
+  <meta property="og:title" content="Impressum — District 95 Division C" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#004165" />
+  <meta name="robots" content="noindex" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --tm-navy: #004165;
+      --tm-red: #D5202C;
+      --tm-light: #f4f6f8;
+      --tm-white: #ffffff;
+      --tm-text: #1a1a1a;
+      --tm-muted: #5a6472;
+      --tm-border: #dde3e9;
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      color: var(--tm-text);
+      background: var(--tm-white);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--tm-navy);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 60px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-brand img {
+      height: 32px;
+      width: auto;
+    }
+
+    .nav-brand .divider {
+      opacity: 0.4;
+      font-weight: 300;
+      margin: 0 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: white; }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      background: var(--tm-navy);
+      color: white;
+      padding: 3.5rem 2rem 3rem;
+      text-align: center;
+    }
+
+    .page-header .section-label {
+      color: #ffd100;
+    }
+
+    .page-header h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    /* ── SECTION SHARED ── */
+    section {
+      padding: 4rem 2rem;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--tm-red);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    h2:first-child { margin-top: 0; }
+
+    .impressum-block {
+      background: var(--tm-light);
+      border: 1px solid var(--tm-border);
+      border-radius: 10px;
+      padding: 2rem 2.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .impressum-block p {
+      color: var(--tm-text);
+      margin-bottom: 0.2rem;
+    }
+
+    .impressum-block a {
+      color: var(--tm-navy);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1.5px solid var(--tm-border);
+    }
+
+    .impressum-block a:hover {
+      border-color: var(--tm-navy);
+    }
+
+    .note {
+      font-size: 13px;
+      color: var(--tm-muted);
+      margin-top: 2.5rem;
+      max-width: 600px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #001f30;
+      color: rgba(255,255,255,0.55);
+      padding: 2rem;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    footer a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    footer a:hover { color: white; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      nav { padding: 0 1rem; }
+      .nav-links { gap: 1.25rem; }
+      section { padding: 3rem 1.25rem; }
+      .page-header { padding: 3rem 1.25rem 2.5rem; }
+      .impressum-block { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="top">
+    <a class="nav-brand" href="index.html">
+      <img src="https://www.toastmasters.org/~/media/Images/logos/TM_logo_color_RGB.png"
+           onerror="this.style.display='none'"
+           alt="Toastmasters logo" />
+      District 95
+      <span class="divider">·</span>
+      Division C
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#toastmasters">About</a></li>
+      <li><a href="index.html#clubs">Clubs</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <p class="section-label">Legal</p>
+    <h1>Impressum</h1>
+  </div>
+
+  <!-- CONTENT -->
+  <section>
+    <div class="container">
+
+      <h2>Angaben gemäß § 5 TMG</h2>
+      <div class="impressum-block">
+        <p>Verantwortlich für den Inhalt:</p>
+        <p><strong>Kunal K Jani</strong></p>
+        <p>Königsbrücker Str. 72</p>
+        <p>01099 Dresden</p>
+        <p>Deutschland</p>
+      </div>
+
+      <h2>Kontakt</h2>
+      <div class="impressum-block">
+        <p>E-Mail: <a href="mailto:tm@kunaljani.com">tm@kunaljani.com</a></p>
+      </div>
+
+      <h2>Haftungsausschluss</h2>
+      <p class="note">
+        Diese Website wird ehrenamtlich im Rahmen der Division C von Toastmasters District 95 betrieben
+        und dient ausschließlich der Information über Toastmasters-Clubs in der Region. Trotz sorgfältiger
+        inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt
+        der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-links">
+      <a href="https://toastmasters-95.org" target="_blank" rel="noopener">District 95</a>
+      <a href="https://www.toastmasters.org" target="_blank" rel="noopener">Toastmasters International</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="index.html">Back to site</a>
+    </div>
+    <p>© 2026 Toastmasters District 95, Division C</p>
+  </footer>
+
+</body>
+</html>
