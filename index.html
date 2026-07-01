@@ -85,6 +85,25 @@
 
     .nav-links a:hover { color: white; }
 
+    .lang-toggle {
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.5);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      padding: 4px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .lang-toggle:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: white;
+    }
+
     /* ── HERO ── */
     .hero {
       background: var(--tm-navy);
@@ -342,29 +361,32 @@
       Division C
     </a>
     <ul class="nav-links">
-      <li><a href="#toastmasters">About</a></li>
+      <li><a href="#toastmasters" data-en="About" data-de="Über uns">About</a></li>
       <li><a href="#clubs">Clubs</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" data-en="Contact" data-de="Kontakt">Contact</a></li>
+      <li><button id="lang-toggle" class="lang-toggle" onclick="setLang(currentLang === 'en' ? 'de' : 'en')">DE</button></li>
     </ul>
   </nav>
 
   <!-- HERO -->
   <section class="hero" id="hero">
     <p class="hero-eyebrow">District 95 · Division C</p>
-    <h1>Find your <span>voice.</span></h1>
-    <p class="hero-sub">Toastmasters clubs across Division C — supporting speakers and leaders at every level.</p>
+    <h1 data-en="Find your <span>voice.</span>" data-de="Finde deine <span>Stimme.</span>">Find your <span>voice.</span></h1>
+    <p class="hero-sub" data-en="Toastmasters clubs across Division C — supporting speakers and leaders at every level." data-de="Toastmasters-Clubs in der gesamten Division C — Unterstützung für Redner und Führungskräfte auf jeder Ebene.">Toastmasters clubs across Division C — supporting speakers and leaders at every level.</p>
     <div class="hero-cta">
-      <a href="#clubs" class="btn btn-primary">Find a club</a>
-      <a href="https://toastmasters-95.org" class="btn btn-outline" target="_blank" rel="noopener">Visit District 95</a>
+      <a href="#clubs" class="btn btn-primary" data-en="Find a club" data-de="Club finden">Find a club</a>
+      <a href="https://toastmasters-95.org" class="btn btn-outline" target="_blank" rel="noopener" data-en="Visit District 95" data-de="District 95 besuchen">Visit District 95</a>
     </div>
   </section>
 
   <!-- WHAT IS TOASTMASTERS -->
   <section class="what-section" id="toastmasters">
     <div class="container">
-      <p class="section-label">New here?</p>
-      <h2>What is Toastmasters?</h2>
-      <p style="color: var(--tm-muted); max-width: 580px;">
+      <p class="section-label" data-en="New here?" data-de="Neu hier?">New here?</p>
+      <h2 data-en="What is Toastmasters?" data-de="Was ist Toastmasters?">What is Toastmasters?</h2>
+      <p style="color: var(--tm-muted); max-width: 580px;"
+         data-en="Toastmasters International is a world-leading communication and leadership organisation with over 300,000 members in 145 countries. Members grow their confidence, sharpen their public speaking skills, and discover their voice — in a supportive, non-judgmental community."
+         data-de="Toastmasters International ist eine weltweit führende Organisation für Kommunikation und Führungskompetenz mit über 300.000 Mitgliedern in 145 Ländern. Mitglieder stärken ihr Selbstvertrauen, verbessern ihre Redefähigkeiten und finden ihre eigene Stimme — in einer unterstützenden, wertschätzenden Gemeinschaft.">
         Toastmasters International is a world-leading communication and leadership organisation
         with over 300,000 members in 145 countries. Members grow their confidence, sharpen their
         public speaking skills, and discover their voice — in a supportive, non-judgmental community.
@@ -373,28 +395,28 @@
       <div class="what-grid">
         <div class="what-card">
           <div class="what-card-icon">🎤</div>
-          <h3>Public speaking</h3>
-          <p>Prepare and deliver speeches in a safe, encouraging environment at every meeting.</p>
+          <h3 data-en="Public speaking" data-de="Öffentliches Sprechen">Public speaking</h3>
+          <p data-en="Prepare and deliver speeches in a safe, encouraging environment at every meeting." data-de="Bereite Reden vor und halte sie in einer sicheren, ermutigenden Umgebung bei jedem Treffen.">Prepare and deliver speeches in a safe, encouraging environment at every meeting.</p>
         </div>
         <div class="what-card">
           <div class="what-card-icon">💬</div>
-          <h3>Impromptu speaking</h3>
-          <p>Build confidence thinking on your feet with Table Topics — short, spontaneous speeches.</p>
+          <h3 data-en="Impromptu speaking" data-de="Spontanes Sprechen">Impromptu speaking</h3>
+          <p data-en="Build confidence thinking on your feet with Table Topics — short, spontaneous speeches." data-de="Stärke dein spontanes Denken mit Table Topics — kurzen, unvorbereiteten Reden.">Build confidence thinking on your feet with Table Topics — short, spontaneous speeches.</p>
         </div>
         <div class="what-card">
           <div class="what-card-icon">🏆</div>
-          <h3>Leadership</h3>
-          <p>Take on club roles and grow your leadership skills alongside your speaking ability.</p>
+          <h3 data-en="Leadership" data-de="Führungskompetenz">Leadership</h3>
+          <p data-en="Take on club roles and grow your leadership skills alongside your speaking ability." data-de="Übernimm Club-Rollen und entwickle deine Führungsfähigkeiten neben deiner Redekompetenz.">Take on club roles and grow your leadership skills alongside your speaking ability.</p>
         </div>
         <div class="what-card">
           <div class="what-card-icon">🌍</div>
-          <h3>Community</h3>
-          <p>Connect with a diverse, welcoming group of people who share your goals.</p>
+          <h3 data-en="Community" data-de="Gemeinschaft">Community</h3>
+          <p data-en="Connect with a diverse, welcoming group of people who share your goals." data-de="Vernetze dich mit einer vielfältigen, offenen Gruppe von Menschen, die deine Ziele teilen.">Connect with a diverse, welcoming group of people who share your goals.</p>
         </div>
       </div>
 
       <div style="margin-top: 2.5rem; display: flex; gap: 12px; flex-wrap: wrap;">
-        <a href="https://toastmasters-95.org" class="btn btn-primary" target="_blank" rel="noopener">Visit District 95</a>
+        <a href="https://toastmasters-95.org" class="btn btn-primary" target="_blank" rel="noopener" data-en="Visit District 95" data-de="District 95 besuchen">Visit District 95</a>
         <a href="https://www.toastmasters.org" class="btn" style="border: 1.5px solid var(--tm-border); color: var(--tm-text);" target="_blank" rel="noopener">Toastmasters International</a>
       </div>
     </div>
@@ -404,8 +426,8 @@
   <section id="clubs">
     <div class="container">
       <p class="section-label">Division C</p>
-      <h2>Our clubs</h2>
-      <p class="clubs-intro">
+      <h2 data-en="Our clubs" data-de="Unsere Clubs">Our clubs</h2>
+      <p class="clubs-intro" data-en="Division C brings together Toastmasters clubs across the region. Each club meets regularly — visit as a guest before committing. All are welcome." data-de="Division C vereint Toastmasters-Clubs aus der gesamten Region. Jeder Club trifft sich regelmäßig — besuche gerne als Gast, bevor du dich entscheidest. Alle sind willkommen.">
         Division C brings together Toastmasters clubs across the region. Each club meets regularly —
         visit as a guest before committing. All are welcome.
       </p>
@@ -449,9 +471,9 @@
   <!-- CONTACT -->
   <section class="contact-section" id="contact">
     <div class="container">
-      <p class="section-label" style="color: rgba(255,255,255,0.5);">Get in touch</p>
-      <h2>Questions?</h2>
-      <p>Reach out to the Division C director or your nearest club. We're happy to help.</p>
+      <p class="section-label" style="color: rgba(255,255,255,0.5);" data-en="Get in touch" data-de="Kontakt aufnehmen">Get in touch</p>
+      <h2 data-en="Questions?" data-de="Fragen?">Questions?</h2>
+      <p data-en="Reach out to the Division C director or your nearest club. We're happy to help." data-de="Wende dich an die Division-C-Leitung oder deinen nächstgelegenen Club. Wir helfen gerne weiter.">Reach out to the Division C director or your nearest club. We're happy to help.</p>
       <a href="mailto:division-c@toastmasters-95.org" class="contact-email">
         division-c@toastmasters-95.org
       </a>
@@ -463,11 +485,29 @@
     <div class="footer-links">
       <a href="https://toastmasters-95.org" target="_blank" rel="noopener">District 95</a>
       <a href="https://www.toastmasters.org" target="_blank" rel="noopener">Toastmasters International</a>
-      <a href="#contact">Contact</a>
+      <a href="#contact" data-en="Contact" data-de="Kontakt">Contact</a>
       <a href="impressum.html">Impressum</a>
     </div>
     <p>© 2026 Toastmasters District 95, Division C</p>
   </footer>
+
+  <script>
+    var currentLang = localStorage.getItem('tm-lang') || 'en';
+
+    function setLang(lang) {
+      currentLang = lang;
+      localStorage.setItem('tm-lang', lang);
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-en]').forEach(function (el) {
+        var text = lang === 'de' ? el.getAttribute('data-de') : el.getAttribute('data-en');
+        if (text !== null) el.innerHTML = text;
+      });
+      var btn = document.getElementById('lang-toggle');
+      if (btn) btn.textContent = lang === 'de' ? 'EN' : 'DE';
+    }
+
+    setLang(currentLang);
+  </script>
 
 </body>
 </html>
