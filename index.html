@@ -104,6 +104,21 @@
       border-color: white;
     }
 
+    .nav-visit-btn {
+      display: inline-block;
+      background: var(--tm-red);
+      color: white !important;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      padding: 6px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+
+    .nav-visit-btn:hover { opacity: 0.88; color: white; }
+
     /* ── HERO ── */
     .hero {
       background: var(--tm-navy);
@@ -284,6 +299,115 @@
       margin-top: 4px;
     }
 
+    /* ── EVENTS ── */
+    .events-section {
+      background: var(--tm-light);
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 2.5rem;
+      margin-top: 2rem;
+      align-items: start;
+    }
+
+    .event-card {
+      background: white;
+      border: 1px solid var(--tm-border);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .event-date {
+      background: var(--tm-navy);
+      color: white;
+      border-radius: 8px;
+      width: 56px;
+      height: 56px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .event-date .day {
+      font-size: 1.3rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .event-date .month {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      opacity: 0.8;
+    }
+
+    .event-details .event-name {
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 2px;
+    }
+
+    .event-details .event-meta {
+      font-size: 13px;
+      color: var(--tm-muted);
+    }
+
+    .events-more-note {
+      font-size: 13px;
+      color: var(--tm-muted);
+      margin-top: 1rem;
+    }
+
+    .calendar-card {
+      background: white;
+      border: 1px solid var(--tm-border);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem 1.5rem;
+    }
+
+    .calendar-header {
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 0.9rem;
+      text-align: center;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+      text-align: center;
+    }
+
+    .calendar-grid .cal-dow {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--tm-muted);
+      padding-bottom: 4px;
+    }
+
+    .calendar-grid .cal-day {
+      font-size: 13px;
+      padding: 6px 0;
+      border-radius: 6px;
+      color: var(--tm-text);
+    }
+
+    .calendar-grid .cal-day.empty { visibility: hidden; }
+
+    .calendar-grid .cal-day.event {
+      background: var(--tm-red);
+      color: white;
+      font-weight: 700;
+    }
+
     /* ── CONTACT ── */
     .contact-section {
       background: var(--tm-navy);
@@ -345,6 +469,7 @@
       .nav-links { gap: 1.25rem; }
       section { padding: 3rem 1.25rem; }
       .hero { padding: 3.5rem 1.25rem 3rem; }
+      .events-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -362,8 +487,9 @@
     </a>
     <ul class="nav-links">
       <li><a href="#toastmasters" data-en="About" data-de="Über uns">About</a></li>
-      <li><a href="#clubs">Clubs</a></li>
+      <li><a href="clubs.html" data-en="Find a Club" data-de="Club finden">Find a Club</a></li>
       <li><a href="#contact" data-en="Contact" data-de="Kontakt">Contact</a></li>
+      <li><a href="https://toastmasters-95.org" class="nav-visit-btn" target="_blank" rel="noopener" data-en="Visit District 95" data-de="District 95 besuchen">Visit District 95</a></li>
       <li><button id="lang-toggle" class="lang-toggle" onclick="setLang(currentLang === 'en' ? 'de' : 'en')">DE</button></li>
     </ul>
   </nav>
@@ -374,8 +500,7 @@
     <h1 data-en="Find your <span>voice.</span>" data-de="Finde deine <span>Stimme.</span>">Find your <span>voice.</span></h1>
     <p class="hero-sub" data-en="Toastmasters clubs across Division C — supporting speakers and leaders at every level." data-de="Toastmasters-Clubs in der gesamten Division C — Unterstützung für Redner und Führungskräfte auf jeder Ebene.">Toastmasters clubs across Division C — supporting speakers and leaders at every level.</p>
     <div class="hero-cta">
-      <a href="#clubs" class="btn btn-primary" data-en="Find a club" data-de="Club finden">Find a club</a>
-      <a href="https://toastmasters-95.org" class="btn btn-outline" target="_blank" rel="noopener" data-en="Visit District 95" data-de="District 95 besuchen">Visit District 95</a>
+      <a href="clubs.html" class="btn btn-primary" data-en="Find a club" data-de="Club finden">Find a club</a>
     </div>
   </section>
 
@@ -416,8 +541,7 @@
       </div>
 
       <div style="margin-top: 2.5rem; display: flex; gap: 12px; flex-wrap: wrap;">
-        <a href="https://toastmasters-95.org" class="btn btn-primary" target="_blank" rel="noopener" data-en="Visit District 95" data-de="District 95 besuchen">Visit District 95</a>
-        <a href="https://www.toastmasters.org" class="btn" style="border: 1.5px solid var(--tm-border); color: var(--tm-text);" target="_blank" rel="noopener">Toastmasters International</a>
+        <a href="https://www.toastmasters.org" class="btn btn-primary" target="_blank" rel="noopener">Toastmasters International</a>
       </div>
     </div>
   </section>
@@ -431,39 +555,85 @@
         Division C brings together Toastmasters clubs across the region. Each club meets regularly —
         visit as a guest before committing. All are welcome.
       </p>
+      <a href="clubs.html" class="btn btn-primary" data-en="Find a club" data-de="Club finden">Find a club</a>
+    </div>
+  </section>
 
-      <div class="clubs-grid">
-        <!-- Placeholder clubs — replace with real Division C clubs -->
-        <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
-          <span class="club-area">Area C1</span>
-          <span class="club-name">Club name here</span>
-          <span class="club-location">📍 City, Country</span>
-        </a>
-        <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
-          <span class="club-area">Area C1</span>
-          <span class="club-name">Club name here</span>
-          <span class="club-location">📍 City, Country</span>
-        </a>
-        <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
-          <span class="club-area">Area C2</span>
-          <span class="club-name">Club name here</span>
-          <span class="club-location">📍 City, Country</span>
-        </a>
-        <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
-          <span class="club-area">Area C2</span>
-          <span class="club-name">Club name here</span>
-          <span class="club-location">📍 City, Country</span>
-        </a>
-        <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
-          <span class="club-area">Area C3</span>
-          <span class="club-name">Club name here</span>
-          <span class="club-location">📍 City, Country</span>
-        </a>
-        <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
-          <span class="club-area">Area C3</span>
-          <span class="club-name">Club name here</span>
-          <span class="club-location">📍 City, Country</span>
-        </a>
+  <!-- EVENTS -->
+  <section class="events-section" id="events">
+    <div class="container">
+      <p class="section-label" data-en="What's on" data-de="Was steht an">What's on</p>
+      <h2 data-en="Upcoming events" data-de="Kommende Veranstaltungen">Upcoming events</h2>
+
+      <div class="events-grid">
+        <div>
+          <div class="event-card">
+            <div class="event-date">
+              <span class="day">8</span>
+              <span class="month" data-en="Aug" data-de="Aug">Aug</span>
+            </div>
+            <div class="event-details">
+              <div class="event-name">Leipzig COT</div>
+              <div class="event-meta" data-en="Saturday, 8 August 2026" data-de="Samstag, 8. August 2026">Saturday, 8 August 2026</div>
+            </div>
+          </div>
+          <p class="events-more-note" data-en="More events and links will be added here soon." data-de="Weitere Veranstaltungen und Links folgen in Kürze.">More events and links will be added here soon.</p>
+        </div>
+
+        <div class="calendar-card">
+          <div class="calendar-header" data-en="August 2026" data-de="August 2026">August 2026</div>
+          <div class="calendar-grid">
+            <div class="cal-dow" data-en="Mo" data-de="Mo">Mo</div>
+            <div class="cal-dow" data-en="Tu" data-de="Di">Tu</div>
+            <div class="cal-dow" data-en="We" data-de="Mi">We</div>
+            <div class="cal-dow" data-en="Th" data-de="Do">Th</div>
+            <div class="cal-dow" data-en="Fr" data-de="Fr">Fr</div>
+            <div class="cal-dow" data-en="Sa" data-de="Sa">Sa</div>
+            <div class="cal-dow" data-en="Su" data-de="So">Su</div>
+
+            <div class="cal-day empty"></div>
+            <div class="cal-day empty"></div>
+            <div class="cal-day empty"></div>
+            <div class="cal-day empty"></div>
+            <div class="cal-day empty"></div>
+            <div class="cal-day">1</div>
+            <div class="cal-day">2</div>
+
+            <div class="cal-day">3</div>
+            <div class="cal-day">4</div>
+            <div class="cal-day">5</div>
+            <div class="cal-day">6</div>
+            <div class="cal-day">7</div>
+            <div class="cal-day event">8</div>
+            <div class="cal-day">9</div>
+
+            <div class="cal-day">10</div>
+            <div class="cal-day">11</div>
+            <div class="cal-day">12</div>
+            <div class="cal-day">13</div>
+            <div class="cal-day">14</div>
+            <div class="cal-day">15</div>
+            <div class="cal-day">16</div>
+
+            <div class="cal-day">17</div>
+            <div class="cal-day">18</div>
+            <div class="cal-day">19</div>
+            <div class="cal-day">20</div>
+            <div class="cal-day">21</div>
+            <div class="cal-day">22</div>
+            <div class="cal-day">23</div>
+
+            <div class="cal-day">24</div>
+            <div class="cal-day">25</div>
+            <div class="cal-day">26</div>
+            <div class="cal-day">27</div>
+            <div class="cal-day">28</div>
+            <div class="cal-day">29</div>
+            <div class="cal-day">30</div>
+
+            <div class="cal-day">31</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -475,7 +645,7 @@
       <h2 data-en="Questions?" data-de="Fragen?">Questions?</h2>
       <p data-en="Reach out to the Division C director or your nearest club. We're happy to help." data-de="Wende dich an die Division-C-Leitung oder deinen nächstgelegenen Club. Wir helfen gerne weiter.">Reach out to the Division C director or your nearest club. We're happy to help.</p>
       <a href="mailto:division-c@toastmasters-95.org" class="contact-email">
-        divd.c.d95@kunaljani.com
+        division-c@toastmasters-95.org
       </a>
     </div>
   </section>

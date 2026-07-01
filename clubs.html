@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Find a Club | District 95 · Division C | Toastmasters</title>
+  <meta name="description" content="Find a Toastmasters club in District 95, Division C, listed by area." />
+  <meta property="og:title" content="Find a Club — District 95 Division C" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#004165" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --tm-navy: #004165;
+      --tm-red: #D5202C;
+      --tm-light: #f4f6f8;
+      --tm-white: #ffffff;
+      --tm-text: #1a1a1a;
+      --tm-muted: #5a6472;
+      --tm-border: #dde3e9;
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      color: var(--tm-text);
+      background: var(--tm-white);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--tm-navy);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 60px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-brand img { height: 32px; width: auto; }
+    .nav-brand .divider { opacity: 0.4; font-weight: 300; margin: 0 2px; }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: white; }
+
+    .lang-toggle {
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.5);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      padding: 4px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .lang-toggle:hover { background: rgba(255,255,255,0.1); border-color: white; }
+
+    .nav-visit-btn {
+      display: inline-block;
+      background: var(--tm-red);
+      color: white !important;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      padding: 6px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+
+    .nav-visit-btn:hover { opacity: 0.88; color: white; }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      background: var(--tm-navy);
+      color: white;
+      padding: 3.5rem 2rem 3rem;
+      text-align: center;
+    }
+
+    .page-header .section-label { color: #ffd100; }
+
+    .page-header h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-header p {
+      opacity: 0.8;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 3rem 2rem; }
+
+    .container { max-width: 900px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--tm-red);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .area-block { margin-bottom: 2.75rem; }
+
+    .area-block:last-child { margin-bottom: 0; }
+
+    .area-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--tm-navy);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--tm-border);
+    }
+
+    .clubs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .club-card {
+      border: 1px solid var(--tm-border);
+      border-radius: 10px;
+      padding: 1.1rem 1.4rem;
+      text-decoration: none;
+      color: var(--tm-text);
+      transition: border-color 0.15s, box-shadow 0.15s;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .club-card:hover {
+      border-color: var(--tm-navy);
+      box-shadow: 0 2px 12px rgba(0,65,101,0.08);
+    }
+
+    .club-card.suspended {
+      border-color: #f3c6c6;
+      background: #fdf4f4;
+    }
+
+    .club-name { font-weight: 700; font-size: 15px; }
+
+    .club-country {
+      font-size: 12px;
+      color: var(--tm-muted);
+    }
+
+    .club-status {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--tm-red);
+      margin-top: 2px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #001f30;
+      color: rgba(255,255,255,0.55);
+      padding: 2rem;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    footer a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    footer a:hover { color: white; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      nav { padding: 0 1rem; }
+      .nav-links { gap: 1.25rem; }
+      section { padding: 2.5rem 1.25rem; }
+      .page-header { padding: 3rem 1.25rem 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="top">
+    <a class="nav-brand" href="index.html">
+      <img src="https://www.toastmasters.org/~/media/Images/logos/TM_logo_color_RGB.png"
+           onerror="this.style.display='none'"
+           alt="Toastmasters logo" />
+      District 95
+      <span class="divider">·</span>
+      Division C
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#toastmasters" data-en="About" data-de="Über uns">About</a></li>
+      <li><a href="clubs.html" data-en="Find a Club" data-de="Club finden">Find a Club</a></li>
+      <li><a href="index.html#contact" data-en="Contact" data-de="Kontakt">Contact</a></li>
+      <li><a href="https://toastmasters-95.org" class="nav-visit-btn" target="_blank" rel="noopener" data-en="Visit District 95" data-de="District 95 besuchen">Visit District 95</a></li>
+      <li><button id="lang-toggle" class="lang-toggle" onclick="setLang(currentLang === 'en' ? 'de' : 'en')">DE</button></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <p class="section-label" data-en="Division C" data-de="Division C">Division C</p>
+    <h1 data-en="Find a club" data-de="Club finden">Find a club</h1>
+    <p data-en="Every Toastmasters club in Division C, grouped by area. Visit any club as a guest before joining." data-de="Alle Toastmasters-Clubs der Division C, nach Bereich sortiert. Besuche jeden Club gerne als Gast, bevor du beitrittst.">
+      Every Toastmasters club in Division C, grouped by area. Visit any club as a guest before joining.
+    </p>
+  </div>
+
+  <!-- CLUBS -->
+  <section>
+    <div class="container">
+
+      <div class="area-block">
+        <div class="area-title" data-en="Area 1" data-de="Bereich 1">Area 1</div>
+        <div class="clubs-grid">
+          <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
+            <span class="club-name">Mercury Toastmasters Berlin</span>
+            <span class="club-country">Germany</span>
+          </a>
+          <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
+            <span class="club-name">Berliner Meisterredner</span>
+            <span class="club-country">Germany</span>
+          </a>
+          <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
+            <span class="club-name">Center Berlin Toastmasters</span>
+            <span class="club-country">Germany</span>
+          </a>
+          <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
+            <span class="club-name">Bayer Berlin Toastmasters</span>
+            <span class="club-country">Germany</span>
+          </a>
+          <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
+            <span class="club-name">Berliner Rhetorikmeister</span>
+            <span class="club-country">Germany</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="area-block">
+        <div class="area-title" data-en="Area 2" data-de="Bereich 2">Area 2</div>
+        <div class="clubs-grid">
+          <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
+            <span class="club-name">First Berlin Toastmasters Club</span>
+            <span class="club-country">Germany</span>
+          </a>
+          <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
+            <span class="club-name">Berliner Redekünstler</span>
+            <span class="club-country">Germany</span>
+          </a>
+          <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
+            <span class="club-name">Mut Und Rede – Toastmasters Neukölln</span>
+            <span class="club-country">Germany</span>
+          </a>
+          <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
+            <span class="club-name">Steglitz Toastmasters</span>
+            <span class="club-country">Germany</span>
+          </a>
+          <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
+            <span class="club-name">1. Lausitzer Rhetorik-Club</span>
+            <span class="club-country">Germany</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="area-block">
+        <div class="area-title" data-en="Area 3" data-de="Bereich 3">Area 3</div>
+        <div class="clubs-grid">
+          <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
+            <span class="club-name">Hannover Speakers Club</span>
+            <span class="club-country">Germany</span>
+          </a>
+          <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
+            <span class="club-name">BS Speaks</span>
+            <span class="club-country">Germany</span>
+          </a>
+          <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
+            <span class="club-name">Rednerclub Göttingen</span>
+            <span class="club-country">Germany</span>
+          </a>
+          <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
+            <span class="club-name">Berlin Habla Toastmasters</span>
+            <span class="club-country">Germany</span>
+          </a>
+          <div class="club-card suspended">
+            <span class="club-name">Frankfurt (Oder) Toastmasters</span>
+            <span class="club-country">Germany</span>
+            <span class="club-status" data-en="Club suspended" data-de="Club ausgesetzt">Club suspended</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="area-block">
+        <div class="area-title" data-en="Area 4" data-de="Bereich 4">Area 4</div>
+        <div class="clubs-grid">
+          <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
+            <span class="club-name">Leipzig Toastmasters</span>
+            <span class="club-country">Germany</span>
+          </a>
+          <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
+            <span class="club-name">Leipziger Redefreiheit</span>
+            <span class="club-country">Germany</span>
+          </a>
+          <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
+            <span class="club-name">Toastmasters Dresden</span>
+            <span class="club-country">Germany</span>
+          </a>
+          <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
+            <span class="club-name">Rhetorikklub Dresden</span>
+            <span class="club-country">Germany</span>
+          </a>
+          <a href="https://www.toastmasters.org/find-a-club" class="club-card" target="_blank" rel="noopener">
+            <span class="club-name">Dresden International Toastmasters</span>
+            <span class="club-country">Germany</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-links">
+      <a href="https://toastmasters-95.org" target="_blank" rel="noopener">District 95</a>
+      <a href="https://www.toastmasters.org" target="_blank" rel="noopener">Toastmasters International</a>
+      <a href="index.html#contact" data-en="Contact" data-de="Kontakt">Contact</a>
+      <a href="index.html" data-en="Back to home" data-de="Zurück zur Startseite">Back to home</a>
+    </div>
+    <p>© 2026 Toastmasters District 95, Division C</p>
+  </footer>
+
+  <script>
+    var currentLang = localStorage.getItem('tm-lang') || 'en';
+
+    function setLang(lang) {
+      currentLang = lang;
+      localStorage.setItem('tm-lang', lang);
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-en]').forEach(function (el) {
+        var text = lang === 'de' ? el.getAttribute('data-de') : el.getAttribute('data-en');
+        if (text !== null) el.innerHTML = text;
+      });
+      var btn = document.getElementById('lang-toggle');
+      if (btn) btn.textContent = lang === 'de' ? 'EN' : 'DE';
+    }
+
+    setLang(currentLang);
+  </script>
+
+</body>
+</html>
