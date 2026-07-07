@@ -53,11 +53,12 @@
       align-items: center;
       justify-content: space-between;
       padding: 0 2rem;
-      height: 62px;
+      height: 110px;
       position: sticky;
       top: 0;
       z-index: 100;
       border-bottom: 3px solid var(--tm-yellow);
+      overflow: visible;
     }
 
     .nav-brand {
@@ -70,11 +71,15 @@
       font-weight: 700;
       letter-spacing: 0.01em;
       white-space: nowrap;
+      position: relative;
+      z-index: 101;
     }
 
     .nav-brand img {
-      height: 32px;
+      height: 96px;
       width: auto;
+      position: relative;
+      margin-bottom: -30px;
     }
 
     .nav-brand .divider {
@@ -834,6 +839,14 @@
       <li><button id="lang-toggle" class="lang-toggle" onclick="setLang(currentLang === 'en' ? 'de' : 'en')">DE</button></li>
     </ul>
   </nav>
+
+  <!-- HERO WELCOME -->
+  <section style="background: linear-gradient(135deg, var(--tm-blue) 0%, var(--tm-blue-deep) 100%); color: white; padding: 4rem 2rem 3.5rem; text-align: center; margin-top: -20px; position: relative; z-index: 99;">
+    <div class="container">
+      <h1 style="font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; margin-bottom: 0.75rem; letter-spacing: -0.02em;">Welcome to Division C!</h1>
+      <p style="font-size: 1.25rem; opacity: 0.9; font-weight: 500;">Germany Middle East, District 95 Toastmasters</p>
+    </div>
+  </section>
 
   <!-- EVENTS -->
   <section class="events-section" id="events">
