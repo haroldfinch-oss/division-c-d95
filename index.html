@@ -1315,6 +1315,15 @@
     });
 
     setLang(currentLang);
+    
+    // Ensure rendering happens after DOM is fully loaded
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() {
+        renderAll();
+      });
+    } else {
+      renderAll();
+    }
   </script>
 
 </body>
