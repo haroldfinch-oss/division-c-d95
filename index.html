@@ -382,8 +382,30 @@
       border: 1px solid var(--tm-border);
       border-left: 4px solid var(--tm-yellow);
       border-radius: 10px;
-      padding: 1.1rem 1.4rem;
+      padding: 1.2rem 1.4rem;
       background: var(--tm-fair);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .lead-avatar {
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--tm-blue) 0%, var(--tm-blue-deep) 100%);
+      color: white;
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.15rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid var(--tm-yellow);
+      flex-shrink: 0;
+    }
+
+    .lead-card > div:last-child {
       display: flex;
       flex-direction: column;
       gap: 2px;
@@ -762,6 +784,16 @@
       .events-grid { grid-template-columns: 1fr; }
       .what-grid { grid-template-columns: 1fr; }
       .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .team-leads { grid-template-columns: 1fr; }
+      .lead-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.8rem;
+      }
+      .lead-card > div:last-child {
+        flex-direction: column;
+        align-items: center;
+      }
     }
 
     @media (max-width: 380px) {
@@ -903,31 +935,45 @@
         </div>
       </div>
 
+      <div style="margin: 2.5rem 0; padding: 1rem 0; border-top: 2px solid var(--tm-border); border-bottom: 1px dashed var(--tm-border);"></div>
+
+      <h3 style="font-size: 1.05rem; font-weight: 700; font-family: var(--font-head); color: var(--tm-blue); margin-bottom: 1.5rem; text-align: center;" data-en="Leadership Support" data-de="Leadership Support">Leadership Support</h3>
+
       <div class="team-leads">
         <div class="lead-card">
-          <div class="team-avatar">GT</div>
-          <span class="lead-role">Division PR Lead</span>
-          <span class="lead-name">Ginia Tarique</span>
+          <div class="lead-avatar">GT</div>
+          <div>
+            <span class="lead-role">Division PR Lead</span>
+            <span class="lead-name">Ginia Tarique</span>
+          </div>
         </div>
         <div class="lead-card">
-          <div class="team-avatar">JW</div>
-          <span class="lead-role">Division Pathways Lead</span>
-          <span class="lead-name">Jens Weiß</span>
+          <div class="lead-avatar">JW</div>
+          <div>
+            <span class="lead-role">Division Pathways Lead</span>
+            <span class="lead-name">Jens Weiß</span>
+          </div>
         </div>
         <div class="lead-card">
-          <div class="team-avatar">JC</div>
-          <span class="lead-role">Division EasySpeak Lead</span>
-          <span class="lead-name">Jan Christian</span>
+          <div class="lead-avatar">JC</div>
+          <div>
+            <span class="lead-role">Division EasySpeak Lead</span>
+            <span class="lead-name">Jan Chiristian</span>
+          </div>
         </div>
         <div class="lead-card">
-          <div class="team-avatar">KG</div>
-          <span class="lead-role">Division Conflict Resolution Representative</span>
-          <span class="lead-name">Kathrin Gerstmeir</span>
+          <div class="lead-avatar">KG</div>
+          <div>
+            <span class="lead-role">Division Conflict Resolution Representative</span>
+            <span class="lead-name">Kathrin Gerstmeir</span>
+          </div>
         </div>
         <div class="lead-card">
-          <div class="team-avatar">SC</div>
-          <span class="lead-role">Immediate Past Division Director</span>
-          <span class="lead-name">Stella Covaci</span>
+          <div class="lead-avatar">SC</div>
+          <div>
+            <span class="lead-role">Immediate Past Division Director</span>
+            <span class="lead-name">Stella Covaci</span>
+          </div>
         </div>
       </div>
 
