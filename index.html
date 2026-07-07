@@ -848,13 +848,13 @@
    <img
     src="assets/right-confetti.png"
     alt=""
-    style="position: absolute; left: 10%; top: 50%; transform: translateY(-50%); width: clamp(60px, 8vw, 120px); height: auto; z-index: 1;"
+    style="position: absolute; left: 20%; top: 50%; margin-top: -60px; width: clamp(60px, 8vw, 120px); height: auto; z-index: 1;"
   >
   
   <img
     src="assets/left-confetti.png"
     alt=""
-    style="position: absolute; right: 10%; top: 50%; transform: translateY(-50%); width: clamp(60px, 8vw, 120px); height: auto; z-index: 1;"
+    style="position: absolute; right: 20%; top: 50%; margin-top: -60px; width: clamp(60px, 8vw, 120px); height: auto; z-index: 1;"
   >
 
   <div class="container" style="position: relative; z-index: 10;">
@@ -1156,8 +1156,8 @@
 
     var _today = new Date(); _today.setHours(0, 0, 0, 0);
     var _sorted = EVENTS.slice().sort(function (a, b) { return a.date < b.date ? -1 : 1; });
-    var _upcoming = _sorted.filter(function (e) { return parseDate(e.date) >= _today; });
-    var _init = _upcoming.length ? parseDate(_upcoming[0].date) : new Date();
+    var _upcoming = _sorted.filter(function (e) { return parseDate(e.date) >= _today; }).slice(0, 3);
+    var _init = _today;
 
     var calYear = _init.getFullYear();
     var calMonth = _init.getMonth();
