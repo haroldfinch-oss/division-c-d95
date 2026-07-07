@@ -73,7 +73,7 @@
 
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 1.4rem;
       list-style: none;
       align-items: center;
     }
@@ -102,6 +102,26 @@
     }
 
     .nav-visit-btn:hover { opacity: 0.88; color: white; }
+
+    .nav-ct-btn {
+      display: inline-block;
+      background: transparent;
+      color: white !important;
+      border: 1.5px solid rgba(255,255,255,0.5);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      padding: 5px 13px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+
+    .nav-ct-btn:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: white;
+    }
 
     /* Hamburger (hidden on desktop) */
     .nav-toggle {
@@ -240,7 +260,7 @@
     footer a:hover { color: white; }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 760px) {
+    @media (max-width: 1080px) {
       nav { padding: 0 1.25rem; }
 
       .nav-toggle { display: block; }
@@ -293,6 +313,7 @@
       <li><a href="index.html#toastmasters">About</a></li>
       <li><a href="clubs.html">Find a Club</a></li>
       <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="https://docs.google.com/spreadsheets/d/17ZKq1rzYZ16j7hnbis9P9YJxOB51sbXQwKV322v5SZ0/edit?gid=0#gid=0" class="nav-ct-btn" target="_blank" rel="noopener">District Contests &amp; Trainings</a></li>
       <li><a href="https://toastmasters-95.org" class="nav-visit-btn" target="_blank" rel="noopener">Visit District 95</a></li>
     </ul>
   </nav>

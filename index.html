@@ -73,7 +73,7 @@
 
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 1.4rem;
       list-style: none;
       align-items: center;
     }
@@ -122,6 +122,26 @@
 
     .nav-visit-btn:hover { opacity: 0.88; color: white; }
 
+    .nav-ct-btn {
+      display: inline-block;
+      background: transparent;
+      color: white !important;
+      border: 1.5px solid rgba(255,255,255,0.5);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      padding: 5px 13px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+
+    .nav-ct-btn:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: white;
+    }
+
     /* Hamburger (hidden on desktop) */
     .nav-toggle {
       display: none;
@@ -146,20 +166,12 @@
     .nav-toggle.open span:nth-child(2) { opacity: 0; }
     .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    /* ── HERO ── */
+    /* ── HERO (kept for future use) ── */
     .hero {
       background: var(--tm-navy);
       color: white;
       padding: 5rem 2rem 4rem;
       text-align: center;
-    }
-
-    .hero-eyebrow {
-      font-size: 13px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      opacity: 0.7;
-      margin-bottom: 1.25rem;
     }
 
     .hero h1 {
@@ -170,23 +182,7 @@
       letter-spacing: -0.02em;
     }
 
-    .hero h1 span {
-      color: #ffd100;
-    }
-
-    .hero-sub {
-      font-size: 1.1rem;
-      opacity: 0.8;
-      max-width: 480px;
-      margin: 0 auto 2rem;
-    }
-
-    .hero-cta {
-      display: inline-flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+    .hero h1 span { color: #ffd100; }
 
     .btn {
       display: inline-block;
@@ -205,12 +201,6 @@
     .btn-primary {
       background: var(--tm-red);
       color: white;
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: white;
-      border: 1.5px solid rgba(255,255,255,0.5);
     }
 
     /* ── SECTION SHARED ── */
@@ -276,55 +266,108 @@
       line-height: 1.55;
     }
 
-    /* ── CLUBS ── */
-    .clubs-intro {
+    /* ── DIVISION TEAM ── */
+    .team-intro {
       font-size: 1.05rem;
       color: var(--tm-muted);
-      max-width: 600px;
+      max-width: 620px;
       margin-bottom: 2.5rem;
     }
 
-    .clubs-grid {
+    .team-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 1rem;
     }
 
-    .club-card {
+    .team-card {
       border: 1px solid var(--tm-border);
       border-radius: 10px;
-      padding: 1.25rem 1.5rem;
-      text-decoration: none;
-      color: var(--tm-text);
-      transition: border-color 0.15s, box-shadow 0.15s;
+      padding: 1.5rem 1rem 1.4rem;
+      text-align: center;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      align-items: center;
+      gap: 8px;
     }
 
-    .club-card:hover {
+    .team-card.director {
       border-color: var(--tm-navy);
       box-shadow: 0 2px 12px rgba(0,65,101,0.08);
     }
 
-    .club-name {
+    .team-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--tm-navy);
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 0.03em;
+    }
+
+    .team-role {
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--tm-red);
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .team-name {
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 1.3;
+    }
+
+    .team-leads {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .lead-card {
+      border: 1px solid var(--tm-border);
+      border-radius: 10px;
+      padding: 1.1rem 1.4rem;
+      background: var(--tm-light);
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .lead-role {
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--tm-red);
+      font-weight: 700;
+    }
+
+    .lead-name {
       font-weight: 700;
       font-size: 15px;
     }
 
-    .club-area {
-      font-size: 12px;
-      color: var(--tm-red);
+    .team-district-link {
+      display: inline-block;
+      margin-top: 2rem;
+      font-size: 14px;
       font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
+      color: var(--tm-navy);
+      text-decoration: none;
+      border-bottom: 1.5px solid var(--tm-border);
+      padding-bottom: 1px;
+      transition: border-color 0.15s;
     }
 
-    .club-location {
-      font-size: 13px;
-      color: var(--tm-muted);
-      margin-top: 4px;
-    }
+    .team-district-link:hover { border-color: var(--tm-navy); }
 
     /* ── EVENTS ── */
     .events-section {
@@ -347,6 +390,14 @@
       display: flex;
       gap: 1rem;
       align-items: center;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .event-card:hover {
+      border-color: var(--tm-navy);
+      box-shadow: 0 2px 12px rgba(0,65,101,0.08);
     }
 
     .event-date {
@@ -399,11 +450,36 @@
       padding: 1.25rem 1.5rem 1.5rem;
     }
 
+    .calendar-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.9rem;
+    }
+
     .calendar-header {
       font-weight: 700;
       font-size: 14px;
-      margin-bottom: 0.9rem;
       text-align: center;
+    }
+
+    .cal-nav-btn {
+      background: none;
+      border: 1px solid var(--tm-border);
+      border-radius: 6px;
+      width: 30px;
+      height: 30px;
+      font-size: 16px;
+      line-height: 1;
+      color: var(--tm-navy);
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .cal-nav-btn:hover {
+      background: var(--tm-light);
+      border-color: var(--tm-navy);
     }
 
     .calendar-grid {
@@ -422,17 +498,70 @@
 
     .calendar-grid .cal-day {
       font-size: 13px;
-      padding: 6px 0;
+      padding: 7px 0;
       border-radius: 6px;
       color: var(--tm-text);
+      background: none;
+      border: none;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.15s;
     }
 
-    .calendar-grid .cal-day.empty { visibility: hidden; }
+    .calendar-grid .cal-day:hover {
+      background: var(--tm-light);
+    }
+
+    .calendar-grid .cal-day.empty {
+      visibility: hidden;
+      pointer-events: none;
+    }
 
     .calendar-grid .cal-day.event {
       background: var(--tm-red);
       color: white;
       font-weight: 700;
+    }
+
+    .calendar-grid .cal-day.selected {
+      box-shadow: 0 0 0 2px var(--tm-navy);
+    }
+
+    .calendar-grid .cal-day.today:not(.event) {
+      color: var(--tm-red);
+      font-weight: 700;
+    }
+
+    .cal-events {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--tm-border);
+    }
+
+    .cal-events-title {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .cal-event-item {
+      font-size: 13px;
+      color: var(--tm-muted);
+      padding: 0.5rem 0.75rem;
+      background: var(--tm-light);
+      border-radius: 8px;
+      margin-bottom: 6px;
+      line-height: 1.5;
+    }
+
+    .cal-event-item strong {
+      color: var(--tm-text);
+      display: block;
+    }
+
+    .cal-no-events {
+      font-size: 13px;
+      color: var(--tm-muted);
     }
 
     /* ── CONTACT ── */
@@ -492,11 +621,7 @@
     footer a:hover { color: white; }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 860px) {
-      .nav-brand .brand-extra { display: none; }
-    }
-
-    @media (max-width: 760px) {
+    @media (max-width: 1080px) {
       nav { padding: 0 1.25rem; }
 
       .nav-toggle { display: block; }
@@ -523,16 +648,18 @@
       }
 
       .nav-links a { font-size: 15px; display: inline-block; }
-
-      .nav-visit-btn { display: inline-block; }
     }
 
     @media (max-width: 600px) {
+      .nav-brand .brand-extra { display: none; }
       section { padding: 3rem 1.25rem; }
-      .hero { padding: 3.5rem 1.25rem 3rem; }
       .events-grid { grid-template-columns: 1fr; }
-      .clubs-grid { grid-template-columns: 1fr; }
       .what-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 380px) {
+      .team-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -556,7 +683,9 @@
     <ul class="nav-links" id="nav-links">
       <li><a href="#toastmasters" data-en="About" data-de="Über uns">About</a></li>
       <li><a href="clubs.html" data-en="Find a Club" data-de="Club finden">Find a Club</a></li>
+      <li><a href="#team" data-en="Division Team" data-de="Division Team">Division Team</a></li>
       <li><a href="#contact" data-en="Contact" data-de="Kontakt">Contact</a></li>
+      <li><a href="https://docs.google.com/spreadsheets/d/17ZKq1rzYZ16j7hnbis9P9YJxOB51sbXQwKV322v5SZ0/edit?gid=0#gid=0" class="nav-ct-btn" target="_blank" rel="noopener" data-en="District Contests &amp; Trainings" data-de="District Contests &amp; Trainings">District Contests &amp; Trainings</a></li>
       <li><a href="https://toastmasters-95.org" class="nav-visit-btn" target="_blank" rel="noopener" data-en="Visit District 95" data-de="District 95 besuchen">Visit District 95</a></li>
       <li><button id="lang-toggle" class="lang-toggle" onclick="setLang(currentLang === 'en' ? 'de' : 'en')">DE</button></li>
     </ul>
@@ -570,72 +699,18 @@
 
       <div class="events-grid">
         <div>
-          <div class="event-card">
-            <div class="event-date">
-              <span class="day">8</span>
-              <span class="month" data-en="Aug" data-de="Aug">Aug</span>
-            </div>
-            <div class="event-details">
-              <div class="event-name">Leipzig COT</div>
-              <div class="event-meta" data-en="Saturday, 8 August 2026" data-de="Samstag, 8. August 2026">Saturday, 8 August 2026</div>
-            </div>
-          </div>
-          <p class="events-more-note" data-en="More events and links will be added here soon." data-de="Weitere Veranstaltungen und Links folgen in Kürze.">More events and links will be added here soon.</p>
+          <div id="event-list"></div>
+          <p class="events-more-note" data-en="More events and links will be added here soon. Tap a date in the calendar to see that day's events." data-de="Weitere Veranstaltungen und Links folgen in Kürze. Tippe auf ein Datum im Kalender, um die Veranstaltungen dieses Tages zu sehen.">More events and links will be added here soon. Tap a date in the calendar to see that day's events.</p>
         </div>
 
         <div class="calendar-card">
-          <div class="calendar-header" data-en="August 2026" data-de="August 2026">August 2026</div>
-          <div class="calendar-grid">
-            <div class="cal-dow" data-en="Mo" data-de="Mo">Mo</div>
-            <div class="cal-dow" data-en="Tu" data-de="Di">Tu</div>
-            <div class="cal-dow" data-en="We" data-de="Mi">We</div>
-            <div class="cal-dow" data-en="Th" data-de="Do">Th</div>
-            <div class="cal-dow" data-en="Fr" data-de="Fr">Fr</div>
-            <div class="cal-dow" data-en="Sa" data-de="Sa">Sa</div>
-            <div class="cal-dow" data-en="Su" data-de="So">Su</div>
-
-            <div class="cal-day empty"></div>
-            <div class="cal-day empty"></div>
-            <div class="cal-day empty"></div>
-            <div class="cal-day empty"></div>
-            <div class="cal-day empty"></div>
-            <div class="cal-day">1</div>
-            <div class="cal-day">2</div>
-
-            <div class="cal-day">3</div>
-            <div class="cal-day">4</div>
-            <div class="cal-day">5</div>
-            <div class="cal-day">6</div>
-            <div class="cal-day">7</div>
-            <div class="cal-day event">8</div>
-            <div class="cal-day">9</div>
-
-            <div class="cal-day">10</div>
-            <div class="cal-day">11</div>
-            <div class="cal-day">12</div>
-            <div class="cal-day">13</div>
-            <div class="cal-day">14</div>
-            <div class="cal-day">15</div>
-            <div class="cal-day">16</div>
-
-            <div class="cal-day">17</div>
-            <div class="cal-day">18</div>
-            <div class="cal-day">19</div>
-            <div class="cal-day">20</div>
-            <div class="cal-day">21</div>
-            <div class="cal-day">22</div>
-            <div class="cal-day">23</div>
-
-            <div class="cal-day">24</div>
-            <div class="cal-day">25</div>
-            <div class="cal-day">26</div>
-            <div class="cal-day">27</div>
-            <div class="cal-day">28</div>
-            <div class="cal-day">29</div>
-            <div class="cal-day">30</div>
-
-            <div class="cal-day">31</div>
+          <div class="calendar-nav">
+            <button type="button" class="cal-nav-btn" id="cal-prev" aria-label="Previous month" onclick="shiftMonth(-1)">&#8249;</button>
+            <div class="calendar-header" id="cal-title"></div>
+            <button type="button" class="cal-nav-btn" id="cal-next" aria-label="Next month" onclick="shiftMonth(1)">&#8250;</button>
           </div>
+          <div class="calendar-grid" id="cal-grid"></div>
+          <div class="cal-events" id="cal-day-events"></div>
         </div>
       </div>
     </div>
@@ -679,21 +754,65 @@
 
       <div style="margin-top: 2.5rem; display: flex; gap: 12px; flex-wrap: wrap;">
         <a href="https://www.toastmasters.org" class="btn btn-primary" target="_blank" rel="noopener">Toastmasters International</a>
+        <a href="clubs.html" class="btn btn-primary" data-en="Find a club" data-de="Club finden">Find a club</a>
       </div>
     </div>
   </section>
 
-  <!-- CLUBS -->
-  <section id="clubs">
+  <!-- DIVISION TEAM -->
+  <section id="team">
     <div class="container">
       <p class="section-label">Division C</p>
-      <h2 data-en="Our clubs" data-de="Unsere Clubs">Our clubs</h2>
-      <p class="clubs-intro" data-en="Division C comprises the Germany Middle East region, bringing together Toastmasters clubs from Berlin, Hannover, Leipzig, Dresden and beyond. Each club meets regularly — visit as a guest before committing. All are welcome." data-de="Division C umfasst die Region Deutschland Mitte-Ost und vereint Toastmasters-Clubs aus Berlin, Hannover, Leipzig, Dresden und Umgebung. Jeder Club trifft sich regelmäßig — besuche gerne als Gast, bevor du dich entscheidest. Alle sind willkommen.">
+      <h2 data-en="Division Team 2026–2027" data-de="Division Team 2026–2027">Division Team 2026–2027</h2>
+      <p class="team-intro" data-en="Division C comprises the Germany Middle East region, bringing together Toastmasters clubs from Berlin, Hannover, Leipzig, Dresden and beyond. Meet the team leading the Division this year." data-de="Division C umfasst die Region Germany Middle East und vereint Toastmasters-Clubs aus Berlin, Hannover, Leipzig, Dresden und Umgebung. Lerne das Team kennen, das die Division in diesem Jahr leitet.">
         Division C comprises the Germany Middle East region, bringing together Toastmasters clubs
-        from Berlin, Hannover, Leipzig, Dresden and beyond. Each club meets regularly —
-        visit as a guest before committing. All are welcome.
+        from Berlin, Hannover, Leipzig, Dresden and beyond. Meet the team leading the Division this year.
       </p>
-      <a href="clubs.html" class="btn btn-primary" data-en="Find a club" data-de="Club finden">Find a club</a>
+
+      <div class="team-grid">
+        <div class="team-card director">
+          <div class="team-avatar">KJ</div>
+          <div class="team-role">Division C Director</div>
+          <div class="team-name">Kunal K Jani</div>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">SB</div>
+          <div class="team-role">Area C1 Director</div>
+          <div class="team-name">Sarah Basteck</div>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">AB</div>
+          <div class="team-role">Area C2 Director</div>
+          <div class="team-name">Astrid Buzin</div>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">MH</div>
+          <div class="team-role">Area C3 Director</div>
+          <div class="team-name">May-Britt Hamann</div>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">MS</div>
+          <div class="team-role">Area C4 Director</div>
+          <div class="team-name">Maria Sachse</div>
+        </div>
+      </div>
+
+      <div class="team-leads">
+        <div class="lead-card">
+          <span class="lead-role">Division PR Lead</span>
+          <span class="lead-name">Ginia Tarique</span>
+        </div>
+        <div class="lead-card">
+          <span class="lead-role">Division Pathways Lead</span>
+          <span class="lead-name">Jens Weiß</span>
+        </div>
+        <div class="lead-card">
+          <span class="lead-role">Division EasySpeak Lead</span>
+          <span class="lead-name">Jan Chiristian</span>
+        </div>
+      </div>
+
+      <a href="https://toastmasters-95.org/district-team-2026-2027/" class="team-district-link" target="_blank" rel="noopener" data-en="See the full District 95 team →" data-de="Das gesamte District 95 Team ansehen →">See the full District 95 team →</a>
     </div>
   </section>
 
@@ -723,6 +842,173 @@
   <script>
     var currentLang = localStorage.getItem('tm-lang') || 'en';
 
+    /* ══════════════════════════════════════════════════
+       EVENTS — add new events to this list.
+       date: 'YYYY-MM-DD'
+       name: stays the same in both languages (Toastmasters jargon)
+       location / language: { en: '...', de: '...' }
+       ══════════════════════════════════════════════════ */
+    var EVENTS = [
+      {
+        date: '2026-08-08', start: '10:00', end: '16:00',
+        name: 'Area C4 Leipzig COT',
+        location: { en: 'Basislager Coworking, Leipzig', de: 'Basislager Coworking, Leipzig' },
+        language: { en: 'English', de: 'Englisch' }
+      },
+      {
+        date: '2026-08-23', start: '10:00', end: '16:00',
+        name: 'Area C3 COT',
+        location: { en: 'Wolfsburg (exact location TBD)', de: 'Wolfsburg (genauer Ort folgt)' },
+        language: { en: 'German', de: 'Deutsch' }
+      },
+      {
+        date: '2026-08-30', start: '10:00', end: '15:00',
+        name: 'Last Chance COT — Division B+C',
+        location: { en: 'Online', de: 'Online' },
+        language: { en: 'English', de: 'Englisch' }
+      }
+    ];
+
+    var MONTHS_FULL = {
+      en: ['January','February','March','April','May','June','July','August','September','October','November','December'],
+      de: ['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember']
+    };
+    var MONTHS_SHORT = {
+      en: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+      de: ['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez']
+    };
+    var WEEKDAYS_FULL = {
+      en: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+      de: ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag']
+    };
+    var DOW_SHORT = {
+      en: ['Mo','Tu','We','Th','Fr','Sa','Su'],
+      de: ['Mo','Di','Mi','Do','Fr','Sa','So']
+    };
+    var TEXT = {
+      noEventsDay: { en: 'No events on this day.', de: 'Keine Veranstaltungen an diesem Tag.' },
+      noUpcoming: { en: 'No upcoming events at the moment — check back soon.', de: 'Zurzeit keine anstehenden Veranstaltungen — schau bald wieder vorbei.' }
+    };
+
+    function parseDate(s) {
+      var p = s.split('-');
+      return new Date(+p[0], +p[1] - 1, +p[2]);
+    }
+    function pad(n) { return (n < 10 ? '0' : '') + n; }
+    function dateKey(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+    function eventsOn(key) { return EVENTS.filter(function (e) { return e.date === key; }); }
+    function formatLong(key) {
+      var d = parseDate(key);
+      if (currentLang === 'de') {
+        return WEEKDAYS_FULL.de[d.getDay()] + ', ' + d.getDate() + '. ' + MONTHS_FULL.de[d.getMonth()] + ' ' + d.getFullYear();
+      }
+      return WEEKDAYS_FULL.en[d.getDay()] + ', ' + d.getDate() + ' ' + MONTHS_FULL.en[d.getMonth()] + ' ' + d.getFullYear();
+    }
+
+    var _today = new Date(); _today.setHours(0, 0, 0, 0);
+    var _sorted = EVENTS.slice().sort(function (a, b) { return a.date < b.date ? -1 : 1; });
+    var _upcoming = _sorted.filter(function (e) { return parseDate(e.date) >= _today; });
+    var _init = _upcoming.length ? parseDate(_upcoming[0].date) : new Date();
+
+    var calYear = _init.getFullYear();
+    var calMonth = _init.getMonth();
+    var selectedKey = _upcoming.length ? _upcoming[0].date : dateKey(_today);
+
+    function renderCalendar() {
+      document.getElementById('cal-title').textContent = MONTHS_FULL[currentLang][calMonth] + ' ' + calYear;
+
+      var html = '';
+      DOW_SHORT[currentLang].forEach(function (d) {
+        html += '<div class="cal-dow">' + d + '</div>';
+      });
+
+      var first = new Date(calYear, calMonth, 1);
+      var offset = (first.getDay() + 6) % 7; // Monday-first
+      for (var i = 0; i < offset; i++) html += '<div class="cal-day empty"></div>';
+
+      var daysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
+      var todayKey = dateKey(_today);
+      for (var day = 1; day <= daysInMonth; day++) {
+        var key = calYear + '-' + pad(calMonth + 1) + '-' + pad(day);
+        var cls = 'cal-day';
+        if (eventsOn(key).length) cls += ' event';
+        if (key === selectedKey) cls += ' selected';
+        if (key === todayKey) cls += ' today';
+        html += '<button type="button" class="' + cls + '" data-date="' + key + '">' + day + '</button>';
+      }
+
+      document.getElementById('cal-grid').innerHTML = html;
+    }
+
+    function renderDayEvents() {
+      var box = document.getElementById('cal-day-events');
+      var evs = eventsOn(selectedKey);
+      var html = '<div class="cal-events-title">' + formatLong(selectedKey) + '</div>';
+      if (!evs.length) {
+        html += '<div class="cal-no-events">' + TEXT.noEventsDay[currentLang] + '</div>';
+      } else {
+        evs.forEach(function (e) {
+          html += '<div class="cal-event-item"><strong>' + e.name + '</strong>' +
+            e.start + '–' + e.end + ' · ' + e.language[currentLang] + ' · ' + e.location[currentLang] + '</div>';
+        });
+      }
+      box.innerHTML = html;
+    }
+
+    function renderUpcoming() {
+      var box = document.getElementById('event-list');
+      if (!_upcoming.length) {
+        box.innerHTML = '<div class="cal-no-events">' + TEXT.noUpcoming[currentLang] + '</div>';
+        return;
+      }
+      var html = '';
+      _upcoming.forEach(function (e) {
+        var d = parseDate(e.date);
+        html += '<div class="event-card" data-date="' + e.date + '">' +
+          '<div class="event-date"><span class="day">' + d.getDate() + '</span>' +
+          '<span class="month">' + MONTHS_SHORT[currentLang][d.getMonth()] + '</span></div>' +
+          '<div class="event-details"><div class="event-name">' + e.name + '</div>' +
+          '<div class="event-meta">' + formatLong(e.date) + ' · ' + e.start + '–' + e.end + '</div>' +
+          '<div class="event-meta">' + e.location[currentLang] + ' · ' + e.language[currentLang] + '</div>' +
+          '</div></div>';
+      });
+      box.innerHTML = html;
+    }
+
+    function selectDate(key) {
+      selectedKey = key;
+      var d = parseDate(key);
+      calYear = d.getFullYear();
+      calMonth = d.getMonth();
+      renderCalendar();
+      renderDayEvents();
+    }
+
+    function shiftMonth(delta) {
+      calMonth += delta;
+      if (calMonth < 0) { calMonth = 11; calYear--; }
+      if (calMonth > 11) { calMonth = 0; calYear++; }
+      renderCalendar();
+    }
+
+    function renderAll() {
+      renderCalendar();
+      renderDayEvents();
+      renderUpcoming();
+    }
+
+    // Tap a day in the calendar → show that day's events
+    document.getElementById('cal-grid').addEventListener('click', function (ev) {
+      var btn = ev.target.closest('.cal-day');
+      if (btn && btn.getAttribute('data-date')) selectDate(btn.getAttribute('data-date'));
+    });
+
+    // Tap an event card → jump the calendar to that date
+    document.getElementById('event-list').addEventListener('click', function (ev) {
+      var card = ev.target.closest('.event-card');
+      if (card && card.getAttribute('data-date')) selectDate(card.getAttribute('data-date'));
+    });
+
     function setLang(lang) {
       currentLang = lang;
       localStorage.setItem('tm-lang', lang);
@@ -733,6 +1019,7 @@
       });
       var btn = document.getElementById('lang-toggle');
       if (btn) btn.textContent = lang === 'de' ? 'EN' : 'DE';
+      renderAll();
     }
 
     function toggleNav() {

@@ -64,7 +64,7 @@
 
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 1.4rem;
       list-style: none;
       align-items: center;
     }
@@ -109,6 +109,26 @@
     }
 
     .nav-visit-btn:hover { opacity: 0.88; color: white; }
+
+    .nav-ct-btn {
+      display: inline-block;
+      background: transparent;
+      color: white !important;
+      border: 1.5px solid rgba(255,255,255,0.5);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      padding: 5px 13px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+
+    .nav-ct-btn:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: white;
+    }
 
     /* Hamburger (hidden on desktop) */
     .nav-toggle {
@@ -269,7 +289,7 @@
     footer a:hover { color: white; }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 760px) {
+    @media (max-width: 1080px) {
       nav { padding: 0 1.25rem; }
 
       .nav-toggle { display: block; }
@@ -322,6 +342,7 @@
       <li><a href="index.html#toastmasters" data-en="About" data-de="Über uns">About</a></li>
       <li><a href="clubs.html" data-en="Find a Club" data-de="Club finden">Find a Club</a></li>
       <li><a href="index.html#contact" data-en="Contact" data-de="Kontakt">Contact</a></li>
+      <li><a href="https://docs.google.com/spreadsheets/d/17ZKq1rzYZ16j7hnbis9P9YJxOB51sbXQwKV322v5SZ0/edit?gid=0#gid=0" class="nav-ct-btn" target="_blank" rel="noopener" data-en="District Contests &amp; Trainings" data-de="District Contests &amp; Trainings">District Contests &amp; Trainings</a></li>
       <li><a href="https://toastmasters-95.org" class="nav-visit-btn" target="_blank" rel="noopener" data-en="Visit District 95" data-de="District 95 besuchen">Visit District 95</a></li>
       <li><button id="lang-toggle" class="lang-toggle" onclick="setLang(currentLang === 'en' ? 'de' : 'en')">DE</button></li>
     </ul>
@@ -329,7 +350,7 @@
 
   <!-- PAGE HEADER -->
   <div class="page-header">
-    <p class="section-label" data-en="Division C · Germany Middle East" data-de="Division C · Deutschland Mitte-Ost">Division C · Germany Middle East</p>
+    <p class="section-label" data-en="Division C · Germany Middle East" data-de="Division C · Germany Middle East">Division C · Germany Middle East</p>
     <h1 data-en="Find a club" data-de="Club finden">Find a club</h1>
     <p data-en="Every Toastmasters club in Division C, grouped by area. Click a club to visit its website — and visit any club as a guest before joining." data-de="Alle Toastmasters-Clubs der Division C, nach Bereich sortiert. Klicke auf einen Club, um seine Website zu besuchen — und komm gerne als Gast vorbei, bevor du beitrittst.">
       Every Toastmasters club in Division C, grouped by area. Click a club to visit its website — and visit any club as a guest before joining.
@@ -341,7 +362,7 @@
     <div class="container">
 
       <div class="area-block">
-        <div class="area-title" data-en="Area 1" data-de="Bereich 1">Area 1</div>
+        <div class="area-title" data-en="Area 1" data-de="Area 1">Area 1</div>
         <div class="clubs-grid">
           <a href="https://mercurytoastmasters.de" class="club-card" target="_blank" rel="noopener">
             <span class="club-name">Mercury Toastmasters Berlin</span>
@@ -367,7 +388,7 @@
       </div>
 
       <div class="area-block">
-        <div class="area-title" data-en="Area 2" data-de="Bereich 2">Area 2</div>
+        <div class="area-title" data-en="Area 2" data-de="Area 2">Area 2</div>
         <div class="clubs-grid">
           <a href="https://fbtm.org" class="club-card" target="_blank" rel="noopener">
             <span class="club-name">First Berlin Toastmasters Club</span>
@@ -393,7 +414,7 @@
       </div>
 
       <div class="area-block">
-        <div class="area-title" data-en="Area 3" data-de="Bereich 3">Area 3</div>
+        <div class="area-title" data-en="Area 3" data-de="Area 3">Area 3</div>
         <div class="clubs-grid">
           <a href="https://hannover-speakers.de" class="club-card" target="_blank" rel="noopener">
             <span class="club-name">Hannover Speakers Club</span>
@@ -419,7 +440,7 @@
       </div>
 
       <div class="area-block">
-        <div class="area-title" data-en="Area 4" data-de="Bereich 4">Area 4</div>
+        <div class="area-title" data-en="Area 4" data-de="Area 4">Area 4</div>
         <div class="clubs-grid">
           <a href="https://www.leipzig-toastmasters.de" class="club-card" target="_blank" rel="noopener">
             <span class="club-name">Leipzig Toastmasters</span>
