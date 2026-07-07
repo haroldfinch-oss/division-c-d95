@@ -47,17 +47,18 @@
 
     /* ── NAV ── */
     nav {
-      background: var(--tm-blue);
+      background: var(--tm-maroon);
       color: white;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 2rem;
-      height: 62px;
+      height: 110px;
       position: sticky;
       top: 0;
       z-index: 100;
       border-bottom: 3px solid var(--tm-yellow);
+      overflow: visible;
     }
 
     .nav-brand {
@@ -70,10 +71,12 @@
       font-weight: 700;
       letter-spacing: 0.01em;
       white-space: nowrap;
+      position: relative;
+      z-index: 101;
     }
 
     .nav-brand img {
-      height: 32px;
+      height: 96px;
       width: auto;
     }
 
@@ -313,6 +316,7 @@
 
     .team-card {
       border: 1px solid var(--tm-border);
+      border-left: 4px solid var(--tm-maroon);
       border-radius: 12px;
       padding: 1.5rem 1rem 1.4rem;
       text-align: center;
@@ -330,7 +334,8 @@
     }
 
     .team-card.director {
-      border-color: var(--tm-blue);
+      border-color: var(--tm-maroon);
+      border-left-width: 4px;
       border-width: 2px;
       background: linear-gradient(180deg, #fbfdff 0%, #ffffff 100%);
     }
@@ -355,7 +360,7 @@
     }
 
     .team-role {
-      font-size: 10.5px;
+      font-size: 11px;
       letter-spacing: 0.05em;
       text-transform: uppercase;
       color: var(--tm-maroon);
@@ -366,7 +371,7 @@
 
     .team-name {
       font-weight: 700;
-      font-size: 15px;
+      font-size: 16px;
       line-height: 1.3;
       color: var(--tm-text);
     }
@@ -418,7 +423,7 @@
     }
 
     .lead-role {
-      font-size: 10.5px;
+      font-size: 11px;
       letter-spacing: 0.05em;
       text-transform: uppercase;
       color: var(--tm-maroon);
@@ -428,7 +433,7 @@
 
     .lead-name {
       font-weight: 700;
-      font-size: 15px;
+      font-size: 16px;
       color: var(--tm-text);
     }
 
@@ -835,37 +840,56 @@
     </ul>
   </nav>
 
-  <!-- HERO WELCOME WITH STATIC CONFETTI -->
+<!-- HERO WELCOME WITH STATIC CONFETTI -->
   <section style="background: linear-gradient(135deg, var(--tm-blue) 0%, var(--tm-blue-deep) 100%); color: white; padding: 4rem 2rem 3.5rem; text-align: center; margin-top: -20px; position: relative; z-index: 99; overflow: hidden;">
     <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;" viewBox="0 0 1000 300" preserveAspectRatio="xMidYMid slice">
-      <!-- Confetti pieces in brand colors - LARGER and MORE VISIBLE -->
-      <rect x="50" y="20" width="12" height="12" fill="#F2DF74" opacity="0.8" transform="rotate(25 56 26)" />
-      <rect x="120" y="40" width="10" height="10" fill="#772432" opacity="0.75" transform="rotate(-15 125 45)" />
-      <rect x="200" y="30" width="11" height="11" fill="#004165" opacity="0.8" transform="rotate(45 205.5 35.5)" />
-      <rect x="300" y="50" width="12" height="12" fill="#F2DF74" opacity="0.75" transform="rotate(-30 306 56)" />
-      <rect x="400" y="25" width="10" height="10" fill="#006094" opacity="0.8" transform="rotate(60 405 30)" />
-      <rect x="500" y="45" width="11" height="11" fill="#772432" opacity="0.75" transform="rotate(-45 505.5 50.5)" />
-      <rect x="600" y="35" width="12" height="12" fill="#F2DF74" opacity="0.8" transform="rotate(20 606 41)" />
-      <rect x="700" y="55" width="10" height="10" fill="#004165" opacity="0.75" transform="rotate(-60 705 60)" />
-      <rect x="800" y="30" width="11" height="11" fill="#006094" opacity="0.8" transform="rotate(35 805.5 35.5)" />
-      <rect x="900" y="48" width="12" height="12" fill="#772432" opacity="0.75" transform="rotate(-25 906 54)" />
-      <rect x="80" y="100" width="10" height="10" fill="#006094" opacity="0.8" transform="rotate(50 85 105)" />
-      <rect x="180" y="120" width="11" height="11" fill="#F2DF74" opacity="0.75" transform="rotate(-40 185.5 125.5)" />
-      <rect x="320" y="110" width="12" height="12" fill="#772432" opacity="0.8" transform="rotate(15 326 116)" />
-      <rect x="420" y="140" width="10" height="10" fill="#004165" opacity="0.75" transform="rotate(-55 425 145)" />
-      <rect x="550" y="130" width="11" height="11" fill="#F2DF74" opacity="0.8" transform="rotate(40 555.5 135.5)" />
-      <rect x="700" y="115" width="12" height="12" fill="#006094" opacity="0.75" transform="rotate(-35 706 121)" />
-      <rect x="850" y="125" width="10" height="10" fill="#772432" opacity="0.8" transform="rotate(25 855 130)" />
-      <rect x="150" y="200" width="11" height="11" fill="#F2DF74" opacity="0.75" transform="rotate(-20 155.5 205.5)" />
-      <rect x="350" y="220" width="12" height="12" fill="#004165" opacity="0.8" transform="rotate(55 356 226)" />
-      <rect x="600" y="210" width="10" height="10" fill="#006094" opacity="0.75" transform="rotate(-45 605 215)" />
-      <rect x="800" y="230" width="11" height="11" fill="#772432" opacity="0.8" transform="rotate(30 805.5 235.5)" />
+      <!-- Confetti pieces in brand colors - DENSER -->
+      <rect x="30" y="15" width="10" height="10" fill="#F2DF74" opacity="0.75" transform="rotate(25 35 20)" />
+      <rect x="90" y="35" width="9" height="9" fill="#772432" opacity="0.7" transform="rotate(-15 94.5 39.5)" />
+      <rect x="150" y="25" width="10" height="10" fill="#004165" opacity="0.75" transform="rotate(45 155 30)" />
+      <rect x="220" y="45" width="9" height="9" fill="#F2DF74" opacity="0.7" transform="rotate(-30 224.5 49.5)" />
+      <rect x="280" y="20" width="10" height="10" fill="#006094" opacity="0.75" transform="rotate(60 285 25)" />
+      <rect x="350" y="40" width="9" height="9" fill="#772432" opacity="0.7" transform="rotate(-45 354.5 44.5)" />
+      <rect x="420" y="30" width="10" height="10" fill="#F2DF74" opacity="0.75" transform="rotate(20 425 35)" />
+      <rect x="490" y="50" width="9" height="9" fill="#004165" opacity="0.7" transform="rotate(-60 494.5 54.5)" />
+      <rect x="560" y="25" width="10" height="10" fill="#006094" opacity="0.75" transform="rotate(35 565 30)" />
+      <rect x="630" y="43" width="9" height="9" fill="#772432" opacity="0.7" transform="rotate(-25 634.5 47.5)" />
+      <rect x="700" y="18" width="10" height="10" fill="#F2DF74" opacity="0.75" transform="rotate(50 705 23)" />
+      <rect x="770" y="38" width="9" height="9" fill="#004165" opacity="0.7" transform="rotate(-40 774.5 42.5)" />
+      <rect x="840" y="28" width="10" height="10" fill="#006094" opacity="0.75" transform="rotate(15 845 33)" />
+      <rect x="910" y="48" width="9" height="9" fill="#772432" opacity="0.7" transform="rotate(-55 914.5 52.5)" />
+      
+      <rect x="60" y="95" width="10" height="10" fill="#006094" opacity="0.75" transform="rotate(50 65 100)" />
+      <rect x="140" y="115" width="9" height="9" fill="#F2DF74" opacity="0.7" transform="rotate(-40 144.5 119.5)" />
+      <rect x="220" y="105" width="10" height="10" fill="#772432" opacity="0.75" transform="rotate(15 225 110)" />
+      <rect x="300" y="135" width="9" height="9" fill="#004165" opacity="0.7" transform="rotate(-55 304.5 139.5)" />
+      <rect x="380" y="125" width="10" height="10" fill="#F2DF74" opacity="0.75" transform="rotate(40 385 130)" />
+      <rect x="460" y="110" width="9" height="9" fill="#006094" opacity="0.7" transform="rotate(-35 464.5 114.5)" />
+      <rect x="540" y="130" width="10" height="10" fill="#772432" opacity="0.75" transform="rotate(25 545 135)" />
+      <rect x="620" y="100" width="9" height="9" fill="#F2DF74" opacity="0.7" transform="rotate(-50 624.5 104.5)" />
+      <rect x="700" y="120" width="10" height="10" fill="#004165" opacity="0.75" transform="rotate(35 705 125)" />
+      <rect x="780" y="140" width="9" height="9" fill="#006094" opacity="0.7" transform="rotate(-20 784.5 144.5)" />
+      <rect x="860" y="110" width="10" height="10" fill="#772432" opacity="0.75" transform="rotate(60 865 115)" />
+      <rect x="940" y="125" width="9" height="9" fill="#F2DF74" opacity="0.7" transform="rotate(-45 944.5 129.5)" />
+      
+      <rect x="50" y="205" width="10" height="10" fill="#F2DF74" opacity="0.75" transform="rotate(-20 55 210)" />
+      <rect x="130" y="225" width="9" height="9" fill="#004165" opacity="0.7" transform="rotate(55 134.5 229.5)" />
+      <rect x="210" y="215" width="10" height="10" fill="#006094" opacity="0.75" transform="rotate(-45 215 220)" />
+      <rect x="290" y="235" width="9" height="9" fill="#772432" opacity="0.7" transform="rotate(30 294.5 239.5)" />
+      <rect x="370" y="205" width="10" height="10" fill="#F2DF74" opacity="0.75" transform="rotate(-35 375 210)" />
+      <rect x="450" y="225" width="9" height="9" fill="#004165" opacity="0.7" transform="rotate(40 454.5 229.5)" />
+      <rect x="530" y="215" width="10" height="10" fill="#006094" opacity="0.75" transform="rotate(-60 535 220)" />
+      <rect x="610" y="235" width="9" height="9" fill="#772432" opacity="0.7" transform="rotate(20 614.5 239.5)" />
+      <rect x="690" y="205" width="10" height="10" fill="#F2DF74" opacity="0.75" transform="rotate(-25 695 210)" />
+      <rect x="770" y="225" width="9" height="9" fill="#004165" opacity="0.7" transform="rotate(50 774.5 229.5)" />
+      <rect x="850" y="215" width="10" height="10" fill="#006094" opacity="0.75" transform="rotate(-15 855 220)" />
+      <rect x="930" y="235" width="9" height="9" fill="#772432" opacity="0.7" transform="rotate(35 934.5 239.5)" />
     </svg>
     <div class="container" style="position: relative; z-index: 10;">
       <h1 style="font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; margin-bottom: 0.75rem; letter-spacing: -0.02em;">Welcome to Division C!</h1>
     </div>
   </section>
-
+  
   <!-- EVENTS -->
   <section class="events-section" id="events">
     <div class="container">
@@ -1078,6 +1102,12 @@
         name: 'Last Chance COT — Division B+C',
         location: { en: 'Online', de: 'Online' },
         language: { en: 'English', de: 'Englisch' }
+      },
+      {
+        date: '2026-11-28', start: '09:43', end: '18:29',
+        name: 'Toastmasters Tag',
+        location: { en: 'CVJM Jugendgästehaus Berlin', de: 'CVJM Jugendgästehaus Berlin' },
+        registerUrl: 'https://toastmasters-tag.de/'
       }
     ];
 
