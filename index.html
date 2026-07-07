@@ -47,18 +47,17 @@
 
     /* ── NAV ── */
     nav {
-      background: var(--tm-maroon);
+      background: var(--tm-blue);
       color: white;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 2rem;
-      height: 110px;
+      height: 62px;
       position: sticky;
       top: 0;
       z-index: 100;
       border-bottom: 3px solid var(--tm-yellow);
-      overflow: visible;
     }
 
     .nav-brand {
@@ -71,12 +70,10 @@
       font-weight: 700;
       letter-spacing: 0.01em;
       white-space: nowrap;
-      position: relative;
-      z-index: 101;
     }
 
     .nav-brand img {
-      height: 96px;
+      height: 32px;
       width: auto;
     }
 
@@ -316,7 +313,6 @@
 
     .team-card {
       border: 1px solid var(--tm-border);
-      border-left: 4px solid var(--tm-maroon);
       border-radius: 12px;
       padding: 1.5rem 1rem 1.4rem;
       text-align: center;
@@ -334,8 +330,7 @@
     }
 
     .team-card.director {
-      border-color: var(--tm-maroon);
-      border-left-width: 4px;
+      border-color: var(--tm-blue);
       border-width: 2px;
       background: linear-gradient(180deg, #fbfdff 0%, #ffffff 100%);
     }
@@ -360,7 +355,7 @@
     }
 
     .team-role {
-      font-size: 11px;
+      font-size: 10.5px;
       letter-spacing: 0.05em;
       text-transform: uppercase;
       color: var(--tm-maroon);
@@ -371,7 +366,7 @@
 
     .team-name {
       font-weight: 700;
-      font-size: 16px;
+      font-size: 15px;
       line-height: 1.3;
       color: var(--tm-text);
     }
@@ -423,7 +418,7 @@
     }
 
     .lead-role {
-      font-size: 11px;
+      font-size: 10.5px;
       letter-spacing: 0.05em;
       text-transform: uppercase;
       color: var(--tm-maroon);
@@ -433,7 +428,7 @@
 
     .lead-name {
       font-weight: 700;
-      font-size: 16px;
+      font-size: 15px;
       color: var(--tm-text);
     }
 
@@ -840,37 +835,37 @@
     </ul>
   </nav>
 
-<!-- HERO WELCOME WITH STATIC CONFETTI -->
+  <!-- HERO WELCOME WITH STATIC CONFETTI -->
   <section style="background: linear-gradient(135deg, var(--tm-blue) 0%, var(--tm-blue-deep) 100%); color: white; padding: 4rem 2rem 3.5rem; text-align: center; margin-top: -20px; position: relative; z-index: 99; overflow: hidden;">
-    <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;" viewBox="0 0 1000 300">
-      <!-- Confetti pieces in brand colors -->
-      <rect x="50" y="20" width="8" height="8" fill="#F2DF74" opacity="0.6" transform="rotate(25 54 24)" />
-      <rect x="120" y="40" width="6" height="6" fill="#772432" opacity="0.5" transform="rotate(-15 123 43)" />
-      <rect x="200" y="30" width="7" height="7" fill="#004165" opacity="0.6" transform="rotate(45 203.5 33.5)" />
-      <rect x="300" y="50" width="8" height="8" fill="#F2DF74" opacity="0.5" transform="rotate(-30 304 54)" />
-      <rect x="400" y="25" width="6" height="6" fill="#006094" opacity="0.6" transform="rotate(60 403 28)" />
-      <rect x="500" y="45" width="7" height="7" fill="#772432" opacity="0.5" transform="rotate(-45 503.5 48.5)" />
-      <rect x="600" y="35" width="8" height="8" fill="#F2DF74" opacity="0.6" transform="rotate(20 604 39)" />
-      <rect x="700" y="55" width="6" height="6" fill="#004165" opacity="0.5" transform="rotate(-60 703 58)" />
-      <rect x="800" y="30" width="7" height="7" fill="#006094" opacity="0.6" transform="rotate(35 803.5 33.5)" />
-      <rect x="900" y="48" width="8" height="8" fill="#772432" opacity="0.5" transform="rotate(-25 904 52)" />
-      <rect x="80" y="100" width="6" height="6" fill="#006094" opacity="0.6" transform="rotate(50 83 103)" />
-      <rect x="180" y="120" width="7" height="7" fill="#F2DF74" opacity="0.5" transform="rotate(-40 183.5 123.5)" />
-      <rect x="320" y="110" width="8" height="8" fill="#772432" opacity="0.6" transform="rotate(15 324 114)" />
-      <rect x="420" y="140" width="6" height="6" fill="#004165" opacity="0.5" transform="rotate(-55 423 143)" />
-      <rect x="550" y="130" width="7" height="7" fill="#F2DF74" opacity="0.6" transform="rotate(40 553.5 133.5)" />
-      <rect x="700" y="115" width="8" height="8" fill="#006094" opacity="0.5" transform="rotate(-35 704 119)" />
-      <rect x="850" y="125" width="6" height="6" fill="#772432" opacity="0.6" transform="rotate(25 853 128)" />
-      <rect x="150" y="200" width="7" height="7" fill="#F2DF74" opacity="0.5" transform="rotate(-20 153.5 203.5)" />
-      <rect x="350" y="220" width="8" height="8" fill="#004165" opacity="0.6" transform="rotate(55 354 224)" />
-      <rect x="600" y="210" width="6" height="6" fill="#006094" opacity="0.5" transform="rotate(-45 603 213)" />
-      <rect x="800" y="230" width="7" height="7" fill="#772432" opacity="0.6" transform="rotate(30 803.5 233.5)" />
+    <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;" viewBox="0 0 1000 300" preserveAspectRatio="xMidYMid slice">
+      <!-- Confetti pieces in brand colors - LARGER and MORE VISIBLE -->
+      <rect x="50" y="20" width="12" height="12" fill="#F2DF74" opacity="0.8" transform="rotate(25 56 26)" />
+      <rect x="120" y="40" width="10" height="10" fill="#772432" opacity="0.75" transform="rotate(-15 125 45)" />
+      <rect x="200" y="30" width="11" height="11" fill="#004165" opacity="0.8" transform="rotate(45 205.5 35.5)" />
+      <rect x="300" y="50" width="12" height="12" fill="#F2DF74" opacity="0.75" transform="rotate(-30 306 56)" />
+      <rect x="400" y="25" width="10" height="10" fill="#006094" opacity="0.8" transform="rotate(60 405 30)" />
+      <rect x="500" y="45" width="11" height="11" fill="#772432" opacity="0.75" transform="rotate(-45 505.5 50.5)" />
+      <rect x="600" y="35" width="12" height="12" fill="#F2DF74" opacity="0.8" transform="rotate(20 606 41)" />
+      <rect x="700" y="55" width="10" height="10" fill="#004165" opacity="0.75" transform="rotate(-60 705 60)" />
+      <rect x="800" y="30" width="11" height="11" fill="#006094" opacity="0.8" transform="rotate(35 805.5 35.5)" />
+      <rect x="900" y="48" width="12" height="12" fill="#772432" opacity="0.75" transform="rotate(-25 906 54)" />
+      <rect x="80" y="100" width="10" height="10" fill="#006094" opacity="0.8" transform="rotate(50 85 105)" />
+      <rect x="180" y="120" width="11" height="11" fill="#F2DF74" opacity="0.75" transform="rotate(-40 185.5 125.5)" />
+      <rect x="320" y="110" width="12" height="12" fill="#772432" opacity="0.8" transform="rotate(15 326 116)" />
+      <rect x="420" y="140" width="10" height="10" fill="#004165" opacity="0.75" transform="rotate(-55 425 145)" />
+      <rect x="550" y="130" width="11" height="11" fill="#F2DF74" opacity="0.8" transform="rotate(40 555.5 135.5)" />
+      <rect x="700" y="115" width="12" height="12" fill="#006094" opacity="0.75" transform="rotate(-35 706 121)" />
+      <rect x="850" y="125" width="10" height="10" fill="#772432" opacity="0.8" transform="rotate(25 855 130)" />
+      <rect x="150" y="200" width="11" height="11" fill="#F2DF74" opacity="0.75" transform="rotate(-20 155.5 205.5)" />
+      <rect x="350" y="220" width="12" height="12" fill="#004165" opacity="0.8" transform="rotate(55 356 226)" />
+      <rect x="600" y="210" width="10" height="10" fill="#006094" opacity="0.75" transform="rotate(-45 605 215)" />
+      <rect x="800" y="230" width="11" height="11" fill="#772432" opacity="0.8" transform="rotate(30 805.5 235.5)" />
     </svg>
     <div class="container" style="position: relative; z-index: 10;">
       <h1 style="font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; margin-bottom: 0.75rem; letter-spacing: -0.02em;">Welcome to Division C!</h1>
     </div>
   </section>
-  
+
   <!-- EVENTS -->
   <section class="events-section" id="events">
     <div class="container">
@@ -1083,12 +1078,6 @@
         name: 'Last Chance COT — Division B+C',
         location: { en: 'Online', de: 'Online' },
         language: { en: 'English', de: 'Englisch' }
-      },
-      {
-        date: '2026-11-28', start: '09:43', end: '18:29',
-        name: 'Toastmasters Tag',
-        location: { en: 'CVJM Jugendgästehaus Berlin', de: 'CVJM Jugendgästehaus Berlin' },
-        registerUrl: 'https://toastmasters-tag.de/'
       }
     ];
 
