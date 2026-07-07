@@ -9,24 +9,32 @@
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#004165" />
   <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --tm-navy: #004165;
-      --tm-red: #D5202C;
-      --tm-light: #f4f6f8;
+      --tm-blue: #004165;
+      --tm-blue-deep: #006094;
+      --tm-maroon: #772432;
+      --tm-maroon-deep: #5c1a25;
+      --tm-yellow: #F2DF74;
+      --tm-gray: #A9B2B1;
+      --tm-fair: #F5F5F5;
       --tm-white: #ffffff;
       --tm-text: #1a1a1a;
       --tm-muted: #5a6472;
-      --tm-border: #dde3e9;
-      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --tm-border: #e2e6ea;
+      --font-head: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+      --font-body: 'Source Sans 3', 'Segoe UI', system-ui, -apple-system, sans-serif;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: var(--font);
+      font-family: var(--font-body);
       color: var(--tm-text);
       background: var(--tm-white);
       font-size: 16px;
@@ -34,18 +42,21 @@
       -webkit-text-size-adjust: 100%;
     }
 
+    h1, h2, .nav-brand { font-family: var(--font-head); }
+
     /* ── NAV ── */
     nav {
-      background: var(--tm-navy);
+      background: var(--tm-blue);
       color: white;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 2rem;
-      height: 60px;
+      height: 62px;
       position: sticky;
       top: 0;
       z-index: 100;
+      border-bottom: 3px solid var(--tm-yellow);
     }
 
     .nav-brand {
@@ -55,21 +66,13 @@
       text-decoration: none;
       color: white;
       font-size: 15px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.01em;
       white-space: nowrap;
     }
 
-    .nav-brand img {
-      height: 32px;
-      width: auto;
-    }
-
-    .nav-brand .divider {
-      opacity: 0.4;
-      font-weight: 300;
-      margin: 0 2px;
-    }
+    .nav-brand img { height: 32px; width: auto; }
+    .nav-brand .divider { opacity: 0.45; font-weight: 400; margin: 0 2px; color: var(--tm-yellow); }
 
     .nav-links {
       display: flex;
@@ -79,51 +82,49 @@
     }
 
     .nav-links a {
-      color: rgba(255,255,255,0.85);
+      color: rgba(255,255,255,0.88);
       text-decoration: none;
       font-size: 14px;
+      font-weight: 600;
       letter-spacing: 0.02em;
       transition: color 0.15s;
     }
 
-    .nav-links a:hover { color: white; }
+    .nav-links a:hover { color: var(--tm-yellow); }
 
     .nav-visit-btn {
       display: inline-block;
-      background: var(--tm-red);
+      background: var(--tm-maroon);
       color: white !important;
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.02em;
-      padding: 6px 14px;
+      padding: 7px 15px;
       border-radius: 6px;
       text-decoration: none;
-      transition: opacity 0.15s;
+      transition: background 0.15s;
     }
 
-    .nav-visit-btn:hover { opacity: 0.88; color: white; }
+    .nav-visit-btn:hover { background: var(--tm-maroon-deep); color: white; }
 
     .nav-ct-btn {
       display: inline-block;
       background: transparent;
       color: white !important;
-      border: 1.5px solid rgba(255,255,255,0.5);
+      border: 1.5px solid var(--tm-yellow);
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.02em;
-      padding: 5px 13px;
+      padding: 6px 13px;
       border-radius: 6px;
       text-decoration: none;
-      transition: background 0.15s, border-color 0.15s;
+      transition: background 0.15s, color 0.15s;
       white-space: nowrap;
     }
 
-    .nav-ct-btn:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: white;
-    }
+    .nav-ct-btn:hover { background: var(--tm-yellow); color: var(--tm-blue) !important; }
 
-    /* Hamburger (hidden on desktop) */
+    /* Hamburger */
     .nav-toggle {
       display: none;
       background: none;
@@ -149,57 +150,67 @@
 
     /* ── PAGE HEADER ── */
     .page-header {
-      background: var(--tm-navy);
+      background: linear-gradient(135deg, var(--tm-blue) 0%, var(--tm-blue-deep) 100%);
       color: white;
-      padding: 3.5rem 2rem 3rem;
+      padding: 3.75rem 2rem 3.25rem;
       text-align: center;
     }
 
     .page-header .section-label {
-      color: #ffd100;
+      color: var(--tm-yellow);
+      justify-content: center;
     }
 
     .page-header h1 {
-      font-size: clamp(1.75rem, 4vw, 2.5rem);
-      font-weight: 700;
+      font-size: clamp(1.85rem, 4vw, 2.6rem);
+      font-weight: 800;
       letter-spacing: -0.02em;
     }
 
     /* ── SECTION SHARED ── */
-    section {
-      padding: 4rem 2rem;
-    }
+    section { padding: 4rem 2rem; }
 
-    .container {
-      max-width: 860px;
-      margin: 0 auto;
-    }
+    .container { max-width: 860px; margin: 0 auto; }
 
     .section-label {
       font-size: 11px;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--tm-red);
+      color: var(--tm-maroon);
       font-weight: 700;
+      font-family: var(--font-head);
       margin-bottom: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 22px;
+      height: 3px;
+      background: var(--tm-yellow);
+      border-radius: 2px;
     }
 
     h2 {
-      font-size: 1.1rem;
-      font-weight: 700;
+      font-size: 1.15rem;
+      font-weight: 800;
       line-height: 1.2;
       letter-spacing: -0.01em;
       margin-bottom: 0.75rem;
       margin-top: 2rem;
+      color: var(--tm-blue);
     }
 
     h2:first-child { margin-top: 0; }
 
     .impressum-block {
-      background: var(--tm-light);
+      background: var(--tm-fair);
       border: 1px solid var(--tm-border);
+      border-left: 4px solid var(--tm-yellow);
       border-radius: 10px;
-      padding: 2rem 2.25rem;
+      padding: 1.75rem 2rem;
       margin-bottom: 1rem;
     }
 
@@ -209,15 +220,15 @@
     }
 
     .impressum-block a {
-      color: var(--tm-navy);
-      font-weight: 600;
+      color: var(--tm-blue);
+      font-weight: 700;
       text-decoration: none;
-      border-bottom: 1.5px solid var(--tm-border);
+      border-bottom: 1.5px solid var(--tm-yellow);
       word-break: break-all;
     }
 
     .impressum-block a:hover {
-      border-color: var(--tm-navy);
+      border-color: var(--tm-blue);
     }
 
     .note {
@@ -228,7 +239,7 @@
     }
 
     .note code {
-      background: var(--tm-light);
+      background: var(--tm-fair);
       padding: 1px 5px;
       border-radius: 4px;
       font-size: 12px;
@@ -236,11 +247,12 @@
 
     /* ── FOOTER ── */
     footer {
-      background: #001f30;
-      color: rgba(255,255,255,0.55);
-      padding: 2rem;
+      background: var(--tm-blue);
+      color: rgba(255,255,255,0.7);
+      padding: 2.5rem 2rem;
       text-align: center;
       font-size: 13px;
+      border-top: 3px solid var(--tm-yellow);
     }
 
     footer .footer-links {
@@ -252,38 +264,36 @@
     }
 
     footer a {
-      color: rgba(255,255,255,0.55);
+      color: rgba(255,255,255,0.7);
       text-decoration: none;
+      font-weight: 600;
       transition: color 0.15s;
     }
 
-    footer a:hover { color: white; }
+    footer a:hover { color: var(--tm-yellow); }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1080px) {
       nav { padding: 0 1.25rem; }
-
       .nav-toggle { display: block; }
 
       .nav-links {
         display: none;
         position: absolute;
-        top: 60px;
+        top: 62px;
         left: 0;
         right: 0;
-        background: var(--tm-navy);
+        background: var(--tm-blue);
         flex-direction: column;
         align-items: stretch;
         gap: 0;
         padding: 0.5rem 0 1.25rem;
         box-shadow: 0 12px 24px rgba(0,0,0,0.25);
-        border-top: 1px solid rgba(255,255,255,0.12);
+        border-bottom: 3px solid var(--tm-yellow);
       }
 
       .nav-links.open { display: flex; }
-
       .nav-links li { padding: 0.65rem 1.5rem; }
-
       .nav-links a { font-size: 15px; display: inline-block; }
     }
 
@@ -312,6 +322,7 @@
     <ul class="nav-links" id="nav-links">
       <li><a href="index.html#toastmasters">About</a></li>
       <li><a href="clubs.html">Find a Club</a></li>
+      <li><a href="index.html#team">Division Team</a></li>
       <li><a href="index.html#contact">Contact</a></li>
       <li><a href="https://docs.google.com/spreadsheets/d/17ZKq1rzYZ16j7hnbis9P9YJxOB51sbXQwKV322v5SZ0/edit?gid=0#gid=0" class="nav-ct-btn" target="_blank" rel="noopener">District Contests &amp; Trainings</a></li>
       <li><a href="https://toastmasters-95.org" class="nav-visit-btn" target="_blank" rel="noopener">Visit District 95</a></li>

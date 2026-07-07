@@ -9,24 +9,33 @@
   <meta property="og:description" content="Find your voice. — Toastmasters District 95, Division C (Germany Middle East)." />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#004165" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --tm-navy: #004165;
-      --tm-red: #D5202C;
-      --tm-light: #f4f6f8;
+      /* Toastmasters brand palette (Brand Manual v2.0) */
+      --tm-blue: #004165;        /* Loyal Blue — primary */
+      --tm-blue-deep: #006094;   /* Blissful Blue — gradient partner */
+      --tm-maroon: #772432;      /* True Maroon — buttons / accents */
+      --tm-maroon-deep: #5c1a25; /* darker maroon for hover */
+      --tm-yellow: #F2DF74;      /* Happy Yellow — accent */
+      --tm-gray: #A9B2B1;        /* Cool Gray */
+      --tm-fair: #F5F5F5;        /* Fair Gray — light surface */
       --tm-white: #ffffff;
       --tm-text: #1a1a1a;
       --tm-muted: #5a6472;
-      --tm-border: #dde3e9;
-      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --tm-border: #e2e6ea;
+      --font-head: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+      --font-body: 'Source Sans 3', 'Segoe UI', system-ui, -apple-system, sans-serif;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: var(--font);
+      font-family: var(--font-body);
       color: var(--tm-text);
       background: var(--tm-white);
       font-size: 16px;
@@ -34,18 +43,21 @@
       -webkit-text-size-adjust: 100%;
     }
 
+    h1, h2, h3, .nav-brand, .team-avatar { font-family: var(--font-head); }
+
     /* ── NAV ── */
     nav {
-      background: var(--tm-navy);
+      background: var(--tm-blue);
       color: white;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 2rem;
-      height: 60px;
+      height: 62px;
       position: sticky;
       top: 0;
       z-index: 100;
+      border-bottom: 3px solid var(--tm-yellow);
     }
 
     .nav-brand {
@@ -55,7 +67,7 @@
       text-decoration: none;
       color: white;
       font-size: 15px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.01em;
       white-space: nowrap;
     }
@@ -66,9 +78,10 @@
     }
 
     .nav-brand .divider {
-      opacity: 0.4;
-      font-weight: 300;
+      opacity: 0.45;
+      font-weight: 400;
       margin: 0 2px;
+      color: var(--tm-yellow);
     }
 
     .nav-links {
@@ -79,14 +92,15 @@
     }
 
     .nav-links a {
-      color: rgba(255,255,255,0.85);
+      color: rgba(255,255,255,0.88);
       text-decoration: none;
       font-size: 14px;
+      font-weight: 600;
       letter-spacing: 0.02em;
       transition: color 0.15s;
     }
 
-    .nav-links a:hover { color: white; }
+    .nav-links a:hover { color: var(--tm-yellow); }
 
     .lang-toggle {
       background: transparent;
@@ -98,48 +112,49 @@
       padding: 4px 10px;
       border-radius: 5px;
       cursor: pointer;
-      font-family: inherit;
-      transition: background 0.15s, border-color 0.15s;
+      font-family: var(--font-head);
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
     }
 
     .lang-toggle:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: white;
+      background: var(--tm-yellow);
+      border-color: var(--tm-yellow);
+      color: var(--tm-blue);
     }
 
     .nav-visit-btn {
       display: inline-block;
-      background: var(--tm-red);
+      background: var(--tm-maroon);
       color: white !important;
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.02em;
-      padding: 6px 14px;
+      padding: 7px 15px;
       border-radius: 6px;
       text-decoration: none;
-      transition: opacity 0.15s;
+      transition: background 0.15s;
     }
 
-    .nav-visit-btn:hover { opacity: 0.88; color: white; }
+    .nav-visit-btn:hover { background: var(--tm-maroon-deep); color: white; }
 
     .nav-ct-btn {
       display: inline-block;
       background: transparent;
       color: white !important;
-      border: 1.5px solid rgba(255,255,255,0.5);
+      border: 1.5px solid var(--tm-yellow);
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.02em;
-      padding: 5px 13px;
+      padding: 6px 13px;
       border-radius: 6px;
       text-decoration: none;
-      transition: background 0.15s, border-color 0.15s;
+      transition: background 0.15s, color 0.15s;
       white-space: nowrap;
     }
 
     .nav-ct-btn:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: white;
+      background: var(--tm-yellow);
+      color: var(--tm-blue) !important;
     }
 
     /* Hamburger (hidden on desktop) */
@@ -166,73 +181,75 @@
     .nav-toggle.open span:nth-child(2) { opacity: 0; }
     .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    /* ── HERO (kept for future use) ── */
-    .hero {
-      background: var(--tm-navy);
-      color: white;
-      padding: 5rem 2rem 4rem;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.25rem);
-      font-weight: 700;
-      line-height: 1.15;
-      margin-bottom: 1.25rem;
-      letter-spacing: -0.02em;
-    }
-
-    .hero h1 span { color: #ffd100; }
-
+    /* ── BTN ── */
     .btn {
       display: inline-block;
       padding: 0.7rem 1.5rem;
       border-radius: 6px;
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 700;
+      font-family: var(--font-head);
       text-decoration: none;
       letter-spacing: 0.02em;
-      transition: opacity 0.15s, transform 0.1s;
+      transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
     }
 
-    .btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn:hover { transform: translateY(-1px); }
     .btn:active { transform: translateY(0); }
 
     .btn-primary {
-      background: var(--tm-red);
+      background: var(--tm-maroon);
       color: white;
+      box-shadow: 0 2px 8px rgba(119,36,50,0.2);
     }
+
+    .btn-primary:hover { background: var(--tm-maroon-deep); }
 
     /* ── SECTION SHARED ── */
     section {
-      padding: 4rem 2rem;
+      padding: 4.5rem 2rem;
     }
 
     .container {
-      max-width: 860px;
+      max-width: 880px;
       margin: 0 auto;
     }
 
     .section-label {
       font-size: 11px;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--tm-red);
+      color: var(--tm-maroon);
       font-weight: 700;
+      font-family: var(--font-head);
       margin-bottom: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 22px;
+      height: 3px;
+      background: var(--tm-yellow);
+      border-radius: 2px;
     }
 
     h2 {
-      font-size: clamp(1.5rem, 3vw, 2rem);
-      font-weight: 700;
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      font-weight: 800;
       line-height: 1.2;
       letter-spacing: -0.01em;
       margin-bottom: 1rem;
+      color: var(--tm-blue);
     }
 
     /* ── WHAT IS TM ── */
     .what-section {
-      background: var(--tm-light);
+      background: var(--tm-fair);
+      border-top: 1px solid var(--tm-border);
+      border-bottom: 1px solid var(--tm-border);
     }
 
     .what-grid {
@@ -244,20 +261,34 @@
 
     .what-card {
       background: white;
-      border-radius: 10px;
-      padding: 1.5rem;
+      border-radius: 12px;
+      padding: 1.6rem;
       border: 1px solid var(--tm-border);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .what-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,65,101,0.1);
     }
 
     .what-card-icon {
-      font-size: 1.75rem;
-      margin-bottom: 0.75rem;
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: var(--tm-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     .what-card h3 {
-      font-size: 1rem;
+      font-size: 1.05rem;
       font-weight: 700;
       margin-bottom: 0.4rem;
+      color: var(--tm-blue);
     }
 
     .what-card p {
@@ -282,40 +313,54 @@
 
     .team-card {
       border: 1px solid var(--tm-border);
-      border-radius: 10px;
+      border-radius: 12px;
       padding: 1.5rem 1rem 1.4rem;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 8px;
+      background: white;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .team-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,65,101,0.1);
     }
 
     .team-card.director {
-      border-color: var(--tm-navy);
-      box-shadow: 0 2px 12px rgba(0,65,101,0.08);
+      border-color: var(--tm-blue);
+      border-width: 2px;
+      background: linear-gradient(180deg, #fbfdff 0%, #ffffff 100%);
     }
 
     .team-avatar {
-      width: 56px;
-      height: 56px;
+      width: 62px;
+      height: 62px;
       border-radius: 50%;
-      background: var(--tm-navy);
+      background: linear-gradient(135deg, var(--tm-blue) 0%, var(--tm-blue-deep) 100%);
       color: white;
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       display: flex;
       align-items: center;
       justify-content: center;
       letter-spacing: 0.03em;
+      border: 3px solid var(--tm-yellow);
+    }
+
+    .team-card.director .team-avatar {
+      background: linear-gradient(135deg, var(--tm-maroon) 0%, var(--tm-maroon-deep) 100%);
     }
 
     .team-role {
-      font-size: 11px;
-      letter-spacing: 0.06em;
+      font-size: 10.5px;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
-      color: var(--tm-red);
+      color: var(--tm-maroon);
       font-weight: 700;
+      font-family: var(--font-head);
       line-height: 1.4;
     }
 
@@ -323,6 +368,7 @@
       font-weight: 700;
       font-size: 15px;
       line-height: 1.3;
+      color: var(--tm-text);
     }
 
     .team-leads {
@@ -334,44 +380,49 @@
 
     .lead-card {
       border: 1px solid var(--tm-border);
+      border-left: 4px solid var(--tm-yellow);
       border-radius: 10px;
       padding: 1.1rem 1.4rem;
-      background: var(--tm-light);
+      background: var(--tm-fair);
       display: flex;
       flex-direction: column;
       gap: 2px;
     }
 
     .lead-role {
-      font-size: 11px;
-      letter-spacing: 0.06em;
+      font-size: 10.5px;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
-      color: var(--tm-red);
+      color: var(--tm-maroon);
       font-weight: 700;
+      font-family: var(--font-head);
     }
 
     .lead-name {
       font-weight: 700;
       font-size: 15px;
+      color: var(--tm-text);
     }
 
     .team-district-link {
       display: inline-block;
       margin-top: 2rem;
       font-size: 14px;
-      font-weight: 600;
-      color: var(--tm-navy);
+      font-weight: 700;
+      font-family: var(--font-head);
+      color: var(--tm-blue);
       text-decoration: none;
-      border-bottom: 1.5px solid var(--tm-border);
-      padding-bottom: 1px;
-      transition: border-color 0.15s;
+      border-bottom: 2px solid var(--tm-yellow);
+      padding-bottom: 2px;
+      transition: color 0.15s;
     }
 
-    .team-district-link:hover { border-color: var(--tm-navy); }
+    .team-district-link:hover { color: var(--tm-blue-deep); }
 
     /* ── EVENTS ── */
     .events-section {
-      background: var(--tm-light);
+      background: var(--tm-fair);
+      border-bottom: 1px solid var(--tm-border);
     }
 
     .events-grid {
@@ -385,37 +436,40 @@
     .event-card {
       background: white;
       border: 1px solid var(--tm-border);
-      border-radius: 10px;
+      border-radius: 12px;
       padding: 1.25rem 1.5rem;
       display: flex;
       gap: 1rem;
       align-items: center;
       margin-bottom: 1rem;
       cursor: pointer;
-      transition: border-color 0.15s, box-shadow 0.15s;
+      transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
     }
 
     .event-card:hover {
-      border-color: var(--tm-navy);
-      box-shadow: 0 2px 12px rgba(0,65,101,0.08);
+      border-color: var(--tm-blue);
+      box-shadow: 0 6px 20px rgba(0,65,101,0.1);
+      transform: translateY(-2px);
     }
 
     .event-date {
-      background: var(--tm-navy);
+      background: linear-gradient(135deg, var(--tm-blue) 0%, var(--tm-blue-deep) 100%);
       color: white;
-      border-radius: 8px;
-      width: 56px;
-      height: 56px;
+      border-radius: 10px;
+      width: 58px;
+      height: 58px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      border-bottom: 3px solid var(--tm-yellow);
     }
 
     .event-date .day {
-      font-size: 1.3rem;
-      font-weight: 700;
+      font-size: 1.35rem;
+      font-weight: 800;
+      font-family: var(--font-head);
       line-height: 1;
     }
 
@@ -423,19 +477,38 @@
       font-size: 10px;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      opacity: 0.8;
+      opacity: 0.85;
+      font-weight: 600;
     }
 
     .event-details .event-name {
       font-weight: 700;
       font-size: 15px;
       margin-bottom: 2px;
+      color: var(--tm-blue);
     }
 
     .event-details .event-meta {
       font-size: 13px;
       color: var(--tm-muted);
     }
+
+    .event-register-btn {
+      display: inline-block;
+      margin-top: 8px;
+      background: var(--tm-maroon);
+      color: white;
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 12.5px;
+      letter-spacing: 0.02em;
+      padding: 6px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+
+    .event-register-btn:hover { background: var(--tm-maroon-deep); }
 
     .events-more-note {
       font-size: 13px;
@@ -446,8 +519,9 @@
     .calendar-card {
       background: white;
       border: 1px solid var(--tm-border);
-      border-radius: 10px;
+      border-radius: 12px;
       padding: 1.25rem 1.5rem 1.5rem;
+      box-shadow: 0 2px 12px rgba(0,65,101,0.05);
     }
 
     .calendar-nav {
@@ -459,27 +533,30 @@
 
     .calendar-header {
       font-weight: 700;
-      font-size: 14px;
+      font-size: 15px;
+      font-family: var(--font-head);
       text-align: center;
+      color: var(--tm-blue);
     }
 
     .cal-nav-btn {
       background: none;
       border: 1px solid var(--tm-border);
       border-radius: 6px;
-      width: 30px;
-      height: 30px;
+      width: 32px;
+      height: 32px;
       font-size: 16px;
       line-height: 1;
-      color: var(--tm-navy);
+      color: var(--tm-blue);
       cursor: pointer;
       font-family: inherit;
-      transition: background 0.15s, border-color 0.15s;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
     }
 
     .cal-nav-btn:hover {
-      background: var(--tm-light);
-      border-color: var(--tm-navy);
+      background: var(--tm-blue);
+      border-color: var(--tm-blue);
+      color: white;
     }
 
     .calendar-grid {
@@ -499,7 +576,7 @@
     .calendar-grid .cal-day {
       font-size: 13px;
       padding: 7px 0;
-      border-radius: 6px;
+      border-radius: 8px;
       color: var(--tm-text);
       background: none;
       border: none;
@@ -509,7 +586,7 @@
     }
 
     .calendar-grid .cal-day:hover {
-      background: var(--tm-light);
+      background: var(--tm-fair);
     }
 
     .calendar-grid .cal-day.empty {
@@ -518,17 +595,21 @@
     }
 
     .calendar-grid .cal-day.event {
-      background: var(--tm-red);
+      background: var(--tm-blue);
       color: white;
       font-weight: 700;
     }
 
+    .calendar-grid .cal-day.event:hover {
+      background: var(--tm-blue-deep);
+    }
+
     .calendar-grid .cal-day.selected {
-      box-shadow: 0 0 0 2px var(--tm-navy);
+      box-shadow: 0 0 0 2px var(--tm-yellow);
     }
 
     .calendar-grid .cal-day.today:not(.event) {
-      color: var(--tm-red);
+      color: var(--tm-maroon);
       font-weight: 700;
     }
 
@@ -541,22 +622,34 @@
     .cal-events-title {
       font-size: 13px;
       font-weight: 700;
+      font-family: var(--font-head);
       margin-bottom: 0.5rem;
+      color: var(--tm-blue);
     }
 
     .cal-event-item {
       font-size: 13px;
       color: var(--tm-muted);
-      padding: 0.5rem 0.75rem;
-      background: var(--tm-light);
+      padding: 0.6rem 0.8rem;
+      background: var(--tm-fair);
+      border-left: 3px solid var(--tm-yellow);
       border-radius: 8px;
       margin-bottom: 6px;
       line-height: 1.5;
     }
 
     .cal-event-item strong {
-      color: var(--tm-text);
+      color: var(--tm-blue);
       display: block;
+    }
+
+    .cal-event-item .cal-register {
+      display: inline-block;
+      margin-top: 6px;
+      color: var(--tm-maroon);
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 1.5px solid var(--tm-maroon);
     }
 
     .cal-no-events {
@@ -566,15 +659,17 @@
 
     /* ── CONTACT ── */
     .contact-section {
-      background: var(--tm-navy);
+      background: linear-gradient(135deg, var(--tm-blue) 0%, var(--tm-blue-deep) 100%);
       color: white;
       text-align: center;
     }
 
     .contact-section h2 { color: white; }
+    .contact-section .section-label { color: var(--tm-yellow); }
+    .contact-section .section-label::before { background: var(--tm-yellow); }
 
     .contact-section p {
-      opacity: 0.75;
+      opacity: 0.85;
       margin-bottom: 1.75rem;
       max-width: 480px;
       margin-left: auto;
@@ -583,25 +678,27 @@
 
     .contact-email {
       display: inline-block;
-      color: #ffd100;
-      font-size: 1.05rem;
-      font-weight: 600;
+      color: var(--tm-yellow);
+      font-size: 1.1rem;
+      font-weight: 700;
+      font-family: var(--font-head);
       text-decoration: none;
-      border-bottom: 1.5px solid rgba(255,209,0,0.4);
-      padding-bottom: 2px;
+      border-bottom: 2px solid rgba(242,223,116,0.4);
+      padding-bottom: 3px;
       transition: border-color 0.15s;
       word-break: break-all;
     }
 
-    .contact-email:hover { border-color: #ffd100; }
+    .contact-email:hover { border-color: var(--tm-yellow); }
 
     /* ── FOOTER ── */
     footer {
-      background: #001f30;
-      color: rgba(255,255,255,0.55);
-      padding: 2rem;
+      background: var(--tm-blue);
+      color: rgba(255,255,255,0.7);
+      padding: 2.5rem 2rem;
       text-align: center;
       font-size: 13px;
+      border-top: 3px solid var(--tm-yellow);
     }
 
     footer .footer-links {
@@ -613,12 +710,21 @@
     }
 
     footer a {
-      color: rgba(255,255,255,0.55);
+      color: rgba(255,255,255,0.7);
       text-decoration: none;
+      font-weight: 600;
       transition: color 0.15s;
     }
 
-    footer a:hover { color: white; }
+    footer a:hover { color: var(--tm-yellow); }
+
+    footer .footer-disclaimer {
+      max-width: 620px;
+      margin: 1rem auto 0;
+      font-size: 11px;
+      opacity: 0.55;
+      line-height: 1.5;
+    }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1080px) {
@@ -629,16 +735,16 @@
       .nav-links {
         display: none;
         position: absolute;
-        top: 60px;
+        top: 62px;
         left: 0;
         right: 0;
-        background: var(--tm-navy);
+        background: var(--tm-blue);
         flex-direction: column;
         align-items: stretch;
         gap: 0;
         padding: 0.5rem 0 1.25rem;
         box-shadow: 0 12px 24px rgba(0,0,0,0.25);
-        border-top: 1px solid rgba(255,255,255,0.12);
+        border-bottom: 3px solid var(--tm-yellow);
       }
 
       .nav-links.open { display: flex; }
@@ -810,6 +916,10 @@
           <span class="lead-role">Division EasySpeak Lead</span>
           <span class="lead-name">Jan Chiristian</span>
         </div>
+        <div class="lead-card">
+          <span class="lead-role">Division Conflict Resolution Representative</span>
+          <span class="lead-name">Kathrin Gerstmeir</span>
+        </div>
       </div>
 
       <a href="https://toastmasters-95.org/district-team-2026-2027/" class="team-district-link" target="_blank" rel="noopener" data-en="See the full District 95 team →" data-de="Das gesamte District 95 Team ansehen →">See the full District 95 team →</a>
@@ -819,7 +929,7 @@
   <!-- CONTACT -->
   <section class="contact-section" id="contact">
     <div class="container">
-      <p class="section-label" style="color: rgba(255,255,255,0.5);" data-en="Get in touch" data-de="Kontakt aufnehmen">Get in touch</p>
+      <p class="section-label" data-en="Get in touch" data-de="Kontakt aufnehmen">Get in touch</p>
       <h2 data-en="Questions?" data-de="Fragen?">Questions?</h2>
       <p data-en="Reach out to the Division C director or your nearest club. We're happy to help." data-de="Wende dich an die Division-C-Leitung oder deinen nächstgelegenen Club. Wir helfen gerne weiter.">Reach out to the Division C director or your nearest club. We're happy to help.</p>
       <a href="mailto:divd.c.d95@kunaljani.com" class="contact-email">
@@ -837,6 +947,7 @@
       <a href="impressum.html">Impressum</a>
     </div>
     <p>© 2026 Toastmasters District 95, Division C</p>
+    <p class="footer-disclaimer" data-en="The information on this website is for the sole use of Toastmasters' members, for Toastmasters business only. It is not to be used for solicitation and distribution of non-Toastmasters material or information." data-de="The information on this website is for the sole use of Toastmasters' members, for Toastmasters business only. It is not to be used for solicitation and distribution of non-Toastmasters material or information.">The information on this website is for the sole use of Toastmasters' members, for Toastmasters business only. It is not to be used for solicitation and distribution of non-Toastmasters material or information.</p>
   </footer>
 
   <script>
@@ -847,11 +958,12 @@
        date: 'YYYY-MM-DD'
        name: stays the same in both languages (Toastmasters jargon)
        location / language: { en: '...', de: '...' }
+       registerUrl: optional — adds a Register button
        ══════════════════════════════════════════════════ */
     var EVENTS = [
       {
         date: '2026-08-08', start: '10:00', end: '16:00',
-        name: 'Area C4 COT',
+        name: 'Area C4 Leipzig COT',
         location: { en: 'Basislager Coworking, Leipzig', de: 'Basislager Coworking, Leipzig' },
         language: { en: 'English', de: 'Englisch' },
         registerUrl: 'https://forms.gle/njPS7H6gzFLDWwKi9'
@@ -888,7 +1000,8 @@
     };
     var TEXT = {
       noEventsDay: { en: 'No events on this day.', de: 'Keine Veranstaltungen an diesem Tag.' },
-      noUpcoming: { en: 'No upcoming events at the moment — check back soon.', de: 'Zurzeit keine anstehenden Veranstaltungen — schau bald wieder vorbei.' }
+      noUpcoming: { en: 'No upcoming events at the moment — check back soon.', de: 'Zurzeit keine anstehenden Veranstaltungen — schau bald wieder vorbei.' },
+      register: { en: 'Register', de: 'Anmelden' }
     };
 
     function parseDate(s) {
@@ -950,7 +1063,9 @@
       } else {
         evs.forEach(function (e) {
           html += '<div class="cal-event-item"><strong>' + e.name + '</strong>' +
-            e.start + '–' + e.end + ' · ' + e.language[currentLang] + ' · ' + e.location[currentLang] + '</div>';
+            e.start + '–' + e.end + ' · ' + e.language[currentLang] + ' · ' + e.location[currentLang] +
+            (e.registerUrl ? '<br><a href="' + e.registerUrl + '" class="cal-register" target="_blank" rel="noopener">' + TEXT.register[currentLang] + ' →</a>' : '') +
+            '</div>';
         });
       }
       box.innerHTML = html;
@@ -971,7 +1086,7 @@
           '<div class="event-details"><div class="event-name">' + e.name + '</div>' +
           '<div class="event-meta">' + formatLong(e.date) + ' · ' + e.start + '–' + e.end + '</div>' +
           '<div class="event-meta">' + e.location[currentLang] + ' · ' + e.language[currentLang] + '</div>' +
-          (e.registerUrl ? '<a href="' + e.registerUrl + '" class="btn btn-primary" style="display:inline-block;margin-top:8px;font-size:13px;padding:0.5rem 1rem;" target="_blank">Register</a>' : '') +
+          (e.registerUrl ? '<a href="' + e.registerUrl + '" class="event-register-btn" target="_blank" rel="noopener" onclick="event.stopPropagation();">' + TEXT.register[currentLang] + '</a>' : '') +
           '</div></div>';
       });
       box.innerHTML = html;
