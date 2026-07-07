@@ -761,6 +761,15 @@
     }
 
     /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .container {
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+      .confetti {
+        width: 100px !important;
+      }
+    }
     @media (max-width: 1080px) {
       nav { padding: 0 1.25rem; }
 
@@ -846,12 +855,14 @@
 
   <!-- Left Confetti -->
    <img
+    class="confetti"
     src="assets/right-confetti.png"
     alt=""
     style="position: absolute; left: 5%; top: 50%; transform: translateY(-50%); width: clamp(60px, 8vw, 120px); height: auto; z-index: 1;"
   >
   
   <img
+    class="confetti"
     src="assets/left-confetti.png"
     alt=""
     style="position: absolute; right: 5%; top: 50%; transform: translateY(-50%); width: clamp(60px, 8vw, 120px); height: auto; z-index: 1;"
@@ -860,8 +871,6 @@
   <div class="container" style="
   position: relative;
   z-index: 10;
-  padding-left: clamp(80px, 15vw, 180px);
-  padding-right: clamp(80px, 15vw, 180px);
 ">
   <h1 style="
     font-size: clamp(2rem, 5vw, 3.2rem);
