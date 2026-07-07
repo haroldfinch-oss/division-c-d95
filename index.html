@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Division C | D95 </title>
-  <meta name="description" content="District 95 Division C — Toastmasters clubs across your region. Find your voice." />
+  <meta name="description" content="District 95 Division C — Toastmasters clubs across the Germany Middle East region. Find your voice." />
   <meta property="og:title" content="District 95 Division C" />
-  <meta property="og:description" content="Find your voice. — Toastmasters District 95, Division C." />
+  <meta property="og:description" content="Find your voice. — Toastmasters District 95, Division C (Germany Middle East)." />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#004165" />
   <style>
@@ -31,6 +31,7 @@
       background: var(--tm-white);
       font-size: 16px;
       line-height: 1.6;
+      -webkit-text-size-adjust: 100%;
     }
 
     /* ── NAV ── */
@@ -56,6 +57,7 @@
       font-size: 15px;
       font-weight: 600;
       letter-spacing: 0.01em;
+      white-space: nowrap;
     }
 
     .nav-brand img {
@@ -73,6 +75,7 @@
       display: flex;
       gap: 2rem;
       list-style: none;
+      align-items: center;
     }
 
     .nav-links a {
@@ -118,6 +121,30 @@
     }
 
     .nav-visit-btn:hover { opacity: 0.88; color: white; }
+
+    /* Hamburger (hidden on desktop) */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      margin-right: -10px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: white;
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
     /* ── HERO ── */
     .hero {
@@ -434,6 +461,7 @@
       border-bottom: 1.5px solid rgba(255,209,0,0.4);
       padding-bottom: 2px;
       transition: border-color 0.15s;
+      word-break: break-all;
     }
 
     .contact-email:hover { border-color: #ffd100; }
@@ -464,12 +492,47 @@
     footer a:hover { color: white; }
 
     /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .nav-brand .brand-extra { display: none; }
+    }
+
+    @media (max-width: 760px) {
+      nav { padding: 0 1.25rem; }
+
+      .nav-toggle { display: block; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: var(--tm-navy);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 0.5rem 0 1.25rem;
+        box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+        border-top: 1px solid rgba(255,255,255,0.12);
+      }
+
+      .nav-links.open { display: flex; }
+
+      .nav-links li {
+        padding: 0.65rem 1.5rem;
+      }
+
+      .nav-links a { font-size: 15px; display: inline-block; }
+
+      .nav-visit-btn { display: inline-block; }
+    }
+
     @media (max-width: 600px) {
-      nav { padding: 0 1rem; }
-      .nav-links { gap: 1.25rem; }
       section { padding: 3rem 1.25rem; }
       .hero { padding: 3.5rem 1.25rem 3rem; }
       .events-grid { grid-template-columns: 1fr; }
+      .clubs-grid { grid-template-columns: 1fr; }
+      .what-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -481,13 +544,16 @@
       <img src="assets/tm-logo.png"
            onerror="this.style.display='none'"
            alt="Toastmasters logo" />
-      Region 10
-      <span class="divider">·</span>
+      <span class="brand-extra">Region 10
+      <span class="divider">·</span></span>
       District 95
       <span class="divider">·</span>
       Division C
     </a>
-    <ul class="nav-links">
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
       <li><a href="#toastmasters" data-en="About" data-de="Über uns">About</a></li>
       <li><a href="clubs.html" data-en="Find a Club" data-de="Club finden">Find a Club</a></li>
       <li><a href="#contact" data-en="Contact" data-de="Kontakt">Contact</a></li>
@@ -622,8 +688,9 @@
     <div class="container">
       <p class="section-label">Division C</p>
       <h2 data-en="Our clubs" data-de="Unsere Clubs">Our clubs</h2>
-      <p class="clubs-intro" data-en="Division C brings together Toastmasters clubs across the region. Each club meets regularly — visit as a guest before committing. All are welcome." data-de="Division C vereint Toastmasters-Clubs aus der gesamten Region. Jeder Club trifft sich regelmäßig — besuche gerne als Gast, bevor du dich entscheidest. Alle sind willkommen.">
-        Division C brings together Toastmasters clubs across the region. Each club meets regularly —
+      <p class="clubs-intro" data-en="Division C comprises the Germany Middle East region, bringing together Toastmasters clubs from Berlin, Hannover, Leipzig, Dresden and beyond. Each club meets regularly — visit as a guest before committing. All are welcome." data-de="Division C umfasst die Region Deutschland Mitte-Ost und vereint Toastmasters-Clubs aus Berlin, Hannover, Leipzig, Dresden und Umgebung. Jeder Club trifft sich regelmäßig — besuche gerne als Gast, bevor du dich entscheidest. Alle sind willkommen.">
+        Division C comprises the Germany Middle East region, bringing together Toastmasters clubs
+        from Berlin, Hannover, Leipzig, Dresden and beyond. Each club meets regularly —
         visit as a guest before committing. All are welcome.
       </p>
       <a href="clubs.html" class="btn btn-primary" data-en="Find a club" data-de="Club finden">Find a club</a>
@@ -636,8 +703,8 @@
       <p class="section-label" style="color: rgba(255,255,255,0.5);" data-en="Get in touch" data-de="Kontakt aufnehmen">Get in touch</p>
       <h2 data-en="Questions?" data-de="Fragen?">Questions?</h2>
       <p data-en="Reach out to the Division C director or your nearest club. We're happy to help." data-de="Wende dich an die Division-C-Leitung oder deinen nächstgelegenen Club. Wir helfen gerne weiter.">Reach out to the Division C director or your nearest club. We're happy to help.</p>
-      <a href="mailto:division-c@toastmasters-95.org" class="contact-email">
-        division-c@toastmasters-95.org
+      <a href="mailto:divd.c.d95@kunaljani.com" class="contact-email">
+        divd.c.d95@kunaljani.com
       </a>
     </div>
   </section>
@@ -667,6 +734,25 @@
       var btn = document.getElementById('lang-toggle');
       if (btn) btn.textContent = lang === 'de' ? 'EN' : 'DE';
     }
+
+    function toggleNav() {
+      var links = document.getElementById('nav-links');
+      var toggle = document.getElementById('nav-toggle');
+      var isOpen = links.classList.toggle('open');
+      toggle.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+
+    // Close the mobile menu after tapping a link
+    document.querySelectorAll('.nav-links a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        var links = document.getElementById('nav-links');
+        var toggle = document.getElementById('nav-toggle');
+        links.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
 
     setLang(currentLang);
   </script>

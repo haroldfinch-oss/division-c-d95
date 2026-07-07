@@ -31,6 +31,7 @@
       background: var(--tm-white);
       font-size: 16px;
       line-height: 1.6;
+      -webkit-text-size-adjust: 100%;
     }
 
     /* ── NAV ── */
@@ -56,6 +57,7 @@
       font-size: 15px;
       font-weight: 600;
       letter-spacing: 0.01em;
+      white-space: nowrap;
     }
 
     .nav-brand img {
@@ -73,6 +75,7 @@
       display: flex;
       gap: 2rem;
       list-style: none;
+      align-items: center;
     }
 
     .nav-links a {
@@ -99,6 +102,30 @@
     }
 
     .nav-visit-btn:hover { opacity: 0.88; color: white; }
+
+    /* Hamburger (hidden on desktop) */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      margin-right: -10px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: white;
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
     /* ── PAGE HEADER ── */
     .page-header {
@@ -166,6 +193,7 @@
       font-weight: 600;
       text-decoration: none;
       border-bottom: 1.5px solid var(--tm-border);
+      word-break: break-all;
     }
 
     .impressum-block a:hover {
@@ -212,9 +240,34 @@
     footer a:hover { color: white; }
 
     /* ── RESPONSIVE ── */
+    @media (max-width: 760px) {
+      nav { padding: 0 1.25rem; }
+
+      .nav-toggle { display: block; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: var(--tm-navy);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 0.5rem 0 1.25rem;
+        box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+        border-top: 1px solid rgba(255,255,255,0.12);
+      }
+
+      .nav-links.open { display: flex; }
+
+      .nav-links li { padding: 0.65rem 1.5rem; }
+
+      .nav-links a { font-size: 15px; display: inline-block; }
+    }
+
     @media (max-width: 600px) {
-      nav { padding: 0 1rem; }
-      .nav-links { gap: 1.25rem; }
       section { padding: 3rem 1.25rem; }
       .page-header { padding: 3rem 1.25rem 2.5rem; }
       .impressum-block { padding: 1.5rem; }
@@ -233,7 +286,10 @@
       <span class="divider">·</span>
       Division C
     </a>
-    <ul class="nav-links">
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
       <li><a href="index.html#toastmasters">About</a></li>
       <li><a href="clubs.html">Find a Club</a></li>
       <li><a href="index.html#contact">Contact</a></li>
@@ -263,7 +319,7 @@
 
       <h2>Kontakt</h2>
       <div class="impressum-block">
-        <p>E-Mail: <a href="mailto:tm@kunaljani.com">tm@kunaljani.com</a></p>
+        <p>E-Mail: <a href="mailto:divd.c.d95@kunaljani.com">divd.c.d95@kunaljani.com</a></p>
       </div>
 
       <h2>Veranstaltung</h2>
@@ -299,6 +355,26 @@
     </div>
     <p>© 2026 Toastmasters District 95, Division C</p>
   </footer>
+
+  <script>
+    function toggleNav() {
+      var links = document.getElementById('nav-links');
+      var toggle = document.getElementById('nav-toggle');
+      var isOpen = links.classList.toggle('open');
+      toggle.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+
+    document.querySelectorAll('.nav-links a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        var links = document.getElementById('nav-links');
+        var toggle = document.getElementById('nav-toggle');
+        links.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
 
 </body>
 </html>
