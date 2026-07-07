@@ -47,7 +47,7 @@
 
     /* ── NAV ── */
     nav {
-      background: var(--tm-blue);
+      background: var(--tm-maroon);
       color: white;
       display: flex;
       align-items: center;
@@ -57,7 +57,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      border-bottom: 5px solid var(--tm-yellow);
+      border-bottom: 3px solid var(--tm-yellow);
       overflow: visible;
     }
 
@@ -840,12 +840,65 @@
     </ul>
   </nav>
 
-  <!-- HERO WELCOME -->
-  <section style="background: linear-gradient(135deg, var(--tm-blue) 0%, var(--tm-blue-deep) 100%); color: white; padding: 4rem 2rem 3.5rem; text-align: center; margin-top: -20px; position: relative; z-index: 99;">
-    <div class="container">
+  <!-- HERO WELCOME WITH CONFETTI -->
+  <section style="background: linear-gradient(135deg, var(--tm-blue) 0%, var(--tm-blue-deep) 100%); color: white; padding: 4rem 2rem 3.5rem; text-align: center; margin-top: -20px; position: relative; z-index: 99; overflow: hidden;">
+    <svg id="confetti-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></svg>
+    <div class="container" style="position: relative; z-index: 10;">
       <h1 style="font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; margin-bottom: 0.75rem; letter-spacing: -0.02em;">Welcome to Division C!</h1>
       <p style="font-size: 1.25rem; opacity: 0.9; font-weight: 500;">Germany Middle East, District 95 Toastmasters</p>
     </div>
+    <script>
+      (function() {
+        const canvas = document.getElementById('confetti-canvas');
+        const colors = ['#F2DF74', '#772432', '#004165', '#006094'];
+        const confetti = [];
+        
+        function createConfetti() {
+          const rect = canvas.parentElement.getBoundingClientRect();
+          for (let i = 0; i < 40; i++) {
+            confetti.push({
+              x: Math.random() * rect.width,
+              y: -10,
+              vx: (Math.random() - 0.5) * 4,
+              vy: Math.random() * 3 + 2,
+              size: Math.random() * 6 + 3,
+              color: colors[Math.floor(Math.random() * colors.length)],
+              rotation: Math.random() * 360,
+              rotationVel: (Math.random() - 0.5) * 8
+            });
+          }
+        }
+        
+        function animate() {
+          const rect = canvas.parentElement.getBoundingClientRect();
+          canvas.setAttribute('viewBox', `0 0 ${rect.width} ${rect.height}`);
+          
+          let svg = '';
+          confetti.forEach((c, i) => {
+            c.y += c.vy;
+            c.x += c.vx;
+            c.vy += 0.1;
+            c.rotation += c.rotationVel;
+            
+            if (c.y > rect.height) {
+              confetti.splice(i, 1);
+            } else {
+              svg += `<rect x="${c.x}" y="${c.y}" width="${c.size}" height="${c.size}" fill="${c.color}" opacity="0.8" transform="rotate(${c.rotation} ${c.x + c.size/2} ${c.y + c.size/2})" />`;
+            }
+          });
+          
+          canvas.innerHTML = svg;
+          
+          if (confetti.length > 0 || Math.random() < 0.3) {
+            if (Math.random() < 0.4) createConfetti();
+            requestAnimationFrame(animate);
+          }
+        }
+        
+        createConfetti();
+        animate();
+      })();
+    </script>
   </section>
 
   <!-- EVENTS -->
@@ -974,7 +1027,7 @@
           </div>
         </div>
         <div class="lead-card">
-          <div class="lead-avatar"><img src="assets/JC.jpeg" alt="Jan Christian" /></div>
+          <div class="lead-avatar">JC</div>
           <div>
             <span class="lead-role">Division EasySpeak Lead</span>
             <span class="lead-name">Jan Chiristian</span>
