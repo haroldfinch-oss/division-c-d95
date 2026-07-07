@@ -763,8 +763,8 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       .welcome-container {
-        padding-left: 80px;
-        padding-right: 80px;
+        padding-left: clamp(30px, 10vw, 80px);
+        padding-right: clamp(30px, 10vw, 80px);
       }
       .welcome-confetti {
         width: 100px !important;
