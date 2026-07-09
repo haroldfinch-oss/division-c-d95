@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources | District 95 · Division C | Toastmasters</title>
+  <meta name="description" content="Resources — District 95 Division C, Toastmasters." />
+  <meta property="og:title" content="Resources — District 95 Division C" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#004165" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --tm-blue: #004165;
+      --tm-blue-deep: #006094;
+      --tm-maroon: #772432;
+      --tm-maroon-deep: #5c1a25;
+      --tm-yellow: #F2DF74;
+      --tm-gray: #A9B2B1;
+      --tm-fair: #F5F5F5;
+      --tm-white: #ffffff;
+      --tm-text: #1a1a1a;
+      --tm-muted: #5a6472;
+      --tm-border: #e2e6ea;
+      --font-head: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+      --font-body: 'Source Sans 3', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--tm-text);
+      background: var(--tm-white);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    h1, h2, .nav-brand { font-family: var(--font-head); }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--tm-blue);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 62px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 3px solid var(--tm-yellow);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: white;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+    }
+
+    .nav-brand img { height: 32px; width: auto; }
+    .nav-brand .divider { opacity: 0.45; font-weight: 400; margin: 0 2px; color: var(--tm-yellow); }
+
+    .nav-links {
+      display: flex;
+      gap: 1.4rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.88);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--tm-yellow); }
+
+    .nav-visit-btn {
+      display: inline-block;
+      background: var(--tm-maroon);
+      color: white !important;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      padding: 7px 15px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+
+    .nav-visit-btn:hover { background: var(--tm-maroon-deep); color: white; }
+
+    .nav-ct-btn {
+      display: inline-block;
+      background: transparent;
+      color: white !important;
+      border: 1.5px solid var(--tm-yellow);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      padding: 6px 13px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+
+    .nav-ct-btn:hover { background: var(--tm-yellow); color: var(--tm-blue) !important; }
+
+    /* Hamburger */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      margin-right: -10px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: white;
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      background: linear-gradient(135deg, var(--tm-blue) 0%, var(--tm-blue-deep) 100%);
+      color: white;
+      padding: 3.75rem 2rem 3.25rem;
+      text-align: center;
+    }
+
+    .page-header .section-label {
+      color: var(--tm-yellow);
+      justify-content: center;
+    }
+
+    .page-header h1 {
+      font-size: clamp(1.85rem, 4vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 4rem 2rem; }
+
+    .container { max-width: 860px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--tm-maroon);
+      font-weight: 700;
+      font-family: var(--font-head);
+      margin-bottom: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 22px;
+      height: 3px;
+      background: var(--tm-yellow);
+      border-radius: 2px;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.75rem;
+      margin-top: 2rem;
+      color: var(--tm-blue);
+    }
+
+    h2:first-child { margin-top: 0; }
+
+    .impressum-block {
+      background: var(--tm-fair);
+      border: 1px solid var(--tm-border);
+      border-left: 4px solid var(--tm-yellow);
+      border-radius: 10px;
+      padding: 1.75rem 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .impressum-block p {
+      color: var(--tm-text);
+      margin-bottom: 0.2rem;
+    }
+
+    .impressum-block a {
+      color: var(--tm-blue);
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 1.5px solid var(--tm-yellow);
+      word-break: break-all;
+    }
+
+    .impressum-block a:hover {
+      border-color: var(--tm-blue);
+    }
+
+    .note {
+      font-size: 13px;
+      color: var(--tm-muted);
+      margin-top: 2.5rem;
+      max-width: 600px;
+    }
+
+    .note code {
+      background: var(--tm-fair);
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--tm-blue);
+      color: rgba(255,255,255,0.7);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      font-size: 13px;
+      border-top: 3px solid var(--tm-yellow);
+    }
+
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    footer a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.15s;
+    }
+
+    footer a:hover { color: var(--tm-yellow); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1080px) {
+      nav { padding: 0 1.25rem; }
+      .nav-toggle { display: block; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 62px;
+        left: 0;
+        right: 0;
+        background: var(--tm-blue);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 0.5rem 0 1.25rem;
+        box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+        border-bottom: 3px solid var(--tm-yellow);
+      }
+
+      .nav-links.open { display: flex; }
+      .nav-links li { padding: 0.65rem 1.5rem; }
+      .nav-links a { font-size: 15px; display: inline-block; }
+    }
+
+    @media (max-width: 600px) {
+      section { padding: 3rem 1.25rem; }
+      .page-header { padding: 3rem 1.25rem 2.5rem; }
+      .impressum-block { padding: 1.5rem; }
+    }
+  </style>
+</head>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="top">
+    <a class="nav-brand" href="index.html">
+      <img src="assets/tm-logo.png"
+           onerror="this.style.display='none'"
+           alt="Toastmasters logo" />
+      District 95
+      <span class="divider">·</span>
+      Division C
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html#toastmasters" data-en="About" data-de="Über uns">About</a></li>
+      <li><a href="clubs.html" data-en="Find a Club" data-de="Club finden">Find a Club</a></li>
+      <li><a href="index.html#team" data-en="Division Team" data-de="Division Team">Division Team</a></li>
+      <li><a href="resources.html" data-en="Resources" data-de="Ressourcen">Resources</a></li>
+      <li><a href="index.html#contact" data-en="Contact" data-de="Kontakt">Contact</a></li>
+      <li><a href="https://docs.google.com/spreadsheets/d/17ZKq1rzYZ16j7hnbis9P9YJxOB51sbXQwKV322v5SZ0/edit?gid=0#gid=0" class="nav-ct-btn" target="_blank" rel="noopener" data-en="District Contests &amp; Trainings" data-de="District Contests &amp; Trainings">District Contests &amp; Trainings</a></li>
+      <li><a href="https://toastmasters-95.org" class="nav-visit-btn" target="_blank" rel="noopener" data-en="Visit District 95" data-de="District 95 besuchen">Visit District 95</a></li>
+      <li><button id="lang-toggle" class="lang-toggle" onclick="setLang(currentLang === 'en' ? 'de' : 'en')" style="background: transparent; border: 1.5px solid rgba(255,255,255,0.5); color: white; font-size: 12px; font-weight: 700; letter-spacing: 0.03em; padding: 4px 10px; border-radius: 5px; cursor: pointer; font-family: var(--font-head);">DE</button></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <p class="section-label" data-en="Resources" data-de="Ressourcen">Resources</p>
+    <h1 data-en="Resources" data-de="Ressourcen">Resources</h1>
+  </div>
+
+  <!-- CONTENT -->
+  <section>
+    <div class="container" style="text-align: center;">
+      <p style="font-size: 1.15rem; color: var(--tm-muted); max-width: 480px; margin: 0 auto;"
+         data-en="Stay tuned for more details."
+         data-de="Bleib dran für weitere Details.">Stay tuned for more details.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-links">
+      <a href="https://toastmasters-95.org" target="_blank" rel="noopener">District 95</a>
+      <a href="https://www.toastmasters.org" target="_blank" rel="noopener">Toastmasters International</a>
+      <a href="index.html#contact" data-en="Contact" data-de="Kontakt">Contact</a>
+      <a href="index.html" data-en="Back to site" data-de="Zurück zur Website">Back to site</a>
+    </div>
+    <p>© 2026 Toastmasters District 95, Division C</p>
+  </footer>
+
+  <script>
+    var currentLang = localStorage.getItem('tm-lang') || 'en';
+
+    function setLang(lang) {
+      currentLang = lang;
+      localStorage.setItem('tm-lang', lang);
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-en]').forEach(function (el) {
+        var text = lang === 'de' ? el.getAttribute('data-de') : el.getAttribute('data-en');
+        if (text !== null) el.innerHTML = text;
+      });
+      var btn = document.getElementById('lang-toggle');
+      if (btn) btn.textContent = lang === 'de' ? 'EN' : 'DE';
+    }
+
+    function toggleNav() {
+      var links = document.getElementById('nav-links');
+      var toggle = document.getElementById('nav-toggle');
+      var isOpen = links.classList.toggle('open');
+      toggle.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+
+    document.querySelectorAll('.nav-links a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        var links = document.getElementById('nav-links');
+        var toggle = document.getElementById('nav-toggle');
+        links.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    setLang(currentLang);
+  </script>
+
+</body>
+</html>

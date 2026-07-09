@@ -256,6 +256,125 @@
       border-bottom: 1px solid var(--tm-border);
     }
 
+    /* ── DIVISION AT A GLANCE (CAROUSEL) ── */
+    .glance-section {
+      background: white;
+    }
+
+    .glance-viewport {
+      overflow: hidden;
+      margin-top: 2rem;
+      border-radius: 16px;
+      position: relative;
+    }
+
+    .glance-track {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .glance-slide {
+      min-width: 100%;
+      box-sizing: border-box;
+    }
+
+    .glance-card {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 2rem;
+      background: linear-gradient(135deg, var(--tm-fair) 0%, #ffffff 100%);
+      border: 1px solid var(--tm-border);
+      border-left: 5px solid var(--tm-maroon);
+      border-radius: 16px;
+      padding: 2rem;
+      align-items: start;
+    }
+
+    .glance-img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+      max-height: 340px;
+      background: var(--tm-fair);
+      border: 1px solid var(--tm-border);
+    }
+
+    .glance-title {
+      font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+      font-weight: 800;
+      color: var(--tm-blue);
+      font-family: var(--font-head);
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .glance-holder {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      font-family: var(--font-head);
+      color: var(--tm-maroon);
+      background: rgba(119,36,50,0.08);
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+
+    .glance-holder:hover { background: rgba(119,36,50,0.15); }
+
+    .glance-body {
+      font-size: 14.5px;
+      color: var(--tm-muted);
+      line-height: 1.6;
+    }
+
+    .glance-body p { margin-bottom: 0.8rem; }
+
+    .glance-body strong { color: var(--tm-blue); }
+
+    .glance-body ul {
+      margin: 0.5rem 0 0.8rem;
+      padding-left: 1.2rem;
+    }
+
+    .glance-body li { margin-bottom: 0.35rem; }
+
+    .glance-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 1.5rem;
+    }
+
+    .glance-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--tm-border);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .glance-dot.active {
+      background: var(--tm-maroon);
+      transform: scale(1.2);
+    }
+
+    @media (max-width: 700px) {
+      .glance-card {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        padding: 1.5rem;
+      }
+      .glance-img { max-height: 240px; }
+    }
+
     .what-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -843,6 +962,7 @@
       <li><a href="#toastmasters" data-en="About" data-de="Über uns">About</a></li>
       <li><a href="clubs.html" data-en="Find a Club" data-de="Club finden">Find a Club</a></li>
       <li><a href="#team" data-en="Division Team" data-de="Division Team">Division Team</a></li>
+      <li><a href="resources.html" data-en="Resources" data-de="Ressourcen">Resources</a></li>
       <li><a href="#contact" data-en="Contact" data-de="Kontakt">Contact</a></li>
       <li><a href="https://docs.google.com/spreadsheets/d/17ZKq1rzYZ16j7hnbis9P9YJxOB51sbXQwKV322v5SZ0/edit?gid=0#gid=0" class="nav-ct-btn" target="_blank" rel="noopener" data-en="District Contests &amp; Trainings" data-de="District Contests &amp; Trainings">District Contests &amp; Trainings</a></li>
       <li><a href="https://toastmasters-95.org" class="nav-visit-btn" target="_blank" rel="noopener" data-en="Visit District 95" data-de="District 95 besuchen">Visit District 95</a></li>
@@ -910,6 +1030,48 @@
     </div>
   </section>
 
+  <!-- DIVISION AT A GLANCE (CAROUSEL) -->
+  <section class="glance-section" id="glance">
+    <div class="container">
+      <p class="section-label" data-en="Division at a glance" data-de="Division auf einen Blick">Division at a glance</p>
+      <h2 data-en="What's happening in Division C" data-de="Was in Division C passiert">What's happening in Division C</h2>
+
+      <div class="glance-viewport">
+        <div class="glance-track" id="glance-track">
+
+          <!-- Slide 1: Wanderpokal -->
+          <div class="glance-slide">
+            <div class="glance-card">
+              <img class="glance-img" src="assets/trophy.jpg" alt="Wanderpokal" onerror="this.style.display='none'" />
+              <div>
+                <div class="glance-title">Wanderpokal | Traveling Cup</div>
+                <a class="glance-holder" href="https://centerberlin-toastmasters.de/" target="_blank" rel="noopener">
+                  🏆 <span data-en="Currently at: Center Berlin Toastmasters" data-de="Aktuell bei: Center Berlin Toastmasters">Currently at: Center Berlin Toastmasters</span>
+                </a>
+                <div class="glance-body">
+                  <p data-en="To earn the trophy, another club has to visit the current trophy holder. During the visit, one member delivers a prepared speech while another serves as the General Evaluator. This initiative was designed to promote collaboration, mutual learning, and valuable feedback between clubs. The trophy was originally introduced by Jürgen Hall during his term as Area Director. Its purpose was to encourage exchange and strengthen the sense of community between clubs."
+                     data-de="Um den Pokal zu gewinnen, muss ein anderer Club den aktuellen Pokalträger besuchen. Während des Besuchs hält ein Mitglied eine vorbereitete Rede, während ein anderes als General Evaluator fungiert. Diese Initiative wurde ins Leben gerufen, um Zusammenarbeit, gegenseitiges Lernen und wertvolles Feedback zwischen den Clubs zu fördern. Der Pokal wurde ursprünglich von Jürgen Hall während seiner Amtszeit als Area Director eingeführt. Sein Zweck war es, den Austausch zu fördern und das Gemeinschaftsgefühl zwischen den Clubs zu stärken.">To earn the trophy, another club has to visit the current trophy holder. During the visit, one member delivers a prepared speech while another serves as the General Evaluator. This initiative was designed to promote collaboration, mutual learning, and valuable feedback between clubs. The trophy was originally introduced by Jürgen Hall during his term as Area Director. Its purpose was to encourage exchange and strengthen the sense of community between clubs.</p>
+                  <p><strong data-en="The rules" data-de="Die Regeln">The rules</strong></p>
+                  <ul>
+                    <li data-en="Two members of a club must attend a club night of the club that currently has the traveling trophy." data-de="Zwei Mitglieder eines Club müssen einen Clubabend des Clubs besuchen, der den Wanderpokal gerade hat.">Two members of a club must attend a club night of the club that currently has the traveling trophy.</li>
+                    <li data-en="One member must give a speech." data-de="Ein Mitglied muss eine Rede halten.">One member must give a speech.</li>
+                    <li data-en="The other member must do the overall judging." data-de="Das andere Mitglied muss die Gesamtbewertung übernehmen.">The other member must do the overall judging.</li>
+                    <li data-en="Then they can take the cup back to their club and proudly present it. Until it moves on again :)" data-de="Dann können sie den Pokal mit in ihren Club nehmen und ihn stolz präsentieren. Bis er wieder weiter wandert :)">Then they can take the cup back to their club and proudly present it. Until it moves on again :)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Add more slides here as needed -->
+
+        </div>
+      </div>
+
+      <div class="glance-dots" id="glance-dots"></div>
+    </div>
+  </section>
+
   <!-- WHAT IS TOASTMASTERS -->
   <section class="what-section" id="toastmasters">
     <div class="container">
@@ -922,29 +1084,6 @@
         with over 300,000 members in 145 countries. Members grow their confidence, sharpen their
         public speaking skills, and discover their voice — in a supportive, non-judgmental community.
       </p>
-
-      <div class="what-grid">
-        <div class="what-card">
-          <div class="what-card-icon">🎤</div>
-          <h3 data-en="Public speaking" data-de="Öffentliches Sprechen">Public speaking</h3>
-          <p data-en="Prepare and deliver speeches in a safe, encouraging environment at every meeting." data-de="Bereite Reden vor und halte sie in einer sicheren, ermutigenden Umgebung bei jedem Treffen.">Prepare and deliver speeches in a safe, encouraging environment at every meeting.</p>
-        </div>
-        <div class="what-card">
-          <div class="what-card-icon">💬</div>
-          <h3 data-en="Impromptu speaking" data-de="Spontanes Sprechen">Impromptu speaking</h3>
-          <p data-en="Build confidence thinking on your feet with Table Topics — short, spontaneous speeches." data-de="Stärke dein spontanes Denken mit Table Topics — kurzen, unvorbereiteten Reden.">Build confidence thinking on your feet with Table Topics — short, spontaneous speeches.</p>
-        </div>
-        <div class="what-card">
-          <div class="what-card-icon">🏆</div>
-          <h3 data-en="Leadership" data-de="Führungskompetenz">Leadership</h3>
-          <p data-en="Take on club roles and grow your leadership skills alongside your speaking ability." data-de="Übernimm Club-Rollen und entwickle deine Führungsfähigkeiten neben deiner Redekompetenz.">Take on club roles and grow your leadership skills alongside your speaking ability.</p>
-        </div>
-        <div class="what-card">
-          <div class="what-card-icon">🌍</div>
-          <h3 data-en="Community" data-de="Gemeinschaft">Community</h3>
-          <p data-en="Connect with a diverse, welcoming group of people who share your goals." data-de="Vernetze dich mit einer vielfältigen, offenen Gruppe von Menschen, die deine Ziele teilen.">Connect with a diverse, welcoming group of people who share your goals.</p>
-        </div>
-      </div>
 
       <div style="margin-top: 2.5rem; display: flex; gap: 12px; flex-wrap: wrap;">
         <a href="https://www.toastmasters.org" class="btn btn-primary" target="_blank" rel="noopener">Toastmasters International</a>
@@ -1345,6 +1484,49 @@
         var banner = document.getElementById('privacy-banner');
         if (banner) banner.style.display = 'flex';
       }
+    })();
+
+    // Division at a glance — auto-scrolling carousel
+    (function () {
+      var track = document.getElementById('glance-track');
+      if (!track) return;
+      var slides = track.children;
+      var count = slides.length;
+      var dotsBox = document.getElementById('glance-dots');
+      var current = 0;
+      var timer = null;
+
+      // Only build controls / autoplay if more than one slide
+      if (count <= 1) return;
+
+      // Build dots
+      for (var i = 0; i < count; i++) {
+        var dot = document.createElement('button');
+        dot.className = 'glance-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+        (function (idx) {
+          dot.addEventListener('click', function () { goTo(idx); resetTimer(); });
+        })(i);
+        dotsBox.appendChild(dot);
+      }
+
+      function goTo(idx) {
+        current = idx;
+        track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+        var dots = dotsBox.children;
+        for (var j = 0; j < dots.length; j++) {
+          dots[j].className = 'glance-dot' + (j === idx ? ' active' : '');
+        }
+      }
+
+      function next() { goTo((current + 1) % count); }
+
+      function resetTimer() {
+        if (timer) clearInterval(timer);
+        timer = setInterval(next, 6000);
+      }
+
+      resetTimer();
     })();
   </script>
 
