@@ -778,14 +778,14 @@
       .nav-links {
         display: none;
         position: absolute;
-        top: 62px;
+        top: 110px;
         left: 0;
         right: 0;
-        background: var(--tm-blue);
+        background: var(--tm-maroon);
         flex-direction: column;
         align-items: stretch;
         gap: 0;
-        padding: 0.5rem 0 1.25rem;
+        padding: 0.75rem 0 1.25rem;
         box-shadow: 0 12px 24px rgba(0,0,0,0.25);
         border-bottom: 3px solid var(--tm-yellow);
       }
@@ -1068,6 +1068,15 @@
     <p class="footer-disclaimer" data-en="The information on this website is for the sole use of Toastmasters' members, for Toastmasters business only. It is not to be used for solicitation and distribution of non-Toastmasters material or information." data-de="The information on this website is for the sole use of Toastmasters' members, for Toastmasters business only. It is not to be used for solicitation and distribution of non-Toastmasters material or information.">The information on this website is for the sole use of Toastmasters' members, for Toastmasters business only. It is not to be used for solicitation and distribution of non-Toastmasters material or information.</p>
   </footer>
 
+  <!-- PRIVACY NOTICE BANNER -->
+  <div id="privacy-banner" style="display: none; position: fixed; bottom: 20px; left: 20px; right: 20px; max-width: 520px; background: var(--tm-blue); color: white; padding: 1rem 1.25rem; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.35); z-index: 1000; border: 1px solid rgba(255,255,255,0.1); align-items: center; gap: 1rem; flex-wrap: wrap;">
+    <p style="flex: 1; min-width: 200px; font-size: 14px; line-height: 1.5; margin: 0;" data-en="This site stores only your language preference in your browser — no tracking cookies, no third-party data." data-de="Diese Website speichert nur deine Spracheinstellung in deinem Browser — keine Tracking-Cookies, keine Daten an Dritte.">This site stores only your language preference in your browser — no tracking cookies, no third-party data.</p>
+    <div style="display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0;">
+      <a href="impressum.html" style="color: rgba(255,255,255,0.75); font-size: 13px; text-decoration: underline; white-space: nowrap;" data-en="More info" data-de="Mehr Infos">More info</a>
+      <button onclick="dismissPrivacyBanner()" style="background: var(--tm-yellow); color: var(--tm-blue); border: none; font-family: var(--font-head); font-weight: 700; font-size: 14px; padding: 8px 20px; border-radius: 20px; cursor: pointer; white-space: nowrap;" data-en="Got it" data-de="Verstanden">Got it</button>
+    </div>
+  </div>
+
   <script>
     var currentLang = localStorage.getItem('tm-lang') || 'en';
 
@@ -1323,6 +1332,20 @@
     } else {
       renderAll();
     }
+
+    // Privacy notice banner — shows once, remembers dismissal
+    function dismissPrivacyBanner() {
+      var banner = document.getElementById('privacy-banner');
+      if (banner) banner.style.display = 'none';
+      localStorage.setItem('tm-privacy-ack', 'yes');
+    }
+
+    (function () {
+      if (!localStorage.getItem('tm-privacy-ack')) {
+        var banner = document.getElementById('privacy-banner');
+        if (banner) banner.style.display = 'flex';
+      }
+    })();
   </script>
 
 </body>
