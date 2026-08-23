@@ -15,7 +15,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       /* Toastmasters brand palette (Brand Manual v2.0) */
       --tm-blue: #004165;        /* Loyal Blue — primary */
@@ -32,9 +31,7 @@
       --font-head: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
       --font-body: 'Source Sans 3', 'Segoe UI', system-ui, -apple-system, sans-serif;
     }
-
     html { scroll-behavior: smooth; }
-
     body {
       font-family: var(--font-body);
       color: var(--tm-text);
@@ -43,9 +40,7 @@
       line-height: 1.6;
       -webkit-text-size-adjust: 100%;
     }
-
     h1, h2, h3, .nav-brand, .team-avatar { font-family: var(--font-head); }
-
     /* ── NAV ── */
     nav {
       background: var(--tm-blue);
@@ -61,7 +56,6 @@
       border-bottom: 6px solid var(--tm-maroon);
       overflow: visible;
     }
-
     .nav-brand {
       display: flex;
       align-items: center;
@@ -75,26 +69,22 @@
       position: relative;
       z-index: 101;
     }
-
     .nav-brand img {
       height: 96px;
       width: auto;
     }
-
     .nav-brand .divider {
       opacity: 0.45;
       font-weight: 400;
       margin: 0 2px;
       color: var(--tm-yellow);
     }
-
     .nav-links {
       display: flex;
       gap: 1.4rem;
       list-style: none;
       align-items: center;
     }
-
     .nav-links a {
       color: rgba(255,255,255,0.88);
       text-decoration: none;
@@ -103,9 +93,7 @@
       letter-spacing: 0.02em;
       transition: color 0.15s;
     }
-
     .nav-links a:hover { color: var(--tm-yellow); }
-
     .lang-toggle {
       background: transparent;
       border: 1.5px solid rgba(255,255,255,0.5);
@@ -119,13 +107,11 @@
       font-family: var(--font-head);
       transition: background 0.15s, border-color 0.15s, color 0.15s;
     }
-
     .lang-toggle:hover {
       background: var(--tm-yellow);
       border-color: var(--tm-yellow);
       color: var(--tm-blue);
     }
-
     .nav-visit-btn {
       display: inline-block;
       background: var(--tm-maroon);
@@ -138,9 +124,7 @@
       text-decoration: none;
       transition: background 0.15s;
     }
-
     .nav-visit-btn:hover { background: var(--tm-maroon-deep); color: white; }
-
     .nav-ct-btn {
       display: inline-block;
       background: transparent;
@@ -155,12 +139,10 @@
       transition: background 0.15s, color 0.15s;
       white-space: nowrap;
     }
-
     .nav-ct-btn:hover {
       background: var(--tm-yellow);
       color: var(--tm-blue) !important;
     }
-
     /* Hamburger (hidden on desktop) */
     .nav-toggle {
       display: none;
@@ -170,7 +152,6 @@
       padding: 10px;
       margin-right: -10px;
     }
-
     .nav-toggle span {
       display: block;
       width: 22px;
@@ -180,11 +161,9 @@
       border-radius: 2px;
       transition: transform 0.2s, opacity 0.2s;
     }
-
     .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .nav-toggle.open span:nth-child(2) { opacity: 0; }
     .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
     /* ── BTN ── */
     .btn {
       display: inline-block;
@@ -197,28 +176,22 @@
       letter-spacing: 0.02em;
       transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
     }
-
     .btn:hover { transform: translateY(-1px); }
     .btn:active { transform: translateY(0); }
-
     .btn-primary {
       background: var(--tm-maroon);
       color: white;
       box-shadow: 0 2px 8px rgba(119,36,50,0.2);
     }
-
     .btn-primary:hover { background: var(--tm-maroon-deep); }
-
     /* ── SECTION SHARED ── */
     section {
       padding: 4.5rem 2rem;
     }
-
     .container {
       max-width: 880px;
       margin: 0 auto;
     }
-
     .section-label {
       font-size: 11px;
       letter-spacing: 0.16em;
@@ -231,7 +204,6 @@
       align-items: center;
       gap: 8px;
     }
-
     .section-label::before {
       content: '';
       width: 22px;
@@ -239,7 +211,6 @@
       background: var(--tm-yellow);
       border-radius: 2px;
     }
-
     h2 {
       font-size: clamp(1.6rem, 3vw, 2.1rem);
       font-weight: 800;
@@ -248,36 +219,30 @@
       margin-bottom: 1rem;
       color: var(--tm-blue);
     }
-
     /* ── WHAT IS TM ── */
     .what-section {
       background: var(--tm-fair);
       border-top: 1px solid var(--tm-border);
       border-bottom: 1px solid var(--tm-border);
     }
-
     /* ── DIVISION AT A GLANCE (CAROUSEL) ── */
     .glance-section {
       background: white;
     }
-
     .glance-viewport {
       overflow: hidden;
       margin-top: 2rem;
       border-radius: 16px;
       position: relative;
     }
-
     .glance-track {
       display: flex;
       transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
-
     .glance-slide {
       min-width: 100%;
       box-sizing: border-box;
     }
-
     .glance-card {
       display: grid;
       grid-template-columns: 300px 1fr;
@@ -289,7 +254,6 @@
       padding: 2rem;
       align-items: start;
     }
-
     .glance-img {
       width: 100%;
       border-radius: 12px;
@@ -298,7 +262,6 @@
       background: var(--tm-fair);
       border: 1px solid var(--tm-border);
     }
-
     .glance-title {
       font-size: clamp(1.3rem, 2.5vw, 1.7rem);
       font-weight: 800;
@@ -307,7 +270,6 @@
       line-height: 1.2;
       margin-bottom: 0.75rem;
     }
-
     .glance-holder {
       display: inline-flex;
       align-items: center;
@@ -323,33 +285,25 @@
       text-decoration: none;
       transition: background 0.15s;
     }
-
     .glance-holder:hover { background: rgba(119,36,50,0.15); }
-
     .glance-body {
       font-size: 14.5px;
       color: var(--tm-muted);
       line-height: 1.6;
     }
-
     .glance-body p { margin-bottom: 0.8rem; }
-
     .glance-body strong { color: var(--tm-blue); }
-
     .glance-body ul {
       margin: 0.5rem 0 0.8rem;
       padding-left: 1.2rem;
     }
-
     .glance-body li { margin-bottom: 0.35rem; }
-
     .glance-dots {
       display: flex;
       justify-content: center;
       gap: 8px;
       margin-top: 1.5rem;
     }
-
     .glance-dot {
       width: 10px;
       height: 10px;
@@ -360,12 +314,10 @@
       padding: 0;
       transition: background 0.2s, transform 0.2s;
     }
-
     .glance-dot.active {
       background: var(--tm-maroon);
       transform: scale(1.2);
     }
-
     @media (max-width: 700px) {
       .glance-card {
         grid-template-columns: 1fr;
@@ -374,14 +326,12 @@
       }
       .glance-img { max-height: 240px; }
     }
-
     .what-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1.5rem;
       margin-top: 2.5rem;
     }
-
     .what-card {
       background: white;
       border-radius: 12px;
@@ -389,12 +339,10 @@
       border: 1px solid var(--tm-border);
       transition: transform 0.15s, box-shadow 0.15s;
     }
-
     .what-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 24px rgba(0,65,101,0.1);
     }
-
     .what-card-icon {
       width: 48px;
       height: 48px;
@@ -406,20 +354,17 @@
       font-size: 1.5rem;
       margin-bottom: 1rem;
     }
-
     .what-card h3 {
       font-size: 1.05rem;
       font-weight: 700;
       margin-bottom: 0.4rem;
       color: var(--tm-blue);
     }
-
     .what-card p {
       font-size: 14px;
       color: var(--tm-muted);
       line-height: 1.55;
     }
-
     /* ── DIVISION TEAM ── */
     .team-intro {
       font-size: 1.05rem;
@@ -427,13 +372,11 @@
       max-width: 620px;
       margin-bottom: 2.5rem;
     }
-
     .team-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 1rem;
     }
-
     .team-card {
       border: 1px solid var(--tm-border);
       border-left: 4px solid var(--tm-maroon);
@@ -447,19 +390,16 @@
       background: white;
       transition: transform 0.15s, box-shadow 0.15s;
     }
-
     .team-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 24px rgba(0,65,101,0.1);
     }
-
     .team-card.director {
       border-color: var(--tm-maroon);
       border-left-width: 4px;
       border-width: 2px;
       background: linear-gradient(180deg, #fbfdff 0%, #ffffff 100%);
     }
-
     .team-avatar {
       width: 150px;
       height: 150px;
@@ -474,11 +414,9 @@
       letter-spacing: 0.03em;
       border: 3px solid var(--tm-yellow);
     }
-
     .team-card.director .team-avatar {
       background: linear-gradient(135deg, var(--tm-maroon) 0%, var(--tm-maroon-deep) 100%);
     }
-
     .team-role {
       font-size: 11px;
       letter-spacing: 0.05em;
@@ -488,21 +426,18 @@
       font-family: var(--font-head);
       line-height: 1.4;
     }
-
     .team-name {
       font-weight: 700;
       font-size: 16px;
       line-height: 1.3;
       color: var(--tm-text);
     }
-
     .team-leads {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1rem;
       margin-top: 1rem;
     }
-
     .lead-card {
       border: 1px solid var(--tm-border);
       border-left: 4px solid var(--tm-yellow);
@@ -519,7 +454,7 @@
       border-radius: 50%;
       object-fit: cover;
     }
-  
+
     .lead-avatar {
       width: 120px;
       height: 120px;
@@ -535,13 +470,11 @@
       border: 3px solid var(--tm-yellow);
       flex-shrink: 0;
     }
-
     .lead-card > div:last-child {
       display: flex;
       flex-direction: column;
       gap: 2px;
     }
-
     .lead-role {
       font-size: 11px;
       letter-spacing: 0.05em;
@@ -550,13 +483,11 @@
       font-weight: 700;
       font-family: var(--font-head);
     }
-
     .lead-name {
       font-weight: 700;
       font-size: 16px;
       color: var(--tm-text);
     }
-
     .team-district-link {
       display: inline-block;
       margin-top: 2rem;
@@ -569,15 +500,12 @@
       padding-bottom: 2px;
       transition: color 0.15s;
     }
-
     .team-district-link:hover { color: var(--tm-blue-deep); }
-
     /* ── EVENTS ── */
     .events-section {
       background: var(--tm-fair);
       border-bottom: 1px solid var(--tm-border);
     }
-
     .events-grid {
       display: grid;
       grid-template-columns: 1.1fr 1fr;
@@ -585,7 +513,6 @@
       margin-top: 2rem;
       align-items: start;
     }
-
     .event-card {
       background: white;
       border: 1px solid var(--tm-border);
@@ -598,13 +525,11 @@
       cursor: pointer;
       transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
     }
-
     .event-card:hover {
       border-color: var(--tm-blue);
       box-shadow: 0 6px 20px rgba(0,65,101,0.1);
       transform: translateY(-2px);
     }
-
     .event-date {
       background: linear-gradient(135deg, var(--tm-blue) 0%, var(--tm-blue-deep) 100%);
       color: white;
@@ -618,14 +543,12 @@
       flex-shrink: 0;
       border-bottom: 3px solid var(--tm-yellow);
     }
-
     .event-date .day {
       font-size: 1.35rem;
       font-weight: 800;
       font-family: var(--font-head);
       line-height: 1;
     }
-
     .event-date .month {
       font-size: 10px;
       text-transform: uppercase;
@@ -633,19 +556,16 @@
       opacity: 0.85;
       font-weight: 600;
     }
-
     .event-details .event-name {
       font-weight: 700;
       font-size: 15px;
       margin-bottom: 2px;
       color: var(--tm-blue);
     }
-
     .event-details .event-meta {
       font-size: 13px;
       color: var(--tm-muted);
     }
-
     .event-register-btn {
       display: inline-block;
       margin-top: 8px;
@@ -660,15 +580,22 @@
       text-decoration: none;
       transition: background 0.15s;
     }
-
     .event-register-btn:hover { background: var(--tm-maroon-deep); }
-
+    /* Wrapper for one or more register buttons on an event card, laid out side by side */
+    .event-register-group {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    .event-register-group .event-register-btn {
+      margin-top: 0;
+    }
     .events-more-note {
       font-size: 13px;
       color: var(--tm-muted);
       margin-top: 1rem;
     }
-
     .calendar-card {
       background: white;
       border: 1px solid var(--tm-border);
@@ -676,14 +603,12 @@
       padding: 1.25rem 1.5rem 1.5rem;
       box-shadow: 0 2px 12px rgba(0,65,101,0.05);
     }
-
     .calendar-nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-bottom: 0.9rem;
     }
-
     .calendar-header {
       font-weight: 700;
       font-size: 15px;
@@ -691,7 +616,6 @@
       text-align: center;
       color: var(--tm-blue);
     }
-
     .cal-nav-btn {
       background: none;
       border: 1px solid var(--tm-border);
@@ -705,27 +629,23 @@
       font-family: inherit;
       transition: background 0.15s, border-color 0.15s, color 0.15s;
     }
-
     .cal-nav-btn:hover {
       background: var(--tm-blue);
       border-color: var(--tm-blue);
       color: white;
     }
-
     .calendar-grid {
       display: grid;
       grid-template-columns: repeat(7, 1fr);
       gap: 4px;
       text-align: center;
     }
-
     .calendar-grid .cal-dow {
       font-size: 11px;
       font-weight: 700;
       color: var(--tm-muted);
       padding-bottom: 4px;
     }
-
     .calendar-grid .cal-day {
       font-size: 13px;
       padding: 7px 0;
@@ -737,41 +657,33 @@
       cursor: pointer;
       transition: background 0.15s;
     }
-
     .calendar-grid .cal-day:hover {
       background: var(--tm-fair);
     }
-
     .calendar-grid .cal-day.empty {
       visibility: hidden;
       pointer-events: none;
     }
-
     .calendar-grid .cal-day.event {
       background: var(--tm-blue);
       color: white;
       font-weight: 700;
     }
-
     .calendar-grid .cal-day.event:hover {
       background: var(--tm-blue-deep);
     }
-
     .calendar-grid .cal-day.selected {
       box-shadow: 0 0 0 2px var(--tm-yellow);
     }
-
     .calendar-grid .cal-day.today:not(.event) {
       color: var(--tm-maroon);
       font-weight: 700;
     }
-
     .cal-events {
       margin-top: 1rem;
       padding-top: 1rem;
       border-top: 1px solid var(--tm-border);
     }
-
     .cal-events-title {
       font-size: 13px;
       font-weight: 700;
@@ -779,7 +691,6 @@
       margin-bottom: 0.5rem;
       color: var(--tm-blue);
     }
-
     .cal-event-item {
       font-size: 13px;
       color: var(--tm-muted);
@@ -790,12 +701,10 @@
       margin-bottom: 6px;
       line-height: 1.5;
     }
-
     .cal-event-item strong {
       color: var(--tm-blue);
       display: block;
     }
-
     .cal-event-item .cal-register {
       display: inline-block;
       margin-top: 6px;
@@ -804,23 +713,29 @@
       text-decoration: none;
       border-bottom: 1.5px solid var(--tm-maroon);
     }
-
+    /* Wrapper for one or more register links in the calendar day panel, laid out side by side */
+    .cal-register-group {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .cal-register-group .cal-register {
+      margin-top: 0;
+    }
     .cal-no-events {
       font-size: 13px;
       color: var(--tm-muted);
     }
-
     /* ── CONTACT ── */
     .contact-section {
       background: linear-gradient(135deg, var(--tm-blue) 0%, var(--tm-blue-deep) 100%);
       color: white;
       text-align: center;
     }
-
     .contact-section h2 { color: white; }
     .contact-section .section-label { color: var(--tm-yellow); }
     .contact-section .section-label::before { background: var(--tm-yellow); }
-
     .contact-section p {
       opacity: 0.85;
       margin-bottom: 1.75rem;
@@ -828,7 +743,6 @@
       margin-left: auto;
       margin-right: auto;
     }
-
     .contact-email {
       display: inline-block;
       color: var(--tm-yellow);
@@ -841,9 +755,7 @@
       transition: border-color 0.15s;
       word-break: break-all;
     }
-
     .contact-email:hover { border-color: var(--tm-yellow); }
-
     /* ── FOOTER ── */
     footer {
       background: var(--tm-blue);
@@ -853,7 +765,6 @@
       font-size: 13px;
       border-top: 3px solid var(--tm-yellow);
     }
-
     footer .footer-links {
       display: flex;
       justify-content: center;
@@ -861,16 +772,13 @@
       flex-wrap: wrap;
       margin-bottom: 1rem;
     }
-
     footer a {
       color: rgba(255,255,255,0.7);
       text-decoration: none;
       font-weight: 600;
       transition: color 0.15s;
     }
-
     footer a:hover { color: var(--tm-yellow); }
-
     footer .footer-disclaimer {
       max-width: 620px;
       margin: 1rem auto 0;
@@ -878,7 +786,6 @@
       opacity: 0.55;
       line-height: 1.5;
     }
-
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       .welcome-container {
@@ -891,9 +798,7 @@
     }
     @media (max-width: 1080px) {
       nav { padding: 0 1.25rem; }
-
       .nav-toggle { display: block; }
-
       .nav-links {
         display: none;
         position: absolute;
@@ -908,16 +813,12 @@
         box-shadow: 0 12px 24px rgba(0,0,0,0.25);
         border-bottom: 3px solid var(--tm-yellow);
       }
-
       .nav-links.open { display: flex; }
-
       .nav-links li {
         padding: 0.65rem 1.5rem;
       }
-
       .nav-links a { font-size: 15px; display: inline-block; }
     }
-
     @media (max-width: 600px) {
       .nav-brand .brand-extra { display: none; }
       section { padding: 3rem 1.25rem; }
@@ -935,14 +836,12 @@
         align-items: center;
       }
     }
-
     @media (max-width: 380px) {
       .team-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-
   <!-- NAV -->
   <nav id="top">
     <a class="nav-brand" href="#">
@@ -969,10 +868,8 @@
       <li><button id="lang-toggle" class="lang-toggle" onclick="setLang(currentLang === 'en' ? 'de' : 'en')">DE</button></li>
     </ul>
   </nav>
-
 <!-- HERO WELCOME WITH STATIC CONFETTI -->
   <section style="background: var(--tm-yellow); color: white; padding: 3rem 2rem 2rem; text-align: center; margin-top: -20px; position: relative; z-index: 99; overflow: hidden;">
-
   <!-- Left Confetti -->
    <img
     class="welcome-confetti"
@@ -980,14 +877,13 @@
     alt=""
     style="position: absolute; left: 5%; top: 50%; transform: translateY(-50%); width: clamp(60px, 8vw, 120px); height: auto; z-index: 1;"
   >
-  
+
   <img
     class="welcome-confetti"
     src="assets/left-confetti.png"
     alt=""
     style="position: absolute; right: 5%; top: 50%; transform: translateY(-50%); width: clamp(60px, 8vw, 120px); height: auto; z-index: 1;"
   >
-
   <div class="container welcome-contaniner" style="
   position: relative;
   z-index: 10;
@@ -1002,21 +898,18 @@
     Welcome to Division C
   </h1>
 </div>
-
 </section>
-  
+
   <!-- EVENTS -->
   <section class="events-section" id="events">
     <div class="container">
       <p class="section-label" data-en="What's on" data-de="Was steht an">What's on</p>
       <h2 data-en="Upcoming events" data-de="Kommende Veranstaltungen">Upcoming events</h2>
-
       <div class="events-grid">
         <div>
           <div id="event-list"></div>
           <p class="events-more-note" data-en="Tap a date in the calendar to see that day's events." data-de="Weitere Veranstaltungen und Links folgen in Kürze. Tippe auf ein Datum im Kalender, um die Veranstaltungen dieses Tages zu sehen.">More events and links will be added here soon. Tap a date in the calendar to see that day's events.</p>
         </div>
-
         <div class="calendar-card">
           <div class="calendar-nav">
             <button type="button" class="cal-nav-btn" id="cal-prev" aria-label="Previous month" onclick="shiftMonth(-1)">&#8249;</button>
@@ -1029,16 +922,13 @@
       </div>
     </div>
   </section>
-
   <!-- DIVISION AT A GLANCE (CAROUSEL) -->
   <section class="glance-section" id="glance">
     <div class="container">
       <p class="section-label" data-en="Division at a glance" data-de="Division auf einen Blick">Division at a glance</p>
       <h2 data-en="What's happening in Division C" data-de="Was in Division C passiert">What's happening in Division C</h2>
-
       <div class="glance-viewport">
         <div class="glance-track" id="glance-track">
-
           <!-- Slide 1: Wanderpokal -->
           <div class="glance-slide">
             <div class="glance-card">
@@ -1062,16 +952,12 @@
               </div>
             </div>
           </div>
-
           <!-- Add more slides here as needed -->
-
         </div>
       </div>
-
       <div class="glance-dots" id="glance-dots"></div>
     </div>
   </section>
-
   <!-- WHAT IS TOASTMASTERS -->
   <section class="what-section" id="toastmasters">
     <div class="container">
@@ -1084,14 +970,12 @@
         with over 300,000 members in 145 countries. Members grow their confidence, sharpen their
         public speaking skills, and discover their voice — in a supportive, non-judgmental community.
       </p>
-
       <div style="margin-top: 2.5rem; display: flex; gap: 12px; flex-wrap: wrap;">
         <a href="https://www.toastmasters.org" class="btn btn-primary" target="_blank" rel="noopener">Toastmasters International</a>
         <a href="clubs.html" class="btn btn-primary" data-en="Find a club" data-de="Club finden">Find a club</a>
       </div>
     </div>
   </section>
-
   <!-- DIVISION TEAM -->
   <section id="team">
     <div class="container">
@@ -1101,7 +985,6 @@
         Division C comprises the Germany Middle East region, bringing together Toastmasters clubs
         from Berlin, Hannover, Leipzig, Dresden and beyond. Meet the team leading the Division this year.
       </p>
-
       <div class="team-grid">
         <div class="team-card director">
           <div class="team-avatar"><img src="assets/KJ.jpg" alt="Kunal K Jani" /></div>
@@ -1129,11 +1012,8 @@
           <div class="team-name">Maria Sachse</div>
         </div>
       </div>
-
       <div style="margin: 2.5rem 0; padding: 1rem 0; border-top: 2px solid var(--tm-border); border-bottom: 1px dashed var(--tm-border);"></div>
-
       <h3 style="font-size: 1.05rem; font-weight: 700; font-family: var(--font-head); color: var(--tm-blue); margin-bottom: 1.5rem; text-align: center;" data-en="Leadership Support" data-de="Leadership Support">Leadership Support</h3>
-
       <div class="team-leads">
         <div class="lead-card">
           <div class="lead-avatar"><img src="assets/GT.jpeg" alt="Ginia Tarique" /></div>
@@ -1178,11 +1058,9 @@
           </div>
         </div>
       </div>
-
       <a href="https://toastmasters-95.org/district-team-2026-2027/" class="team-district-link" target="_blank" rel="noopener" data-en="See the full District 95 team →" data-de="Das gesamte District 95 Team ansehen →">See the full District 95 team →</a>
     </div>
   </section>
-
   <!-- CONTACT -->
   <section class="contact-section" id="contact">
     <div class="container">
@@ -1194,7 +1072,6 @@
       </a>
     </div>
   </section>
-
   <!-- FOOTER -->
   <footer>
     <div class="footer-links">
@@ -1206,7 +1083,6 @@
     <p>© 2026 Toastmasters District 95, Division C</p>
     <p class="footer-disclaimer" data-en="The information on this website is for the sole use of Toastmasters' members, for Toastmasters business only. It is not to be used for solicitation and distribution of non-Toastmasters material or information." data-de="The information on this website is for the sole use of Toastmasters' members, for Toastmasters business only. It is not to be used for solicitation and distribution of non-Toastmasters material or information.">The information on this website is for the sole use of Toastmasters' members, for Toastmasters business only. It is not to be used for solicitation and distribution of non-Toastmasters material or information.</p>
   </footer>
-
   <!-- PRIVACY NOTICE BANNER -->
   <div id="privacy-banner" style="display: none; position: fixed; bottom: 20px; left: 20px; right: 20px; max-width: 520px; background: var(--tm-blue); color: white; padding: 1rem 1.25rem; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.35); z-index: 1000; border: 1px solid rgba(255,255,255,0.1); align-items: center; gap: 1rem; flex-wrap: wrap;">
     <p style="flex: 1; min-width: 200px; font-size: 14px; line-height: 1.5; margin: 0;" data-en="This site stores only your language preference in your browser — no tracking cookies, no third-party data." data-de="Diese Website speichert nur deine Spracheinstellung in deinem Browser — keine Tracking-Cookies, keine Daten an Dritte.">This site stores only your language preference in your browser — no tracking cookies, no third-party data.</p>
@@ -1215,16 +1091,18 @@
       <button onclick="dismissPrivacyBanner()" style="background: var(--tm-yellow); color: var(--tm-blue); border: none; font-family: var(--font-head); font-weight: 700; font-size: 14px; padding: 8px 20px; border-radius: 20px; cursor: pointer; white-space: nowrap;" data-en="Got it" data-de="Verstanden">Got it</button>
     </div>
   </div>
-
   <script>
     var currentLang = localStorage.getItem('tm-lang') || 'en';
-
     /* ══════════════════════════════════════════════════
        EVENTS — add new events to this list.
        date: 'YYYY-MM-DD'
        name: stays the same in both languages (Toastmasters jargon)
        location / language: { en: '...', de: '...' }
-       registerUrl: optional — adds a Register button
+       registerUrl: optional — adds a single Register button
+       registerUrls: optional — use instead of registerUrl when an event has
+         more than one registration link (e.g. separate DE/EN sessions).
+         Each entry: { label: { en: '...', de: '...' }, url: '...' }.
+         Buttons render side by side in the order listed.
        ══════════════════════════════════════════════════ */
     var EVENTS = [
       {
@@ -1245,6 +1123,10 @@
         date: '2026-08-30', start: '10:00', end: '15:00',
         name: 'Last Chance COT — Division B+C+D',
         location: { en: 'Online', de: 'Online' },
+        registerUrls: [
+          { label: { en: 'Register (Deutsch)', de: 'Anmelden (Deutsch)' }, url: 'https://us06web.zoom.us/meeting/register/dM-dUyCxRZCiXo6fOIGtqg' },
+          { label: { en: 'Register (English)', de: 'Anmelden (Englisch)' }, url: 'https://us06web.zoom.us/meeting/register/bHgoNi0qRtOddLuxTtc65g' }
+        ],
         language: { en: 'English/German', de: 'Englisch/Deutsch' }
       },
       {
@@ -1285,7 +1167,6 @@
         language: { en: 'German/English', de: 'Deutsch/Englisch' }
       }
     ];
-
     var MONTHS_FULL = {
       en: ['January','February','March','April','May','June','July','August','September','October','November','December'],
       de: ['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember']
@@ -1307,7 +1188,6 @@
       noUpcoming: { en: 'No upcoming events at the moment — check back soon.', de: 'Zurzeit keine anstehenden Veranstaltungen — schau bald wieder vorbei.' },
       register: { en: 'Register', de: 'Anmelden' }
     };
-
     function parseDate(s) {
       var p = s.split('-');
       return new Date(+p[0], +p[1] - 1, +p[2]);
@@ -1322,28 +1202,44 @@
       }
       return WEEKDAYS_FULL.en[d.getDay()] + ', ' + d.getDate() + ' ' + MONTHS_FULL.en[d.getMonth()] + ' ' + d.getFullYear();
     }
-
+    // Normalises an event's registration link(s) into a single array,
+    // whether it was defined via registerUrl (single) or registerUrls (multiple).
+    function registerLinks(e) {
+      if (e.registerUrls && e.registerUrls.length) return e.registerUrls;
+      if (e.registerUrl) return [{ label: null, url: e.registerUrl }];
+      return [];
+    }
+    // Renders one or more register buttons/links side by side for an event.
+    // opts: { groupClass, btnClass, suffix (optional text appended, e.g. ' →'), stopProp (optional) }
+    function registerButtonsHtml(e, opts) {
+      var links = registerLinks(e);
+      if (!links.length) return '';
+      var html = '<div class="' + opts.groupClass + '">';
+      links.forEach(function (l) {
+        var text = l.label ? l.label[currentLang] : TEXT.register[currentLang];
+        if (opts.suffix) text += opts.suffix;
+        html += '<a href="' + l.url + '" class="' + opts.btnClass + '" target="_blank" rel="noopener"' +
+          (opts.stopProp ? ' onclick="event.stopPropagation();"' : '') + '>' + text + '</a>';
+      });
+      html += '</div>';
+      return html;
+    }
     var _today = new Date(); _today.setHours(0, 0, 0, 0);
     var _sorted = EVENTS.slice().sort(function (a, b) { return a.date < b.date ? -1 : 1; });
     var _upcoming = _sorted.filter(function (e) { return parseDate(e.date) >= _today; }).slice(0, 3);
     var _init = _upcoming.length ? parseDate(_upcoming[0].date) : new Date();
-
     var calYear = _init.getFullYear();
     var calMonth = _init.getMonth();
     var selectedKey = _upcoming.length ? _upcoming[0].date : dateKey(_today);
-
     function renderCalendar() {
       document.getElementById('cal-title').textContent = MONTHS_FULL[currentLang][calMonth] + ' ' + calYear;
-
       var html = '';
       DOW_SHORT[currentLang].forEach(function (d) {
         html += '<div class="cal-dow">' + d + '</div>';
       });
-
       var first = new Date(calYear, calMonth, 1);
       var offset = (first.getDay() + 6) % 7; // Monday-first
       for (var i = 0; i < offset; i++) html += '<div class="cal-day empty"></div>';
-
       var daysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
       var todayKey = dateKey(_today);
       for (var day = 1; day <= daysInMonth; day++) {
@@ -1354,10 +1250,8 @@
         if (key === todayKey) cls += ' today';
         html += '<button type="button" class="' + cls + '" data-date="' + key + '">' + day + '</button>';
       }
-
       document.getElementById('cal-grid').innerHTML = html;
     }
-
     function renderDayEvents() {
       var box = document.getElementById('cal-day-events');
       var evs = eventsOn(selectedKey);
@@ -1368,13 +1262,12 @@
         evs.forEach(function (e) {
           html += '<div class="cal-event-item"><strong>' + e.name + '</strong>' +
             e.start + '–' + e.end + ' · ' + e.language[currentLang] + ' · ' + e.location[currentLang] +
-            (e.registerUrl ? '<br><a href="' + e.registerUrl + '" class="cal-register" target="_blank" rel="noopener">' + TEXT.register[currentLang] + ' →</a>' : '') +
+            registerButtonsHtml(e, { groupClass: 'cal-register-group', btnClass: 'cal-register', suffix: ' →' }) +
             '</div>';
         });
       }
       box.innerHTML = html;
     }
-
     function renderUpcoming() {
       var box = document.getElementById('event-list');
       if (!_upcoming.length) {
@@ -1390,12 +1283,11 @@
           '<div class="event-details"><div class="event-name">' + e.name + '</div>' +
           '<div class="event-meta">' + formatLong(e.date) + ' · ' + e.start + '–' + e.end + '</div>' +
           '<div class="event-meta">' + e.location[currentLang] + ' · ' + e.language[currentLang] + '</div>' +
-          (e.registerUrl ? '<a href="' + e.registerUrl + '" class="event-register-btn" target="_blank" rel="noopener" onclick="event.stopPropagation();">' + TEXT.register[currentLang] + '</a>' : '') +
+          registerButtonsHtml(e, { groupClass: 'event-register-group', btnClass: 'event-register-btn', stopProp: true }) +
           '</div></div>';
       });
       box.innerHTML = html;
     }
-
     function selectDate(key) {
       selectedKey = key;
       var d = parseDate(key);
@@ -1404,32 +1296,27 @@
       renderCalendar();
       renderDayEvents();
     }
-
     function shiftMonth(delta) {
       calMonth += delta;
       if (calMonth < 0) { calMonth = 11; calYear--; }
       if (calMonth > 11) { calMonth = 0; calYear++; }
       renderCalendar();
     }
-
     function renderAll() {
       renderCalendar();
       renderDayEvents();
       renderUpcoming();
     }
-
     // Tap a day in the calendar → show that day's events
     document.getElementById('cal-grid').addEventListener('click', function (ev) {
       var btn = ev.target.closest('.cal-day');
       if (btn && btn.getAttribute('data-date')) selectDate(btn.getAttribute('data-date'));
     });
-
     // Tap an event card → jump the calendar to that date
     document.getElementById('event-list').addEventListener('click', function (ev) {
       var card = ev.target.closest('.event-card');
       if (card && card.getAttribute('data-date')) selectDate(card.getAttribute('data-date'));
     });
-
     function setLang(lang) {
       currentLang = lang;
       localStorage.setItem('tm-lang', lang);
@@ -1442,7 +1329,6 @@
       if (btn) btn.textContent = lang === 'de' ? 'EN' : 'DE';
       renderAll();
     }
-
     function toggleNav() {
       var links = document.getElementById('nav-links');
       var toggle = document.getElementById('nav-toggle');
@@ -1450,7 +1336,6 @@
       toggle.classList.toggle('open', isOpen);
       toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     }
-
     // Close the mobile menu after tapping a link
     document.querySelectorAll('.nav-links a').forEach(function (a) {
       a.addEventListener('click', function () {
@@ -1461,9 +1346,8 @@
         toggle.setAttribute('aria-expanded', 'false');
       });
     });
-
     setLang(currentLang);
-    
+
     // Ensure rendering happens after DOM is fully loaded
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', function() {
@@ -1472,21 +1356,18 @@
     } else {
       renderAll();
     }
-
     // Privacy notice banner — shows once, remembers dismissal
     function dismissPrivacyBanner() {
       var banner = document.getElementById('privacy-banner');
       if (banner) banner.style.display = 'none';
       localStorage.setItem('tm-privacy-ack', 'yes');
     }
-
     (function () {
       if (!localStorage.getItem('tm-privacy-ack')) {
         var banner = document.getElementById('privacy-banner');
         if (banner) banner.style.display = 'flex';
       }
     })();
-
     // Division at a glance — auto-scrolling carousel
     (function () {
       var track = document.getElementById('glance-track');
@@ -1496,10 +1377,8 @@
       var dotsBox = document.getElementById('glance-dots');
       var current = 0;
       var timer = null;
-
       // Only build controls / autoplay if more than one slide
       if (count <= 1) return;
-
       // Build dots
       for (var i = 0; i < count; i++) {
         var dot = document.createElement('button');
@@ -1510,7 +1389,6 @@
         })(i);
         dotsBox.appendChild(dot);
       }
-
       function goTo(idx) {
         current = idx;
         track.style.transform = 'translateX(-' + (idx * 100) + '%)';
@@ -1519,17 +1397,13 @@
           dots[j].className = 'glance-dot' + (j === idx ? ' active' : '');
         }
       }
-
       function next() { goTo((current + 1) % count); }
-
       function resetTimer() {
         if (timer) clearInterval(timer);
         timer = setInterval(next, 6000);
       }
-
       resetTimer();
     })();
   </script>
-
 </body>
 </html>
