@@ -436,6 +436,42 @@
       margin-top: 1rem;
     }
 
+    .res-quicknav-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .res-quicknav-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      background: var(--tm-white);
+      border: 1px solid var(--tm-border);
+      border-left: 4px solid var(--tm-yellow);
+      border-radius: 10px;
+      padding: 1.1rem 1.25rem;
+      text-decoration: none;
+      transition: border-color 0.15s, transform 0.15s;
+    }
+
+    .res-quicknav-card:hover {
+      border-left-color: var(--tm-maroon);
+      transform: translateY(-2px);
+    }
+
+    .res-quicknav-title {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--tm-blue);
+    }
+
+    .res-quicknav-desc {
+      font-size: 13px;
+      color: var(--tm-muted);
+    }
+
     @media (max-width: 600px) {
       .res-section { padding: 2.5rem 1.25rem; }
       .res-link-row { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
@@ -475,8 +511,38 @@
     <h1 data-en="Resources" data-de="Ressourcen">Resources</h1>
   </div>
 
+  <!-- QUICK NAV -->
+  <section class="res-section res-quicknav">
+    <div class="container-wide">
+      <p class="section-label" data-en="On this page" data-de="Auf dieser Seite">On this page</p>
+      <h2 data-en="What's available" data-de="Was verfügbar ist">What's available</h2>
+      <div class="res-quicknav-grid">
+        <a class="res-quicknav-card" href="#onboarding">
+          <span class="res-quicknav-title" data-en="New Member &amp; Officer Onboarding" data-de="Einstieg für neue Mitglieder &amp; Officers">New Member &amp; Officer Onboarding</span>
+          <span class="res-quicknav-desc" data-en="90-day guides for members and officers" data-de="90-Tage-Leitfäden für Mitglieder und Officers">90-day guides for members and officers</span>
+        </a>
+        <a class="res-quicknav-card" href="#club-success-plan">
+          <span class="res-quicknav-title" data-en="Club Success Plan in 90 Minutes" data-de="Club-Erfolgsplan in 90 Minuten">Club Success Plan in 90 Minutes</span>
+          <span class="res-quicknav-desc" data-en="Workshop deck for club planning" data-de="Workshop-Folien für die Club-Planung">Workshop deck for club planning</span>
+        </a>
+        <a class="res-quicknav-card" href="#officer-training">
+          <span class="res-quicknav-title" data-en="Club Officer Training Materials" data-de="Club Officer Training Materialien">Club Officer Training Materials</span>
+          <span class="res-quicknav-desc" data-en="COT decks and progress tracking template" data-de="COT-Folien und Vorlage zur Fortschrittsverfolgung">COT decks and progress tracking template</span>
+        </a>
+        <a class="res-quicknav-card" href="#zoom-backgrounds">
+          <span class="res-quicknav-title" data-en="Zoom Backgrounds" data-de="Zoom-Hintergründe">Zoom Backgrounds</span>
+          <span class="res-quicknav-desc" data-en="#EmpoweringExcellence branding" data-de="#EmpoweringExcellence Branding">#EmpoweringExcellence branding</span>
+        </a>
+        <a class="res-quicknav-card" href="#contests">
+          <span class="res-quicknav-title" data-en="Speech Contests" data-de="Redewettbewerbe">Speech Contests</span>
+          <span class="res-quicknav-desc" data-en="Rulebook, judge's guides &amp; ballots" data-de="Regelwerk, Preisrichter-Leitfäden &amp; Bewertungsbögen">Rulebook, judge's guides &amp; ballots</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ONBOARDING -->
-  <section class="res-section">
+  <section class="res-section" id="onboarding">
     <div class="container-wide">
       <p class="section-label" data-en="Getting started" data-de="Erste Schritte">Getting started</p>
       <h2 data-en="New Member &amp; Officer Onboarding" data-de="Einstieg für neue Mitglieder &amp; Officers">New Member &amp; Officer Onboarding</h2>
@@ -506,7 +572,7 @@
   </section>
 
   <!-- CLUB SUCCESS PLAN -->
-  <section class="res-section alt">
+  <section class="res-section alt" id="club-success-plan">
     <div class="container-wide">
       <p class="section-label" data-en="Club planning" data-de="Club-Planung">Club planning</p>
       <h2 data-en="Club Success Plan in 90 Minutes" data-de="Club-Erfolgsplan in 90 Minuten">Club Success Plan in 90 Minutes</h2>
@@ -514,7 +580,7 @@
          data-de="Ein moderierter Workshop-Ablauf, mit dem dein Club seinen Club-Erfolgsplan für das kommende Programmjahr in einer einzigen 90-minütigen Sitzung erstellen kann.">A guided workshop format to help your club build its Club Success Plan for the coming program year in a single 90-minute session.</p>
       <div class="res-grid">
         <div class="res-card">
-          <div class="res-card-title" data-en="Club Success Plan in 90 Minutes (V2026-09)" data-de="Club-Erfolgsplan in 90 Minuten (V2026-09)">Club Success Plan in 90 Minutes (V2026-09)</div>
+          <div class="res-card-title" data-en="Club Success Plan in 90 Minutes" data-de="Club-Erfolgsplan in 90 Minuten">Club Success Plan in 90 Minutes</div>
           <p class="res-card-desc" data-en="Step-by-step workshop deck for facilitating a club's success plan in one meeting."
              data-de="Schrittweiser Workshop-Foliensatz zur Moderation des Club-Erfolgsplans in einer einzigen Sitzung.">Step-by-step workshop deck for facilitating a club's success plan in one meeting.</p>
           <div class="res-actions">
@@ -527,7 +593,7 @@
   </section>
 
   <!-- CLUB OFFICER TRAINING -->
-  <section class="res-section">
+  <section class="res-section" id="officer-training">
     <div class="container-wide">
       <p class="section-label" data-en="COT" data-de="COT">COT</p>
       <h2 data-en="Club Officer Training Materials" data-de="Club Officer Training Materialien">Club Officer Training Materials</h2>
@@ -597,7 +663,7 @@
   </section>
 
   <!-- ZOOM BACKGROUNDS -->
-  <section class="res-section alt">
+  <section class="res-section alt" id="zoom-backgrounds">
     <div class="container-wide">
       <p class="section-label" data-en="Branding" data-de="Branding">Branding</p>
       <h2 data-en="Zoom Backgrounds" data-de="Zoom-Hintergründe">Zoom Backgrounds</h2>
