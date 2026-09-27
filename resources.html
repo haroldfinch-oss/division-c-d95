@@ -170,6 +170,7 @@
     section { padding: 4rem 2rem; }
 
     .container { max-width: 860px; margin: 0 auto; }
+    .container-wide { max-width: 1100px; margin: 0 auto; }
 
     .section-label {
       font-size: 11px;
@@ -301,8 +302,181 @@
       .page-header { padding: 3rem 1.25rem 2.5rem; }
       .impressum-block { padding: 1.5rem; }
     }
+
+    /* ── RESOURCES PAGE ── */
+    .res-section { padding: 3rem 2rem; }
+    .res-section:nth-child(odd) { background: var(--tm-white); }
+    .res-section.alt { background: var(--tm-fair); }
+
+    .res-intro {
+      color: var(--tm-muted);
+      max-width: 640px;
+      margin-bottom: 2rem;
+    }
+
+    .res-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .res-card {
+      background: var(--tm-white);
+      border: 1px solid var(--tm-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .res-section.alt .res-card { background: var(--tm-white); }
+
+    .res-card-title {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--tm-blue);
+      line-height: 1.3;
+    }
+
+    .res-card-desc {
+      font-size: 14px;
+      color: var(--tm-muted);
+      flex-grow: 1;
+    }
+
+    .res-actions {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-top: 0.4rem;
+    }
+
+    .res-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--tm-blue);
+      color: white !important;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      padding: 7px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+
+    .res-btn:hover { background: var(--tm-blue-deep); }
+    .res-btn.res-btn-de { background: var(--tm-maroon); }
+    .res-btn.res-btn-de:hover { background: var(--tm-maroon-deep); }
+    .res-btn.res-btn-outline {
+      background: transparent;
+      color: var(--tm-blue) !important;
+      border: 1.5px solid var(--tm-blue);
+    }
+    .res-btn.res-btn-outline:hover { background: var(--tm-blue); color: white !important; }
+
+    .res-thumb {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--tm-border);
+    }
+
+    .res-subheading {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--tm-maroon);
+      margin: 2.5rem 0 1rem;
+      letter-spacing: 0.01em;
+    }
+
+    .res-subheading:first-of-type { margin-top: 0.5rem; }
+
+    .res-link-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 0.6rem 1.5rem;
+    }
+
+    .res-link-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--tm-border);
+      font-size: 14px;
+    }
+
+    .res-link-row .res-link-name { color: var(--tm-text); }
+
+    .res-link-row .res-link-actions {
+      display: flex;
+      gap: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    .res-link-row .res-link-actions a {
+      color: var(--tm-blue);
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 1.5px solid var(--tm-yellow);
+      font-size: 13px;
+    }
+
+    .res-link-row .res-link-actions a:hover { border-color: var(--tm-blue); }
+
+    .res-note {
+      font-size: 13px;
+      color: var(--tm-muted);
+      margin-top: 1rem;
+    }
+
+    .res-quicknav-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .res-quicknav-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      background: var(--tm-white);
+      border: 1px solid var(--tm-border);
+      border-left: 4px solid var(--tm-yellow);
+      border-radius: 10px;
+      padding: 1.1rem 1.25rem;
+      text-decoration: none;
+      transition: border-color 0.15s, transform 0.15s;
+    }
+
+    .res-quicknav-card:hover {
+      border-left-color: var(--tm-maroon);
+      transform: translateY(-2px);
+    }
+
+    .res-quicknav-title {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--tm-blue);
+    }
+
+    .res-quicknav-desc {
+      font-size: 13px;
+      color: var(--tm-muted);
+    }
+
+    @media (max-width: 600px) {
+      .res-section { padding: 2.5rem 1.25rem; }
+      .res-link-row { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+    }
   </style>
-</head>
 </head>
 <body>
 
@@ -337,12 +511,255 @@
     <h1 data-en="Resources" data-de="Ressourcen">Resources</h1>
   </div>
 
-  <!-- CONTENT -->
-  <section>
-    <div class="container" style="text-align: center;">
-      <p style="font-size: 1.15rem; color: var(--tm-muted); max-width: 480px; margin: 0 auto;"
-         data-en="Stay tuned for more details."
-         data-de="Bleib dran für weitere Details.">Stay tuned for more details.</p>
+  <!-- QUICK NAV -->
+  <section class="res-section res-quicknav">
+    <div class="container-wide">
+      <p class="section-label" data-en="On this page" data-de="Auf dieser Seite">On this page</p>
+      <h2 data-en="What's available" data-de="Was verfügbar ist">What's available</h2>
+      <div class="res-quicknav-grid">
+        <a class="res-quicknav-card" href="#onboarding">
+          <span class="res-quicknav-title" data-en="New Member &amp; Officer Onboarding" data-de="Einstieg für neue Mitglieder &amp; Officers">New Member &amp; Officer Onboarding</span>
+          <span class="res-quicknav-desc" data-en="90-day guides for members and officers" data-de="90-Tage-Leitfäden für Mitglieder und Officers">90-day guides for members and officers</span>
+        </a>
+        <a class="res-quicknav-card" href="#club-success-plan">
+          <span class="res-quicknav-title" data-en="Club Success Plan in 90 Minutes" data-de="Club-Erfolgsplan in 90 Minuten">Club Success Plan in 90 Minutes</span>
+          <span class="res-quicknav-desc" data-en="Workshop deck for club planning" data-de="Workshop-Folien für die Club-Planung">Workshop deck for club planning</span>
+        </a>
+        <a class="res-quicknav-card" href="#officer-training">
+          <span class="res-quicknav-title" data-en="Club Officer Training Materials" data-de="Club Officer Training Materialien">Club Officer Training Materials</span>
+          <span class="res-quicknav-desc" data-en="COT decks and progress tracking template" data-de="COT-Folien und Vorlage zur Fortschrittsverfolgung">COT decks and progress tracking template</span>
+        </a>
+        <a class="res-quicknav-card" href="#zoom-backgrounds">
+          <span class="res-quicknav-title" data-en="Zoom Backgrounds" data-de="Zoom-Hintergründe">Zoom Backgrounds</span>
+          <span class="res-quicknav-desc" data-en="#EmpoweringExcellence branding" data-de="#EmpoweringExcellence Branding">#EmpoweringExcellence branding</span>
+        </a>
+        <a class="res-quicknav-card" href="#contests">
+          <span class="res-quicknav-title" data-en="Speech Contests" data-de="Redewettbewerbe">Speech Contests</span>
+          <span class="res-quicknav-desc" data-en="Rulebook, judge's guides &amp; ballots" data-de="Regelwerk, Preisrichter-Leitfäden &amp; Bewertungsbögen">Rulebook, judge's guides &amp; ballots</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ONBOARDING -->
+  <section class="res-section" id="onboarding">
+    <div class="container-wide">
+      <p class="section-label" data-en="Getting started" data-de="Erste Schritte">Getting started</p>
+      <h2 data-en="New Member &amp; Officer Onboarding" data-de="Einstieg für neue Mitglieder &amp; Officers">New Member &amp; Officer Onboarding</h2>
+      <p class="res-intro" data-en="One-page guides covering the first 90 days as a new Toastmasters member or as a newly elected club officer."
+         data-de="Ein-Seiten-Leitfäden für die ersten 90 Tage als neues Toastmasters-Mitglied oder als neu gewähltes Club-Officer.">One-page guides covering the first 90 days as a new Toastmasters member or as a newly elected club officer.</p>
+      <div class="res-grid">
+        <div class="res-card">
+          <div class="res-card-title" data-en="Your First 90 Days as a Member" data-de="Deine ersten 90 Tage als Mitglied">Your First 90 Days as a Member</div>
+          <p class="res-card-desc" data-en="A one-page overview of what to expect and do in your first 90 days as a Toastmasters member."
+             data-de="Ein Ein-Seiten-Überblick, was dich in den ersten 90 Tagen als Toastmasters-Mitglied erwartet und was zu tun ist.">A one-page overview of what to expect and do in your first 90 days as a Toastmasters member.</p>
+          <div class="res-actions">
+            <a class="res-btn" href="resources/onboarding/90-day-plan-member-en.pdf" target="_blank" rel="noopener">🇬🇧 English</a>
+            <a class="res-btn res-btn-de" href="resources/onboarding/90-day-plan-member-de.pdf" target="_blank" rel="noopener">🇩🇪 Deutsch</a>
+          </div>
+        </div>
+        <div class="res-card">
+          <div class="res-card-title" data-en="Your First 90 Days as a Club Officer" data-de="Deine ersten 90 Tage als Club Officer">Your First 90 Days as a Club Officer</div>
+          <p class="res-card-desc" data-en="A one-page overview of what to expect and do in your first 90 days as a newly elected club officer."
+             data-de="Ein Ein-Seiten-Überblick, was dich in den ersten 90 Tagen als neu gewähltes Club Officer erwartet und was zu tun ist.">A one-page overview of what to expect and do in your first 90 days as a newly elected club officer.</p>
+          <div class="res-actions">
+            <a class="res-btn" href="resources/onboarding/90-day-plan-officer-en.pdf" target="_blank" rel="noopener">🇬🇧 English</a>
+            <a class="res-btn res-btn-de" href="resources/onboarding/90-day-plan-officer-de.pdf" target="_blank" rel="noopener">🇩🇪 Deutsch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLUB SUCCESS PLAN -->
+  <section class="res-section alt" id="club-success-plan">
+    <div class="container-wide">
+      <p class="section-label" data-en="Club planning" data-de="Club-Planung">Club planning</p>
+      <h2 data-en="Club Success Plan in 90 Minutes" data-de="Club-Erfolgsplan in 90 Minuten">Club Success Plan in 90 Minutes</h2>
+      <p class="res-intro" data-en="A guided workshop format to help your club build its Club Success Plan for the coming program year in a single 90-minute session."
+         data-de="Ein moderierter Workshop-Ablauf, mit dem dein Club seinen Club-Erfolgsplan für das kommende Programmjahr in einer einzigen 90-minütigen Sitzung erstellen kann.">A guided workshop format to help your club build its Club Success Plan for the coming program year in a single 90-minute session.</p>
+      <div class="res-grid">
+        <div class="res-card">
+          <div class="res-card-title" data-en="Club Success Plan in 90 Minutes" data-de="Club-Erfolgsplan in 90 Minuten">Club Success Plan in 90 Minutes</div>
+          <p class="res-card-desc" data-en="Step-by-step workshop deck for facilitating a club's success plan in one meeting."
+             data-de="Schrittweiser Workshop-Foliensatz zur Moderation des Club-Erfolgsplans in einer einzigen Sitzung.">Step-by-step workshop deck for facilitating a club's success plan in one meeting.</p>
+          <div class="res-actions">
+            <a class="res-btn" href="resources/club-success-plan/club-success-plan-en.pdf" target="_blank" rel="noopener">🇬🇧 English</a>
+            <a class="res-btn res-btn-de" href="resources/club-success-plan/club-success-plan-de.pdf" target="_blank" rel="noopener">🇩🇪 Deutsch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLUB OFFICER TRAINING -->
+  <section class="res-section" id="officer-training">
+    <div class="container-wide">
+      <p class="section-label" data-en="COT" data-de="COT">COT</p>
+      <h2 data-en="Club Officer Training Materials" data-de="Club Officer Training Materialien">Club Officer Training Materials</h2>
+      <p class="res-intro" data-en="Presentations used in Division C's Club Officer Training (COT), including a template for tracking member progress and role-specific training decks for each club officer position."
+         data-de="Präsentationen aus dem Club Officer Training (COT) der Division C, inklusive einer Vorlage zur Verfolgung des Mitgliederfortschritts und rollenspezifischer Schulungsfolien für jede Club-Officer-Position.">Presentations used in Division C's Club Officer Training (COT), including a template for tracking member progress and role-specific training decks for each club officer position.</p>
+
+      <div class="res-grid">
+        <div class="res-card">
+          <div class="res-card-title" data-en="Member Progress Analysis Template" data-de="Vorlage Mitgliederfortschritts-Analyse">Member Progress Analysis Template</div>
+          <p class="res-card-desc" data-en="Template for club officers to analyze and track member progress through Pathways."
+             data-de="Vorlage für Club Officers zur Analyse und Verfolgung des Mitgliederfortschritts in Pathways.">Template for club officers to analyze and track member progress through Pathways.</p>
+          <div class="res-actions">
+            <a class="res-btn" href="resources/officer-training/member-progress-analysis-en.pptx" target="_blank" rel="noopener">🇬🇧 English</a>
+            <a class="res-btn res-btn-de" href="resources/officer-training/member-progress-analysis-de.pptx" target="_blank" rel="noopener">🇩🇪 Deutsch</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="res-subheading" data-en="Role Training Decks (Toastmasters Roles)" data-de="Rollenschulungen (Toastmasters-Rollen)">Role Training Decks (Toastmasters Roles)</p>
+      <div class="res-grid">
+        <div class="res-card">
+          <div class="res-card-title" data-en="President" data-de="President">President</div>
+          <div class="res-actions">
+            <a class="res-btn res-btn-outline" href="resources/officer-training/president.pptx" target="_blank" rel="noopener" data-en="Download" data-de="Herunterladen">Download</a>
+          </div>
+        </div>
+        <div class="res-card">
+          <div class="res-card-title" data-en="Secretary" data-de="Secretary">Secretary</div>
+          <div class="res-actions">
+            <a class="res-btn res-btn-outline" href="resources/officer-training/secretary.pptx" target="_blank" rel="noopener" data-en="Download" data-de="Herunterladen">Download</a>
+          </div>
+        </div>
+        <div class="res-card">
+          <div class="res-card-title" data-en="Sergeant at Arms" data-de="Sergeant at Arms">Sergeant at Arms</div>
+          <div class="res-actions">
+            <a class="res-btn res-btn-outline" href="resources/officer-training/sergeant-at-arms.pptx" target="_blank" rel="noopener" data-en="Download" data-de="Herunterladen">Download</a>
+          </div>
+        </div>
+        <div class="res-card">
+          <div class="res-card-title" data-en="Treasurer" data-de="Treasurer">Treasurer</div>
+          <div class="res-actions">
+            <a class="res-btn res-btn-outline" href="resources/officer-training/treasurer.pptx" target="_blank" rel="noopener" data-en="Download" data-de="Herunterladen">Download</a>
+          </div>
+        </div>
+        <div class="res-card">
+          <div class="res-card-title" data-en="VP Education" data-de="VP Education">VP Education</div>
+          <div class="res-actions">
+            <a class="res-btn res-btn-outline" href="resources/officer-training/vp-education.pptx" target="_blank" rel="noopener" data-en="Download" data-de="Herunterladen">Download</a>
+          </div>
+        </div>
+        <div class="res-card">
+          <div class="res-card-title" data-en="VP Membership" data-de="VP Membership">VP Membership</div>
+          <div class="res-actions">
+            <a class="res-btn res-btn-outline" href="resources/officer-training/vp-membership.pptx" target="_blank" rel="noopener" data-en="Download" data-de="Herunterladen">Download</a>
+          </div>
+        </div>
+        <div class="res-card">
+          <div class="res-card-title" data-en="VP Public Relations" data-de="VP Public Relations">VP Public Relations</div>
+          <div class="res-actions">
+            <a class="res-btn res-btn-outline" href="resources/officer-training/vp-public-relations.pptx" target="_blank" rel="noopener" data-en="Download" data-de="Herunterladen">Download</a>
+          </div>
+        </div>
+      </div>
+      <p class="res-note" data-en="These role training decks are sourced from Toastmasters International and are only available in English."
+         data-de="Diese Rollenschulungsfolien stammen von Toastmasters International und sind nur auf Englisch verfügbar.">These role training decks are sourced from Toastmasters International and are only available in English.</p>
+    </div>
+  </section>
+
+  <!-- ZOOM BACKGROUNDS -->
+  <section class="res-section alt" id="zoom-backgrounds">
+    <div class="container-wide">
+      <p class="section-label" data-en="Branding" data-de="Branding">Branding</p>
+      <h2 data-en="Zoom Backgrounds" data-de="Zoom-Hintergründe">Zoom Backgrounds</h2>
+      <div class="res-grid">
+        <div class="res-card">
+          <img class="res-thumb" src="resources/zoom-backgrounds/empowering-excellence.png" alt="#EmpoweringExcellence Zoom background" loading="lazy" />
+          <div class="res-card-title">#EmpoweringExcellence</div>
+          <div class="res-actions">
+            <a class="res-btn" href="resources/zoom-backgrounds/empowering-excellence.png" target="_blank" rel="noopener" data-en="Download" data-de="Herunterladen">Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEECH CONTESTS -->
+  <section class="res-section" id="contests">
+    <div class="container-wide">
+      <p class="section-label" data-en="Speech contests" data-de="Redewettbewerbe">Speech contests</p>
+      <h2 data-en="Contest Rules, Judge &amp; Evaluation Materials" data-de="Wettbewerbsregeln, Preisrichter- &amp; Bewertungsmaterialien">Contest Rules, Judge &amp; Evaluation Materials</h2>
+      <p class="res-intro" data-en="Official Toastmasters International resources for running speech contests at the club, area, and division level. Most judge and ballot forms are published in English only by Toastmasters International; the Speech Contest Rulebook is also available in German."
+         data-de="Offizielle Toastmasters-International-Materialien zur Durchführung von Redewettbewerben auf Club-, Area- und Division-Ebene. Die meisten Preisrichter- und Bewertungsformulare werden von Toastmasters International nur auf Englisch veröffentlicht; das Redewettbewerb-Regelwerk ist zusätzlich auf Deutsch verfügbar.">Official Toastmasters International resources for running speech contests at the club, area, and division level. Most judge and ballot forms are published in English only by Toastmasters International; the Speech Contest Rulebook is also available in German.</p>
+
+      <div class="res-grid">
+        <div class="res-card">
+          <div class="res-card-title" data-en="Speech Contest Rulebook (2026–2027)" data-de="Redewettbewerb Regelwerk (2026–2027)">Speech Contest Rulebook (2026–2027)</div>
+          <p class="res-card-desc" data-en="The full rulebook covering International, Evaluation, Humorous, Table Topics, Tall Tales, and Online speech contests."
+             data-de="Das vollständige Regelwerk für die Wettbewerbe Internationale Reden, Bewertungsreden, humorvolle Reden, Table Topics, Seemannsgarn und Video-Reden.">The full rulebook covering International, Evaluation, Humorous, Table Topics, Tall Tales, and Online speech contests.</p>
+          <div class="res-actions">
+            <a class="res-btn" href="https://content.toastmasters.org/image/upload/1171-speech-contest-rulebook.pdf" target="_blank" rel="noopener">🇬🇧 English</a>
+            <a class="res-btn res-btn-de" href="https://content.toastmasters.org/image/upload/de-DE1171-Speech-Contest-Rulebook.pdf" target="_blank" rel="noopener">🇩🇪 Deutsch</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="res-subheading" data-en="Judge's Guides &amp; Ballots" data-de="Preisrichter-Leitfäden &amp; Bewertungsbögen">Judge's Guides &amp; Ballots</p>
+      <div class="res-link-list">
+        <div class="res-link-row">
+          <span class="res-link-name" data-en="International Speech Contest" data-de="Internationaler Redewettbewerb">International Speech Contest</span>
+          <span class="res-link-actions"><a href="https://www.toastmasters.org/resources/international-speech-contest-judges-guide-and-ballot" target="_blank" rel="noopener">EN</a></span>
+        </div>
+        <div class="res-link-row">
+          <span class="res-link-name" data-en="Evaluation Contest" data-de="Bewertungsredenwettbewerb">Evaluation Contest</span>
+          <span class="res-link-actions"><a href="https://www.toastmasters.org/resources/evaluation-contest-judges-guide-and-ballot" target="_blank" rel="noopener">EN</a></span>
+        </div>
+        <div class="res-link-row">
+          <span class="res-link-name" data-en="Table Topics Contest" data-de="Table Topics Wettbewerb">Table Topics Contest</span>
+          <span class="res-link-actions"><a href="https://www.toastmasters.org/resources/table-topics-contest-judges-guide-and-ballot" target="_blank" rel="noopener">EN</a></span>
+        </div>
+      </div>
+
+      <p class="res-subheading" data-en="Tiebreaking Guides &amp; Ballots" data-de="Stichentscheid-Leitfäden &amp; Bewertungsbögen">Tiebreaking Guides &amp; Ballots</p>
+      <div class="res-link-list">
+        <div class="res-link-row">
+          <span class="res-link-name" data-en="International Speech Contest" data-de="Internationaler Redewettbewerb">International Speech Contest</span>
+          <span class="res-link-actions"><a href="https://www.toastmasters.org/resources/tiebreaking-judges-guide-and-ballot" target="_blank" rel="noopener">EN</a></span>
+        </div>
+        <div class="res-link-row">
+          <span class="res-link-name" data-en="Evaluation Contest" data-de="Bewertungsredenwettbewerb">Evaluation Contest</span>
+          <span class="res-link-actions"><a href="https://www.toastmasters.org/resources/evaluation-contest-tiebreaking-judges-guide-and-ballot" target="_blank" rel="noopener">EN</a></span>
+        </div>
+        <div class="res-link-row">
+          <span class="res-link-name" data-en="Table Topics Contest" data-de="Table Topics Wettbewerb">Table Topics Contest</span>
+          <span class="res-link-actions"><a href="https://www.toastmasters.org/resources/table-topics-contest-tiebreaking-guide-ballot" target="_blank" rel="noopener">EN</a></span>
+        </div>
+      </div>
+
+      <p class="res-subheading" data-en="Contest Administration &amp; Entry Forms" data-de="Wettbewerbsverwaltung &amp; Anmeldeformulare">Contest Administration &amp; Entry Forms</p>
+      <div class="res-link-list">
+        <div class="res-link-row">
+          <span class="res-link-name" data-en="Counters' Tally Sheet" data-de="Zähler-Tabellenblatt">Counters' Tally Sheet</span>
+          <span class="res-link-actions"><a href="https://www.toastmasters.org/resources/counters-tally-sheet" target="_blank" rel="noopener">EN</a></span>
+        </div>
+        <div class="res-link-row">
+          <span class="res-link-name" data-en="Notification of Contest Winner" data-de="Benachrichtigung über Wettbewerbsgewinner">Notification of Contest Winner</span>
+          <span class="res-link-actions"><a href="https://www.toastmasters.org/resources/notification-of-contest-winner" target="_blank" rel="noopener">EN</a></span>
+        </div>
+        <div class="res-link-row">
+          <span class="res-link-name" data-en="Speaker's Certification of Eligibility &amp; Originality" data-de="Bestätigung der Teilnahmeberechtigung &amp; Originalität">Speaker's Certification of Eligibility &amp; Originality</span>
+          <span class="res-link-actions"><a href="https://www.toastmasters.org/resources/speakers-certification-of-eligibility-and-originality" target="_blank" rel="noopener">EN</a></span>
+        </div>
+        <div class="res-link-row">
+          <span class="res-link-name" data-en="Speech Contestant Profile" data-de="Teilnehmerprofil">Speech Contestant Profile</span>
+          <span class="res-link-actions"><a href="https://www.toastmasters.org/resources/speech-contestant-profile" target="_blank" rel="noopener">EN</a></span>
+        </div>
+        <div class="res-link-row">
+          <span class="res-link-name" data-en="Quarterfinals Checklist" data-de="Checkliste Viertelfinale">Quarterfinals Checklist</span>
+          <span class="res-link-actions"><a href="https://www.toastmasters.org/resources/quarterfinals-checklist" target="_blank" rel="noopener">EN</a></span>
+        </div>
+        <div class="res-link-row">
+          <span class="res-link-name" data-en="Quarterfinals Video Release Form" data-de="Videofreigabe Viertelfinale">Quarterfinals Video Release Form</span>
+          <span class="res-link-actions"><a href="https://www.toastmasters.org/resources/speech-contest-quarterfinals-video-release-form" target="_blank" rel="noopener">EN</a></span>
+        </div>
+      </div>
+      <p class="res-note" data-en="Source: Toastmasters International Resource Library (toastmasters.org). Links open the official, always up-to-date version of each document."
+         data-de="Quelle: Toastmasters International Resource Library (toastmasters.org). Die Links öffnen jeweils die offizielle, aktuelle Version des Dokuments.">Source: Toastmasters International Resource Library (toastmasters.org). Links open the official, always up-to-date version of each document.</p>
     </div>
   </section>
 
