@@ -10,160 +10,52 @@
   <meta property="og:description" content="Find your voice. — Toastmasters District 95, Division C (Germany Middle East)." />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#004165" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" href="assets/fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/source-sans-3-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="assets/site.css" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      /* Toastmasters brand palette (Brand Manual v2.0) */
-      --tm-blue: #004165;        /* Loyal Blue — primary */
-      --tm-blue-deep: #006094;   /* Blissful Blue — gradient partner */
-      --tm-maroon: #772432;      /* True Maroon — buttons / accents */
-      --tm-maroon-deep: #5c1a25; /* darker maroon for hover */
-      --tm-yellow: #F2DF74;      /* Happy Yellow — accent */
-      --tm-gray: #A9B2B1;        /* Cool Gray */
-      --tm-fair: #F5F5F5;        /* Fair Gray — light surface */
-      --tm-white: #ffffff;
-      --tm-text: #1a1a1a;
-      --tm-muted: #5a6472;
-      --tm-border: #e2e6ea;
-      --font-head: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
-      --font-body: 'Source Sans 3', 'Segoe UI', system-ui, -apple-system, sans-serif;
-    }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: var(--font-body);
-      color: var(--tm-text);
-      background: var(--tm-white);
-      font-size: 16px;
-      line-height: 1.6;
-      -webkit-text-size-adjust: 100%;
-    }
-    h1, h2, h3, .nav-brand, .team-avatar { font-family: var(--font-head); }
-    /* ── NAV ── */
+    .team-avatar { font-family: var(--font-head); }
+    /* ── NAV (home page uses a taller bar with a larger logo) ── */
     nav {
-      background: var(--tm-blue);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 2rem;
       height: 110px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
       border-bottom: 6px solid var(--tm-maroon);
-      overflow: visible;
     }
     .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      color: white;
-      font-size: 15px;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-      white-space: nowrap;
       position: relative;
       z-index: 101;
     }
-    .nav-brand img {
-      height: 96px;
-      width: auto;
-    }
-    .nav-brand .divider {
-      opacity: 0.45;
-      font-weight: 400;
-      margin: 0 2px;
-      color: var(--tm-yellow);
-    }
-    .nav-links {
-      display: flex;
-      gap: 1.4rem;
-      list-style: none;
-      align-items: center;
-    }
-    .nav-links a {
-      color: rgba(255,255,255,0.88);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      transition: color 0.15s;
-    }
-    .nav-links a:hover { color: var(--tm-yellow); }
-    .lang-toggle {
-      background: transparent;
-      border: 1.5px solid rgba(255,255,255,0.5);
-      color: white;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.03em;
-      padding: 4px 10px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-family: var(--font-head);
-      transition: background 0.15s, border-color 0.15s, color 0.15s;
-    }
-    .lang-toggle:hover {
+    .nav-brand img { height: 96px; }
+    /* ── WELCOME BANNER ── */
+    .welcome-section {
       background: var(--tm-yellow);
-      border-color: var(--tm-yellow);
-      color: var(--tm-blue);
+      padding: 3rem 2rem 2rem;
+      text-align: center;
+      margin-top: -20px;
+      position: relative;
+      z-index: 99;
+      overflow: hidden;
     }
-    .nav-visit-btn {
-      display: inline-block;
-      background: var(--tm-maroon);
-      color: white !important;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      padding: 7px 15px;
-      border-radius: 6px;
-      text-decoration: none;
-      transition: background 0.15s;
+    .welcome-confetti {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: clamp(60px, 8vw, 120px);
+      height: auto;
+      z-index: 1;
     }
-    .nav-visit-btn:hover { background: var(--tm-maroon-deep); color: white; }
-    .nav-ct-btn {
-      display: inline-block;
-      background: transparent;
-      color: white !important;
-      border: 1.5px solid var(--tm-yellow);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      padding: 6px 13px;
-      border-radius: 6px;
-      text-decoration: none;
-      transition: background 0.15s, color 0.15s;
-      white-space: nowrap;
+    .welcome-confetti.left { left: 5%; }
+    .welcome-confetti.right { right: 5%; }
+    .welcome-container {
+      position: relative;
+      z-index: 10;
     }
-    .nav-ct-btn:hover {
-      background: var(--tm-yellow);
-      color: var(--tm-blue) !important;
+    .welcome-section h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: var(--tm-maroon);
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
     }
-    /* Hamburger (hidden on desktop) */
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 10px;
-      margin-right: -10px;
-    }
-    .nav-toggle span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: white;
-      margin: 5px 0;
-      border-radius: 2px;
-      transition: transform 0.2s, opacity 0.2s;
-    }
-    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-toggle.open span:nth-child(2) { opacity: 0; }
-    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
     /* ── BTN ── */
     .btn {
       display: inline-block;
@@ -191,25 +83,6 @@
     .container {
       max-width: 880px;
       margin: 0 auto;
-    }
-    .section-label {
-      font-size: 11px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--tm-maroon);
-      font-weight: 700;
-      font-family: var(--font-head);
-      margin-bottom: 0.75rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .section-label::before {
-      content: '';
-      width: 22px;
-      height: 3px;
-      background: var(--tm-yellow);
-      border-radius: 2px;
     }
     h2 {
       font-size: clamp(1.6rem, 3vw, 2.1rem);
@@ -257,6 +130,7 @@
     .glance-img {
       width: 100%;
       border-radius: 12px;
+      height: auto;
       object-fit: cover;
       max-height: 340px;
       background: var(--tm-fair);
@@ -301,20 +175,29 @@
     .glance-dots {
       display: flex;
       justify-content: center;
-      gap: 8px;
-      margin-top: 1.5rem;
+      margin-top: 1rem;
     }
+    /* The button is a 32px tap target; the visible dot is drawn by ::before */
     .glance-dot {
+      width: 32px;
+      height: 32px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .glance-dot::before {
+      content: '';
       width: 10px;
       height: 10px;
       border-radius: 50%;
       background: var(--tm-border);
-      border: none;
-      cursor: pointer;
-      padding: 0;
       transition: background 0.2s, transform 0.2s;
     }
-    .glance-dot.active {
+    .glance-dot.active::before {
       background: var(--tm-maroon);
       transform: scale(1.2);
     }
@@ -381,13 +264,14 @@
       border: 1px solid var(--tm-border);
       border-left: 4px solid var(--tm-maroon);
       border-radius: 12px;
-      padding: 1.5rem 1rem 1.4rem;
+      padding: 1.5rem 0.25rem 1.4rem; /* narrow side padding leaves room for the 150px photo */
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 8px;
       background: white;
+      min-width: 0;
       transition: transform 0.15s, box-shadow 0.15s;
     }
     .team-card:hover {
@@ -396,13 +280,16 @@
     }
     .team-card.director {
       border-color: var(--tm-maroon);
-      border-left-width: 4px;
       border-width: 2px;
+      border-left-width: 4px;
       background: linear-gradient(180deg, #fbfdff 0%, #ffffff 100%);
     }
     .team-avatar {
-      width: 150px;
-      height: 150px;
+      width: 100%;
+      max-width: 150px;
+      aspect-ratio: 1;
+      overflow: hidden; /* lets aspect-ratio win over the photo's own height */
+      height: auto;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--tm-blue) 0%, var(--tm-blue-deep) 100%);
       color: white;
@@ -490,14 +377,14 @@
     }
     .team-district-link {
       display: inline-block;
-      margin-top: 2rem;
+      margin-top: 1.5rem;
       font-size: 14px;
       font-weight: 700;
       font-family: var(--font-head);
       color: var(--tm-blue);
       text-decoration: none;
       border-bottom: 2px solid var(--tm-yellow);
-      padding-bottom: 2px;
+      padding: 8px 0 2px;
       transition: color 0.15s;
     }
     .team-district-link:hover { color: var(--tm-blue-deep); }
@@ -648,7 +535,7 @@
     }
     .calendar-grid .cal-day {
       font-size: 13px;
-      padding: 7px 0;
+      padding: 9px 0;
       border-radius: 8px;
       color: var(--tm-text);
       background: none;
@@ -708,6 +595,7 @@
     .cal-event-item .cal-register {
       display: inline-block;
       margin-top: 6px;
+      padding: 8px 0 3px;
       color: var(--tm-maroon);
       font-weight: 700;
       text-decoration: none;
@@ -718,7 +606,6 @@
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
-      margin-top: 6px;
     }
     .cal-register-group .cal-register {
       margin-top: 0;
@@ -756,75 +643,68 @@
       word-break: break-all;
     }
     .contact-email:hover { border-color: var(--tm-yellow); }
-    /* ── FOOTER ── */
-    footer {
+    .what-intro { color: var(--tm-muted); max-width: 580px; }
+    .what-actions { margin-top: 2.5rem; display: flex; gap: 12px; flex-wrap: wrap; }
+    .team-separator { margin: 2.5rem 0; padding: 1rem 0; border-top: 2px solid var(--tm-border); border-bottom: 1px dashed var(--tm-border); }
+    .team-subheading { font-size: 1.05rem; font-weight: 700; color: var(--tm-blue); margin-bottom: 1.5rem; text-align: center; }
+    /* ── PRIVACY BANNER ── */
+    .privacy-banner {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      max-width: 520px;
       background: var(--tm-blue);
-      color: rgba(255,255,255,0.7);
-      padding: 2.5rem 2rem;
-      text-align: center;
-      font-size: 13px;
-      border-top: 3px solid var(--tm-yellow);
-    }
-    footer .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
+      color: white;
+      padding: 1rem 1.25rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+      z-index: 1000;
+      border: 1px solid rgba(255,255,255,0.1);
+      align-items: center;
+      gap: 1rem;
       flex-wrap: wrap;
-      margin-bottom: 1rem;
     }
-    footer a {
-      color: rgba(255,255,255,0.7);
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.15s;
-    }
-    footer a:hover { color: var(--tm-yellow); }
-    footer .footer-disclaimer {
-      max-width: 620px;
-      margin: 1rem auto 0;
-      font-size: 11px;
-      opacity: 0.55;
-      line-height: 1.5;
-    }
+    .privacy-banner.show { display: flex; }
+    .privacy-banner p { flex: 1; min-width: 200px; font-size: 14px; line-height: 1.5; }
+    .privacy-actions { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
+    .privacy-actions a { color: rgba(255,255,255,0.75); font-size: 13px; text-decoration: underline; white-space: nowrap; }
+    .privacy-actions button { background: var(--tm-yellow); color: var(--tm-blue); border: none; font-family: var(--font-head); font-weight: 700; font-size: 14px; padding: 8px 20px; border-radius: 20px; cursor: pointer; white-space: nowrap; }
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
+      /* Keep the heading clear of the confetti on narrow screens */
       .welcome-container {
-        padding-left: clamp(30px, 10vw, 80px);
-        padding-right: clamp(30px, 10vw, 80px);
+        padding-left: 52px;
+        padding-right: 52px;
       }
-      .welcome-confetti {
-        width: 100px !important;
+      .welcome-confetti { width: 56px; }
+      .welcome-confetti.left { left: 3%; }
+      .welcome-confetti.right { right: 3%; }
+    }
+    @media (max-width: 1240px) {
+      .nav-links {
+        top: 110px;
+        padding: 0.75rem 0 1.25rem;
+        max-height: calc(100vh - 110px);
+        max-height: calc(100dvh - 110px);
       }
     }
-    @media (max-width: 1080px) {
-      nav { padding: 0 1.25rem; }
-      .nav-toggle { display: block; }
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 110px;
-        left: 0;
-        right: 0;
-        background: var(--tm-blue);
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        padding: 0.75rem 0 1.25rem;
-        box-shadow: 0 12px 24px rgba(0,0,0,0.25);
-        border-bottom: 3px solid var(--tm-yellow);
-      }
-      .nav-links.open { display: flex; }
-      .nav-links li {
-        padding: 0.65rem 1.5rem;
-      }
-      .nav-links a { font-size: 15px; display: inline-block; }
+    /* Older browsers without aspect-ratio (e.g. iOS 14): fixed-size circles */
+    @supports not (aspect-ratio: 1) {
+      .team-avatar { width: 130px; height: 130px; }
+    }
+    /* Medium desktop widths: drop "Region 10" and tighten link spacing so the menu fits on one line */
+    @media (min-width: 1241px) and (max-width: 1400px) {
+      .nav-brand .brand-extra { display: none; }
+      .nav-links { gap: 1rem; }
     }
     @media (max-width: 600px) {
       .nav-brand .brand-extra { display: none; }
       section { padding: 3rem 1.25rem; }
       .events-grid { grid-template-columns: 1fr; }
       .what-grid { grid-template-columns: 1fr; }
-      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .team-grid { grid-template-columns: 1fr; } /* one team member per row on phones */
       .team-leads { grid-template-columns: 1fr; }
       .lead-card {
         flex-direction: column;
@@ -837,7 +717,10 @@
       }
     }
     @media (max-width: 380px) {
-      .team-grid { grid-template-columns: 1fr; }
+      /* Smaller logo keeps the menu button on screen; smaller heading avoids a four-line wrap */
+      .nav-brand img { height: 56px; }
+      .welcome-container { padding-left: 44px; padding-right: 44px; }
+      .welcome-section h1 { font-size: 1.6rem; }
     }
   </style>
 </head>
@@ -845,7 +728,7 @@
   <!-- NAV -->
   <nav id="top">
     <a class="nav-brand" href="#">
-      <img src="assets/tm-logo.png"
+      <img src="assets/tm-logo.png" width="192" height="192"
            onerror="this.style.display='none'"
            alt="Toastmasters logo" />
       <span class="brand-extra">Region 10
@@ -868,37 +751,14 @@
       <li><button id="lang-toggle" class="lang-toggle" onclick="setLang(currentLang === 'en' ? 'de' : 'en')">DE</button></li>
     </ul>
   </nav>
-<!-- HERO WELCOME WITH STATIC CONFETTI -->
-  <section style="background: var(--tm-yellow); color: white; padding: 3rem 2rem 2rem; text-align: center; margin-top: -20px; position: relative; z-index: 99; overflow: hidden;">
-  <!-- Left Confetti -->
-   <img
-    class="welcome-confetti"
-    src="assets/right-confetti.png"
-    alt=""
-    style="position: absolute; left: 5%; top: 50%; transform: translateY(-50%); width: clamp(60px, 8vw, 120px); height: auto; z-index: 1;"
-  >
-
-  <img
-    class="welcome-confetti"
-    src="assets/left-confetti.png"
-    alt=""
-    style="position: absolute; right: 5%; top: 50%; transform: translateY(-50%); width: clamp(60px, 8vw, 120px); height: auto; z-index: 1;"
-  >
-  <div class="container welcome-contaniner" style="
-  position: relative;
-  z-index: 10;
-">
-  <h1 style="
-    font-size: clamp(2rem, 5vw, 3.2rem);
-    color: var(--tm-maroon);
-    font-weight: 800;
-    margin-bottom: 0.75rem;
-    letter-spacing: -0.02em;
-  ">
-    Welcome to Division C
-  </h1>
-</div>
-</section>
+<!-- WELCOME BANNER WITH STATIC CONFETTI -->
+  <section class="welcome-section">
+    <img class="welcome-confetti left" src="assets/right-confetti.png" alt="" width="240" height="240" />
+    <img class="welcome-confetti right" src="assets/left-confetti.png" alt="" width="240" height="240" />
+    <div class="container welcome-container">
+      <h1 data-en="Welcome to Division C" data-de="Willkommen in Division C">Welcome to Division C</h1>
+    </div>
+  </section>
 
   <!-- EVENTS -->
   <section class="events-section" id="events">
@@ -908,7 +768,7 @@
       <div class="events-grid">
         <div>
           <div id="event-list"></div>
-          <p class="events-more-note" data-en="Tap a date in the calendar to see that day's events." data-de="Weitere Veranstaltungen und Links folgen in Kürze. Tippe auf ein Datum im Kalender, um die Veranstaltungen dieses Tages zu sehen.">More events and links will be added here soon. Tap a date in the calendar to see that day's events.</p>
+          <p class="events-more-note" data-en="More events and links will be added here soon. Tap a date in the calendar to see that day's events." data-de="Weitere Veranstaltungen und Links folgen in Kürze. Tippe auf ein Datum im Kalender, um die Veranstaltungen dieses Tages zu sehen.">More events and links will be added here soon. Tap a date in the calendar to see that day's events.</p>
         </div>
         <div class="calendar-card">
           <div class="calendar-nav">
@@ -932,7 +792,7 @@
           <!-- Slide 1: Wanderpokal -->
           <div class="glance-slide">
             <div class="glance-card">
-              <img class="glance-img" src="assets/trophy.jpg" alt="Wanderpokal" onerror="this.style.display='none'" />
+              <img class="glance-img" src="assets/trophy.jpg" alt="Wanderpokal (traveling trophy)" width="640" height="1142" loading="lazy" onerror="this.style.display='none'" />
               <div>
                 <div class="glance-title">Wanderpokal | Traveling Cup</div>
                 <a class="glance-holder" href="https://centerberlin-toastmasters.de/" target="_blank" rel="noopener">
@@ -955,7 +815,7 @@
           <!-- Slide 2: 100% Club Success Plan Submission -->
           <div class="glance-slide">
             <div class="glance-card">
-              <img class="glance-img" src="assets/csp-100-percent.jpg" alt="100% Club Success Plan Submission" onerror="this.style.display='none'" />
+              <img class="glance-img" src="assets/csp-100-percent.jpg" alt="100% Club Success Plan Submission" width="640" height="800" loading="lazy" onerror="this.style.display='none'" />
               <div>
                 <div class="glance-title" data-en="100% Club Success Plan Submission!" data-de="100% Abgabe des Club Success Plans!">100% Club Success Plan Submission!</div>
                 <div class="glance-body">
@@ -984,14 +844,14 @@
     <div class="container">
       <p class="section-label" data-en="New here?" data-de="Neu hier?">New here?</p>
       <h2 data-en="What is Toastmasters?" data-de="Was ist Toastmasters?">What is Toastmasters?</h2>
-      <p style="color: var(--tm-muted); max-width: 580px;"
+      <p class="what-intro"
          data-en="Toastmasters International is a world-leading communication and leadership organisation with over 300,000 members in 145 countries. Members grow their confidence, sharpen their public speaking skills, and discover their voice — in a supportive, non-judgmental community."
          data-de="Toastmasters International ist eine weltweit führende Organisation für Kommunikation und Führungskompetenz mit über 300.000 Mitgliedern in 145 Ländern. Mitglieder stärken ihr Selbstvertrauen, verbessern ihre Redefähigkeiten und finden ihre eigene Stimme — in einer unterstützenden, wertschätzenden Gemeinschaft.">
         Toastmasters International is a world-leading communication and leadership organisation
         with over 300,000 members in 145 countries. Members grow their confidence, sharpen their
         public speaking skills, and discover their voice — in a supportive, non-judgmental community.
       </p>
-      <div style="margin-top: 2.5rem; display: flex; gap: 12px; flex-wrap: wrap;">
+      <div class="what-actions">
         <a href="https://www.toastmasters.org" class="btn btn-primary" target="_blank" rel="noopener">Toastmasters International</a>
         <a href="clubs.html" class="btn btn-primary" data-en="Find a club" data-de="Club finden">Find a club</a>
       </div>
@@ -1008,57 +868,57 @@
       </p>
       <div class="team-grid">
         <div class="team-card director">
-          <div class="team-avatar"><img src="assets/KJ.jpg" alt="Kunal K Jani" /></div>
+          <div class="team-avatar"><img src="assets/KJ.jpg" width="320" height="360" loading="lazy" alt="Kunal K Jani" /></div>
           <div class="team-role">Division C Director</div>
           <div class="team-name">Kunal K Jani</div>
         </div>
         <div class="team-card">
-          <div class="team-avatar"><img src="assets/SB.jpg" alt="Sarah Basteck" /></div>
+          <div class="team-avatar"><img src="assets/SB.jpg" width="320" height="360" loading="lazy" alt="Sarah Basteck" /></div>
           <div class="team-role">Area C1 Director</div>
           <div class="team-name">Sarah Basteck</div>
         </div>
         <div class="team-card">
-          <div class="team-avatar"><img src="assets/AB.jpg" alt="Astrid Buzin" /></div>
+          <div class="team-avatar"><img src="assets/AB.jpg" width="320" height="360" loading="lazy" alt="Astrid Buzin" /></div>
           <div class="team-role">Area C2 Director</div>
           <div class="team-name">Astrid Buzin</div>
         </div>
         <div class="team-card">
-          <div class="team-avatar"><img src="assets/MBH.jpg" alt="May-Britt Hamann" /></div>
+          <div class="team-avatar"><img src="assets/MBH.jpg" width="320" height="360" loading="lazy" alt="May-Britt Hamann" /></div>
           <div class="team-role">Area C3 Director</div>
           <div class="team-name">May-Britt Hamann</div>
         </div>
         <div class="team-card">
-          <div class="team-avatar"><img src="assets/MS.jpg" alt="Maria Sachse" /></div>
+          <div class="team-avatar"><img src="assets/MS.jpg" width="320" height="360" loading="lazy" alt="Maria Sachse" /></div>
           <div class="team-role">Area C4 Director</div>
           <div class="team-name">Maria Sachse</div>
         </div>
       </div>
-      <div style="margin: 2.5rem 0; padding: 1rem 0; border-top: 2px solid var(--tm-border); border-bottom: 1px dashed var(--tm-border);"></div>
-      <h3 style="font-size: 1.05rem; font-weight: 700; font-family: var(--font-head); color: var(--tm-blue); margin-bottom: 1.5rem; text-align: center;" data-en="Leadership Support" data-de="Leadership Support">Leadership Support</h3>
+      <div class="team-separator"></div>
+      <h3 class="team-subheading" data-en="Leadership Support" data-de="Leadership Support">Leadership Support</h3>
       <div class="team-leads">
         <div class="lead-card">
-          <div class="lead-avatar"><img src="assets/GT.jpeg" alt="Ginia Tarique" /></div>
+          <div class="lead-avatar"><img src="assets/GT.jpeg" width="320" height="321" loading="lazy" alt="Ginia Tarique" /></div>
           <div>
             <span class="lead-role">Division PR Lead</span>
             <span class="lead-name">Ginia Tarique</span>
           </div>
         </div>
         <div class="lead-card">
-          <div class="lead-avatar"><img src="assets/JW.jpeg" alt="Jens Weiß" /></div>
+          <div class="lead-avatar"><img src="assets/JW.jpeg" width="320" height="360" loading="lazy" alt="Jens Weiß" /></div>
           <div>
             <span class="lead-role">Division Pathways Lead</span>
             <span class="lead-name">Jens Weiß</span>
           </div>
         </div>
         <div class="lead-card">
-          <div class="lead-avatar"><img src="assets/JC.jpeg" alt="JC" /></div>
+          <div class="lead-avatar"><img src="assets/JC.jpeg" width="320" height="338" loading="lazy" alt="Jan Christian" /></div>
           <div>
             <span class="lead-role">Division EasySpeak Lead</span>
             <span class="lead-name">Jan Christian</span>
           </div>
         </div>
         <div class="lead-card">
-          <div class="lead-avatar"><img src="assets/KB.jpg" alt="KB" /></div>
+          <div class="lead-avatar"><img src="assets/KB.jpg" width="320" height="316" loading="lazy" alt="Konstantin Bolshakov" /></div>
           <div>
             <span class="lead-role">Division Tech Coordinator</span>
             <span class="lead-name">Konstantin Bolshakov</span>
@@ -1072,7 +932,7 @@
           </div>
         </div>
         <div class="lead-card">
-          <div class="lead-avatar"><img src="assets/SC.jpeg" alt="SC" /></div>
+          <div class="lead-avatar"><img src="assets/SC.jpeg" width="320" height="321" loading="lazy" alt="Stella Covaci" /></div>
           <div>
             <span class="lead-role">Immediate Past Division Director</span>
             <span class="lead-name">Stella Covaci</span>
@@ -1105,15 +965,15 @@
     <p class="footer-disclaimer" data-en="The information on this website is for the sole use of Toastmasters' members, for Toastmasters business only. It is not to be used for solicitation and distribution of non-Toastmasters material or information." data-de="The information on this website is for the sole use of Toastmasters' members, for Toastmasters business only. It is not to be used for solicitation and distribution of non-Toastmasters material or information.">The information on this website is for the sole use of Toastmasters' members, for Toastmasters business only. It is not to be used for solicitation and distribution of non-Toastmasters material or information.</p>
   </footer>
   <!-- PRIVACY NOTICE BANNER -->
-  <div id="privacy-banner" style="display: none; position: fixed; bottom: 20px; left: 20px; right: 20px; max-width: 520px; background: var(--tm-blue); color: white; padding: 1rem 1.25rem; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.35); z-index: 1000; border: 1px solid rgba(255,255,255,0.1); align-items: center; gap: 1rem; flex-wrap: wrap;">
-    <p style="flex: 1; min-width: 200px; font-size: 14px; line-height: 1.5; margin: 0;" data-en="This site stores only your language preference in your browser — no tracking cookies, no third-party data." data-de="Diese Website speichert nur deine Spracheinstellung in deinem Browser — keine Tracking-Cookies, keine Daten an Dritte.">This site stores only your language preference in your browser — no tracking cookies, no third-party data.</p>
-    <div style="display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0;">
-      <a href="impressum.html" style="color: rgba(255,255,255,0.75); font-size: 13px; text-decoration: underline; white-space: nowrap;" data-en="More info" data-de="Mehr Infos">More info</a>
-      <button onclick="dismissPrivacyBanner()" style="background: var(--tm-yellow); color: var(--tm-blue); border: none; font-family: var(--font-head); font-weight: 700; font-size: 14px; padding: 8px 20px; border-radius: 20px; cursor: pointer; white-space: nowrap;" data-en="Got it" data-de="Verstanden">Got it</button>
+  <div id="privacy-banner" class="privacy-banner" role="region" aria-label="Privacy notice">
+    <p data-en="This site stores only your language preference in your browser — no tracking cookies, no third-party data." data-de="Diese Website speichert nur deine Spracheinstellung in deinem Browser — keine Tracking-Cookies, keine Daten an Dritte.">This site stores only your language preference in your browser — no tracking cookies, no third-party data.</p>
+    <div class="privacy-actions">
+      <a href="impressum.html" data-en="More info" data-de="Mehr Infos">More info</a>
+      <button type="button" onclick="dismissPrivacyBanner()" data-en="Got it" data-de="Verstanden">Got it</button>
     </div>
   </div>
+  <script src="assets/site.js"></script>
   <script>
-    var currentLang = localStorage.getItem('tm-lang') || 'en';
     /* ══════════════════════════════════════════════════
        EVENTS — add new events to this list.
        date: 'YYYY-MM-DD'
@@ -1344,56 +1204,17 @@
       var card = ev.target.closest('.event-card');
       if (card && card.getAttribute('data-date')) selectDate(card.getAttribute('data-date'));
     });
-    function setLang(lang) {
-      currentLang = lang;
-      localStorage.setItem('tm-lang', lang);
-      document.documentElement.lang = lang;
-      document.querySelectorAll('[data-en]').forEach(function (el) {
-        var text = lang === 'de' ? el.getAttribute('data-de') : el.getAttribute('data-en');
-        if (text !== null) el.innerHTML = text;
-      });
-      var btn = document.getElementById('lang-toggle');
-      if (btn) btn.textContent = lang === 'de' ? 'EN' : 'DE';
-      renderAll();
-    }
-    function toggleNav() {
-      var links = document.getElementById('nav-links');
-      var toggle = document.getElementById('nav-toggle');
-      var isOpen = links.classList.toggle('open');
-      toggle.classList.toggle('open', isOpen);
-      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    }
-    // Close the mobile menu after tapping a link
-    document.querySelectorAll('.nav-links a').forEach(function (a) {
-      a.addEventListener('click', function () {
-        var links = document.getElementById('nav-links');
-        var toggle = document.getElementById('nav-toggle');
-        links.classList.remove('open');
-        toggle.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-    setLang(currentLang);
-
-    // Ensure rendering happens after DOM is fully loaded
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function() {
-        renderAll();
-      });
-    } else {
-      renderAll();
-    }
+    // Called by setLang() in assets/site.js on load and on every language switch
+    function onLangChange() { renderAll(); }
     // Privacy notice banner — shows once, remembers dismissal
     function dismissPrivacyBanner() {
-      var banner = document.getElementById('privacy-banner');
-      if (banner) banner.style.display = 'none';
-      localStorage.setItem('tm-privacy-ack', 'yes');
+      document.getElementById('privacy-banner').classList.remove('show');
+      try { localStorage.setItem('tm-privacy-ack', 'yes'); } catch (e) {}
     }
     (function () {
-      if (!localStorage.getItem('tm-privacy-ack')) {
-        var banner = document.getElementById('privacy-banner');
-        if (banner) banner.style.display = 'flex';
-      }
+      var acked = false;
+      try { acked = !!localStorage.getItem('tm-privacy-ack'); } catch (e) {}
+      if (!acked) document.getElementById('privacy-banner').classList.add('show');
     })();
     // Division at a glance — auto-scrolling carousel
     (function () {
@@ -1425,10 +1246,26 @@
         }
       }
       function next() { goTo((current + 1) % count); }
+      function prev() { goTo((current - 1 + count) % count); }
+      // No auto-advance for visitors who ask their device to reduce motion
+      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       function resetTimer() {
         if (timer) clearInterval(timer);
-        timer = setInterval(next, 6000);
+        timer = reduceMotion || document.hidden ? null : setInterval(next, 6000);
       }
+      // Pause while the tab is in the background
+      document.addEventListener('visibilitychange', resetTimer);
+      // Swipe left/right on touch screens; vertical scrolling is left alone
+      var startX = null, startY = null;
+      track.addEventListener('touchstart', function (e) {
+        startX = e.touches[0].clientX; startY = e.touches[0].clientY;
+      }, { passive: true });
+      track.addEventListener('touchend', function (e) {
+        if (startX === null) return;
+        var dx = e.changedTouches[0].clientX - startX, dy = e.changedTouches[0].clientY - startY;
+        startX = null;
+        if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) { if (dx < 0) next(); else prev(); resetTimer(); }
+      }, { passive: true });
       resetTimer();
     })();
   </script>
