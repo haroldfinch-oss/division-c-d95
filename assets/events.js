@@ -86,13 +86,17 @@ var EVENTS = [
     language: 'DE/EN'
   },
   {
-    date: '2027-03-13', start: '09:00', end: '15:00',
+    date: '2027-03-13',
     name: 'Area C1 Speech Contest',
     location: 'Berlin',
     language: 'DE/EN'
   },
   {
-    date: '2027-03-20', start: '09:00', end: '18:00',
+    date: '2027-03-13',
+    name: 'Area C3 Speech Contest'
+  },
+  {
+    date: '2027-03-20',
     name: 'Area C2 Speech Contest',
     location: 'Berlin',
     language: 'DE/EN'

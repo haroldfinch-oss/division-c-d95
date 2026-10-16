@@ -1063,10 +1063,11 @@
       return [];
     }
     // Renders one or more register buttons/links side by side for an event.
+    // Past events get none: their registration links have usually expired.
     // opts: { groupClass, btnClass, suffix (optional text appended, e.g. ' →'), stopProp (optional) }
     function registerButtonsHtml(e, opts) {
       var links = registerLinks(e);
-      if (!links.length) return '';
+      if (!links.length || parseDate(e.date) < _today) return '';
       var html = '<div class="' + opts.groupClass + '">';
       links.forEach(function (l) {
         var text = l.label ? localised(l.label) : TEXT.register[currentLang];
