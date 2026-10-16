@@ -102,9 +102,24 @@ var EVENTS = [
     language: 'DE/EN'
   },
   {
-    date: '2027-04-17', start: '09:00', end: '18:00',
+    date: '2027-04-17', start: '09:00', end: '17:00',
     name: 'Division Conference',
     location: 'Dresden',
+    language: 'DE/EN'
+  },
+  {
+    date: '2027-05-07',
+    name: 'District 95 Conference',
+    language: 'DE/EN'
+  },
+  {
+    date: '2027-05-08',
+    name: 'District 95 Conference',
+    language: 'DE/EN'
+  },
+  {
+    date: '2027-05-09',
+    name: 'District 95 Conference',
     language: 'DE/EN'
   }
 ];

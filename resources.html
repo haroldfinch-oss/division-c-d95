@@ -20,6 +20,18 @@
   <link rel="icon" type="image/png" href="assets/tm-logo.png" />
   <link rel="preload" href="assets/fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/source-sans-3-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <!-- If German was chosen earlier, hide the page until site.js has translated it (see .lang-pending in site.css) -->
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem('tm-lang') !== 'de') return;
+        var root = document.documentElement;
+        root.lang = 'de';
+        root.classList.add('lang-pending');
+        setTimeout(function () { root.classList.remove('lang-pending'); }, 3000); // never stay hidden
+      } catch (e) {}
+    })();
+  </script>
   <link rel="stylesheet" href="assets/site.css" />
   <style>
     .container { max-width: 980px; margin: 0 auto; }
@@ -283,8 +295,8 @@
   <header class="page-header">
     <p class="section-label">Division C</p>
     <h1 data-en="Resources" data-de="Ressourcen">Resources</h1>
-    <p class="lead" data-en="Official forms for contest organisers, guides for club officers, material for growing and starting clubs, and branding resources. Everything here is free to download."
-       data-de="Offizielle Formulare für Wettbewerbs-Organisatoren, Leitfäden für Club Officers, Materialien für Club-Wachstum und Club-Gründung sowie Branding-Ressourcen. Alles hier kann kostenlos heruntergeladen werden.">Official forms for contest organisers, guides for club officers, material for growing and starting clubs, and branding resources. Everything here is free to download.</p>
+    <p class="lead" data-en="Official forms for contest organisers, guides for club officers, material for growing and starting clubs, and branding resources. Almost everything here is free to download; paid items are marked."
+       data-de="Offizielle Formulare für Wettbewerbs-Organisatoren, Leitfäden für Club Officers, Materialien für Club-Wachstum und Club-Gründung sowie Branding-Ressourcen. Fast alles hier kann kostenlos heruntergeladen werden; kostenpflichtige Angebote sind gekennzeichnet.">Official forms for contest organisers, guides for club officers, material for growing and starting clubs, and branding resources. Almost everything here is free to download; paid items are marked.</p>
   </header>
 
   <main>
@@ -560,8 +572,8 @@
             <li><a href="https://www.toastmasters.org/resources/moments-of-truth" target="_blank" rel="noopener" data-en="Moments of Truth" data-de="Moments of Truth">Moments of Truth</a></li>
             <li><a href="https://www.toastmasters.org/resources/tips-for-growing-and-maintaining-a-quality-club" target="_blank" rel="noopener" data-en="Tips for growing and maintaining a quality club" data-de="Tipps für Wachstum und Qualität im Club">Tips for growing and maintaining a quality club</a></li>
             <li><a href="https://www.toastmasters.org/membership/leadership/club-officer-tools/club-quality-and-growth-resources" target="_blank" rel="noopener" data-en="Successful Club Series &amp; Leadership Excellence Series" data-de="Successful Club Series &amp; Leadership Excellence Series">Successful Club Series &amp; Leadership Excellence Series</a></li>
-            <li><a href="https://www.toastmasters.org/resources/ebooks/healthy-clubs" target="_blank" rel="noopener" data-en="Healthy Clubs e-book" data-de="E-Book „Healthy Clubs“">Healthy Clubs e-book</a></li>
-            <li><a href="https://www.toastmasters.org/resources/ebooks/club-officer-essentials" target="_blank" rel="noopener" data-en="Club Officer Essentials e-book" data-de="E-Book „Club Officer Essentials“">Club Officer Essentials e-book</a></li>
+            <li><a href="https://www.toastmasters.org/resources/ebooks/healthy-clubs" target="_blank" rel="noopener" data-en="Healthy Clubs e-book (paid, US$4.99)" data-de="E-Book „Healthy Clubs“ (kostenpflichtig, 4,99&nbsp;US$)">Healthy Clubs e-book (paid, US$4.99)</a></li>
+            <li><a href="https://www.toastmasters.org/resources/ebooks/club-officer-essentials" target="_blank" rel="noopener" data-en="Club Officer Essentials e-book (paid, US$4.99)" data-de="E-Book „Club Officer Essentials“ (kostenpflichtig, 4,99&nbsp;US$)">Club Officer Essentials e-book (paid, US$4.99)</a></li>
             <li><a href="https://www.toastmasters.org/resources/club-leadership-handbook" target="_blank" rel="noopener" hreflang="en" data-en="Club Leadership Handbook" data-de="Club Leadership Handbook (Englisch)">Club Leadership Handbook</a></li>
             <li><a href="https://www.toastmasters.org/resources/club-leadership-handbook-german" target="_blank" rel="noopener" hreflang="de" data-en="Club Leadership Handbook (German)" data-de="Club Leadership Handbook (Deutsch)">Club Leadership Handbook (German)</a></li>
           </ul>

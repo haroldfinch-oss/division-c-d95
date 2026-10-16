@@ -16,6 +16,8 @@ function setLang(lang) {
   });
   var btn = document.getElementById('lang-toggle');
   if (btn) btn.textContent = lang === 'de' ? 'EN' : 'DE';
+  // Show the page again (see .lang-pending in site.css and the script in each page's <head>)
+  document.documentElement.classList.remove('lang-pending');
   if (typeof onLangChange === 'function') onLangChange();
 }
 

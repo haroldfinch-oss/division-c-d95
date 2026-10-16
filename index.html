@@ -20,10 +20,23 @@
   <meta name="theme-color" content="#004165" />
   <link rel="preload" href="assets/fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/source-sans-3-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <!-- If German was chosen earlier, hide the page until site.js has translated it (see .lang-pending in site.css) -->
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem('tm-lang') !== 'de') return;
+        var root = document.documentElement;
+        root.lang = 'de';
+        root.classList.add('lang-pending');
+        setTimeout(function () { root.classList.remove('lang-pending'); }, 3000); // never stay hidden
+      } catch (e) {}
+    })();
+  </script>
   <link rel="stylesheet" href="assets/site.css" />
   <style>
     .team-avatar { font-family: var(--font-head); }
-    [id] { scroll-margin-top: 120px; }
+    /* Jump links and keyboard focus stop below the taller home-page menu */
+    html { scroll-padding-top: 126px; }
     /* ── NAV (home page uses a taller bar with a larger logo) ── */
     nav {
       height: 110px;
@@ -181,11 +194,30 @@
       padding-left: 1.2rem;
     }
     .glance-body li { margin-bottom: 0.35rem; }
+    .glance-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
     .glance-dots {
       display: flex;
       justify-content: center;
-      margin-top: 1rem;
     }
+    .glance-toggle {
+      background: none;
+      border: 1.5px solid var(--tm-muted);
+      color: var(--tm-blue);
+      border-radius: 16px;
+      min-height: 32px;
+      padding: 4px 14px;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .glance-toggle:hover { border-color: var(--tm-blue); }
     /* The button is a 32px tap target; the visible dot is drawn by ::before */
     .glance-dot {
       width: 32px;
@@ -203,7 +235,7 @@
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background: var(--tm-border);
+      background: var(--tm-muted);
       transition: background 0.2s, transform 0.2s;
     }
     .glance-dot.active::before {
@@ -330,7 +362,7 @@
     }
     .team-leads {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1rem;
       margin-top: 1rem;
     }
@@ -370,6 +402,7 @@
       display: flex;
       flex-direction: column;
       gap: 2px;
+      min-width: 0;
     }
     .lead-role {
       font-size: 11px;
@@ -569,7 +602,7 @@
       background: var(--tm-blue-deep);
     }
     .calendar-grid .cal-day.selected {
-      box-shadow: 0 0 0 2px var(--tm-yellow);
+      box-shadow: 0 0 0 3px var(--tm-maroon);
     }
     .calendar-grid .cal-day.today:not(.event) {
       color: var(--tm-maroon);
@@ -760,6 +793,14 @@
       <li><button id="lang-toggle" class="lang-toggle" onclick="setLang(currentLang === 'en' ? 'de' : 'en')">DE</button></li>
     </ul>
   </nav>
+  <!-- PRIVACY NOTICE BANNER (fixed to the bottom of the screen; placed here so keyboard users reach "Got it" early) -->
+  <div id="privacy-banner" class="privacy-banner" role="region" aria-label="Privacy notice">
+    <p data-en="No tracking cookies. Your language choice is saved in your browser. Our providers GitHub Pages and Cloudflare process IP addresses, and Cloudflare counts visits without cookies." data-de="Keine Tracking-Cookies. Deine Spracheinstellung wird in deinem Browser gespeichert. Unsere Dienstleister GitHub Pages und Cloudflare verarbeiten IP-Adressen; Cloudflare zählt Besuche ohne Cookies.">No tracking cookies. Your language choice is saved in your browser. Our providers GitHub Pages and Cloudflare process IP addresses, and Cloudflare counts visits without cookies.</p>
+    <div class="privacy-actions">
+      <a href="impressum.html" data-en="More info" data-de="Mehr Infos">More info</a>
+      <button type="button" onclick="dismissPrivacyBanner()" data-en="Got it" data-de="Verstanden">Got it</button>
+    </div>
+  </div>
 <!-- WELCOME BANNER WITH STATIC CONFETTI -->
   <section class="welcome-section">
     <img class="welcome-confetti left" src="assets/right-confetti.png" alt="" width="240" height="240" />
@@ -782,11 +823,11 @@
         <div class="calendar-card">
           <div class="calendar-nav">
             <button type="button" class="cal-nav-btn" id="cal-prev" aria-label="Previous month" onclick="shiftMonth(-1)">&#8249;</button>
-            <div class="calendar-header" id="cal-title"></div>
+            <div class="calendar-header" id="cal-title" aria-live="polite"></div>
             <button type="button" class="cal-nav-btn" id="cal-next" aria-label="Next month" onclick="shiftMonth(1)">&#8250;</button>
           </div>
           <div class="calendar-grid" id="cal-grid"></div>
-          <div class="cal-events" id="cal-day-events"></div>
+          <div class="cal-events" id="cal-day-events" aria-live="polite"></div>
         </div>
       </div>
     </div>
@@ -845,7 +886,10 @@
           <!-- Add more slides here as needed -->
         </div>
       </div>
-      <div class="glance-dots" id="glance-dots"></div>
+      <div class="glance-controls">
+        <button type="button" class="glance-toggle" id="glance-toggle" hidden>Pause</button>
+        <div class="glance-dots" id="glance-dots"></div>
+      </div>
     </div>
   </section>
   <!-- WHAT IS TOASTMASTERS -->
@@ -854,10 +898,10 @@
       <p class="section-label" data-en="New here?" data-de="Neu hier?">New here?</p>
       <h2 data-en="What is Toastmasters?" data-de="Was ist Toastmasters?">What is Toastmasters?</h2>
       <p class="what-intro"
-         data-en="Toastmasters International is a world-leading communication and leadership organisation with over 300,000 members in 145 countries. Members grow their confidence, sharpen their public speaking skills, and discover their voice — in a supportive, non-judgmental community."
-         data-de="Toastmasters International ist eine weltweit führende Organisation für Kommunikation und Führungskompetenz mit über 300.000 Mitgliedern in 145 Ländern. Mitglieder stärken ihr Selbstvertrauen, verbessern ihre Redefähigkeiten und finden ihre eigene Stimme — in einer unterstützenden, wertschätzenden Gemeinschaft.">
+         data-en="Toastmasters International is a world-leading communication and leadership organisation with more than 260,000 members in nearly 150 countries. Members grow their confidence, sharpen their public speaking skills, and discover their voice — in a supportive, non-judgmental community."
+         data-de="Toastmasters International ist eine weltweit führende Organisation für Kommunikation und Führungskompetenz mit mehr als 260.000 Mitgliedern in fast 150 Ländern. Mitglieder stärken ihr Selbstvertrauen, verbessern ihre Redefähigkeiten und finden ihre eigene Stimme — in einer unterstützenden, wertschätzenden Gemeinschaft.">
         Toastmasters International is a world-leading communication and leadership organisation
-        with over 300,000 members in 145 countries. Members grow their confidence, sharpen their
+        with more than 260,000 members in nearly 150 countries. Members grow their confidence, sharpen their
         public speaking skills, and discover their voice — in a supportive, non-judgmental community.
       </p>
       <div class="what-actions">
@@ -973,14 +1017,6 @@
     <p>© <span data-year>2026</span> Toastmasters District 95, Division C</p>
     <p class="footer-disclaimer">The information on this website is for the sole use of Toastmasters' members, for Toastmasters business only. It is not to be used for solicitation and distribution of non-Toastmasters material or information.</p>
   </footer>
-  <!-- PRIVACY NOTICE BANNER -->
-  <div id="privacy-banner" class="privacy-banner" role="region" aria-label="Privacy notice">
-    <p data-en="No tracking cookies or analytics. This site only remembers your language choice in your browser; our host, GitHub Pages, logs IP addresses for security." data-de="Keine Tracking-Cookies, keine Analyse. Diese Website merkt sich nur deine Spracheinstellung im Browser; unser Hoster GitHub Pages protokolliert IP-Adressen aus Sicherheitsgründen.">No tracking cookies or analytics. This site only remembers your language choice in your browser; our host, GitHub Pages, logs IP addresses for security.</p>
-    <div class="privacy-actions">
-      <a href="impressum.html" data-en="More info" data-de="Mehr Infos">More info</a>
-      <button type="button" onclick="dismissPrivacyBanner()" data-en="Got it" data-de="Verstanden">Got it</button>
-    </div>
-  </div>
   <script src="assets/site.js"></script>
   <script src="assets/events.js"></script>
   <script>
@@ -1015,7 +1051,14 @@
     var TEXT = {
       noEventsDay: { en: 'No events on this day.', de: 'Keine Veranstaltungen an diesem Tag.' },
       noUpcoming: { en: 'No upcoming events at the moment — check back soon.', de: 'Zurzeit keine anstehenden Veranstaltungen — schau bald wieder vorbei.' },
-      register: { en: 'Register', de: 'Anmelden' }
+      register: { en: 'Register', de: 'Anmelden' },
+      event: { en: 'event', de: 'Veranstaltung' },
+      events: { en: 'events', de: 'Veranstaltungen' },
+      prevMonth: { en: 'Previous month', de: 'Vorheriger Monat' },
+      nextMonth: { en: 'Next month', de: 'Nächster Monat' },
+      pause: { en: 'Pause slideshow', de: 'Diashow anhalten' },
+      play: { en: 'Play slideshow', de: 'Diashow abspielen' },
+      slide: { en: 'Slide', de: 'Folie' }
     };
     function parseDate(s) {
       var p = s.split('-');
@@ -1087,6 +1130,8 @@
     var selectedKey = _upcoming.length ? _upcoming[0].date : dateKey(_today);
     function renderCalendar() {
       document.getElementById('cal-title').textContent = MONTHS_FULL[currentLang][calMonth] + ' ' + calYear;
+      document.getElementById('cal-prev').setAttribute('aria-label', TEXT.prevMonth[currentLang]);
+      document.getElementById('cal-next').setAttribute('aria-label', TEXT.nextMonth[currentLang]);
       var html = '';
       DOW_SHORT[currentLang].forEach(function (d) {
         html += '<div class="cal-dow">' + d + '</div>';
@@ -1098,11 +1143,15 @@
       var todayKey = dateKey(_today);
       for (var day = 1; day <= daysInMonth; day++) {
         var key = calYear + '-' + pad(calMonth + 1) + '-' + pad(day);
+        var n = eventsOn(key).length;
         var cls = 'cal-day';
-        if (eventsOn(key).length) cls += ' event';
+        if (n) cls += ' event';
         if (key === selectedKey) cls += ' selected';
         if (key === todayKey) cls += ' today';
-        html += '<button type="button" class="' + cls + '" data-date="' + key + '">' + day + '</button>';
+        // Screen readers hear the full date and the number of events, not just the day number
+        var label = formatLong(key) + (n ? ', ' + n + ' ' + (n === 1 ? TEXT.event : TEXT.events)[currentLang] : '');
+        html += '<button type="button" class="' + cls + '" data-date="' + key + '" aria-label="' + escapeHtml(label) + '"' +
+          ' aria-pressed="' + (key === selectedKey) + '"' + (key === todayKey ? ' aria-current="date"' : '') + '>' + day + '</button>';
       }
       document.getElementById('cal-grid').innerHTML = html;
     }
@@ -1164,7 +1213,12 @@
     // Tap a day in the calendar → show that day's events
     document.getElementById('cal-grid').addEventListener('click', function (ev) {
       var btn = ev.target.closest('.cal-day');
-      if (btn && btn.getAttribute('data-date')) selectDate(btn.getAttribute('data-date'));
+      if (!btn || !btn.getAttribute('data-date')) return;
+      var key = btn.getAttribute('data-date');
+      selectDate(key);
+      // The grid has been rebuilt, so put keyboard focus back on the chosen day
+      var same = document.querySelector('#cal-grid [data-date="' + key + '"]');
+      if (same) same.focus();
     });
     // Tap an event card → jump the calendar to that date
     document.getElementById('event-list').addEventListener('click', function (ev) {
@@ -1172,33 +1226,63 @@
       if (card && card.getAttribute('data-date')) selectDate(card.getAttribute('data-date'));
     });
     // Called by setLang() in assets/site.js on load and on every language switch
-    function onLangChange() { renderAll(); }
+    function onLangChange() {
+      renderAll();
+      if (typeof updateGlanceLabels === 'function') updateGlanceLabels();
+      updateBannerPadding();
+    }
     // Privacy notice banner — shows once, remembers dismissal
+    // While it is shown, keyboard focus is scrolled clear of it instead of behind it, and extra space
+    // below the footer lets the last links on the page scroll above it
+    function updateBannerPadding() {
+      var banner = document.getElementById('privacy-banner');
+      var shown = banner && banner.classList.contains('show');
+      var space = shown ? (banner.offsetHeight + 30) + 'px' : '';
+      document.documentElement.style.scrollPaddingBottom = space;
+      document.body.style.paddingBottom = space;
+    }
     function dismissPrivacyBanner() {
       document.getElementById('privacy-banner').classList.remove('show');
       try { localStorage.setItem('tm-privacy-ack', 'yes'); } catch (e) {}
+      updateBannerPadding();
     }
     (function () {
       var acked = false;
       try { acked = !!localStorage.getItem('tm-privacy-ack'); } catch (e) {}
-      if (!acked) document.getElementById('privacy-banner').classList.add('show');
+      if (!acked) {
+        var banner = document.getElementById('privacy-banner');
+        banner.classList.add('show');
+        updateBannerPadding();
+        window.addEventListener('resize', updateBannerPadding);
+        // Something already on screen but under the banner is not scrolled by the browser, so nudge it up
+        document.addEventListener('focusin', function (e) {
+          if (!banner.classList.contains('show') || banner.contains(e.target)) return;
+          var r = e.target.getBoundingClientRect(), top = banner.getBoundingClientRect().top;
+          if (r.bottom > top) window.scrollBy(0, r.bottom - top + 16);
+        });
+      }
     })();
     // Division at a glance — auto-scrolling carousel
+    // Autoplay stops while the slides are hovered or focused, and the visitor can pause it with the button.
+    var updateGlanceLabels;
     (function () {
       var track = document.getElementById('glance-track');
       if (!track) return;
       var slides = track.children;
       var count = slides.length;
       var dotsBox = document.getElementById('glance-dots');
+      var toggle = document.getElementById('glance-toggle');
+      var viewport = track.parentNode;
       var current = 0;
       var timer = null;
+      var userPaused = false, hovering = false, focused = false;
       // Only build controls / autoplay if more than one slide
       if (count <= 1) return;
       // Build dots
       for (var i = 0; i < count; i++) {
         var dot = document.createElement('button');
-        dot.className = 'glance-dot' + (i === 0 ? ' active' : '');
-        dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+        dot.type = 'button';
+        dot.className = 'glance-dot';
         (function (idx) {
           dot.addEventListener('click', function () { goTo(idx); resetTimer(); });
         })(i);
@@ -1208,8 +1292,12 @@
         current = idx;
         track.style.transform = 'translateX(-' + (idx * 100) + '%)';
         var dots = dotsBox.children;
-        for (var j = 0; j < dots.length; j++) {
+        for (var j = 0; j < count; j++) {
           dots[j].className = 'glance-dot' + (j === idx ? ' active' : '');
+          if (j === idx) dots[j].setAttribute('aria-current', 'true'); else dots[j].removeAttribute('aria-current');
+          // Slides that are off screen are taken out of the Tab order and hidden from screen readers
+          slides[j].inert = j !== idx;
+          slides[j].setAttribute('aria-hidden', j === idx ? 'false' : 'true');
         }
       }
       function next() { goTo((current + 1) % count); }
@@ -1218,8 +1306,27 @@
       var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       function resetTimer() {
         if (timer) clearInterval(timer);
-        timer = reduceMotion || document.hidden ? null : setInterval(next, 6000);
+        timer = reduceMotion || userPaused || hovering || focused || document.hidden ? null : setInterval(next, 6000);
       }
+      updateGlanceLabels = function () {
+        var dots = dotsBox.children;
+        for (var j = 0; j < dots.length; j++) dots[j].setAttribute('aria-label', TEXT.slide[currentLang] + ' ' + (j + 1));
+        toggle.textContent = (userPaused ? TEXT.play : TEXT.pause)[currentLang];
+      };
+      if (!reduceMotion) {
+        toggle.hidden = false;
+        toggle.addEventListener('click', function () {
+          userPaused = !userPaused;
+          updateGlanceLabels();
+          resetTimer();
+        });
+      }
+      viewport.addEventListener('mouseenter', function () { hovering = true; resetTimer(); });
+      viewport.addEventListener('mouseleave', function () { hovering = false; resetTimer(); });
+      viewport.addEventListener('focusin', function () { focused = true; resetTimer(); });
+      viewport.addEventListener('focusout', function (e) {
+        if (!viewport.contains(e.relatedTarget)) { focused = false; resetTimer(); }
+      });
       // Pause while the tab is in the background
       document.addEventListener('visibilitychange', resetTimer);
       // Swipe left/right on touch screens; vertical scrolling is left alone
@@ -1233,6 +1340,8 @@
         startX = null;
         if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) { if (dx < 0) next(); else prev(); resetTimer(); }
       }, { passive: true });
+      goTo(0);
+      updateGlanceLabels();
       resetTimer();
     })();
   </script>

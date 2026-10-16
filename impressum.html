@@ -21,6 +21,18 @@
   <link rel="icon" type="image/png" href="assets/tm-logo.png" />
   <link rel="preload" href="assets/fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/source-sans-3-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <!-- If German was chosen earlier, hide the page until site.js has translated it (see .lang-pending in site.css) -->
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem('tm-lang') !== 'de') return;
+        var root = document.documentElement;
+        root.lang = 'de';
+        root.classList.add('lang-pending');
+        setTimeout(function () { root.classList.remove('lang-pending'); }, 3000); // never stay hidden
+      } catch (e) {}
+    })();
+  </script>
   <link rel="stylesheet" href="assets/site.css" />
   <style>
     section { padding: 4rem 2rem; }
@@ -151,13 +163,17 @@
 
       <h2>Datenschutz</h2>
       <p class="note">
-        Diese Website verwendet keine Analyse-Dienste und setzt von sich aus keine Tracking-Cookies ein.
+        Verantwortlich für die Verarbeitung personenbezogener Daten auf dieser Website ist die oben unter
+        „Verantwortlich“ genannte Person.
+        Diese Website setzt von sich aus keine Tracking-Cookies ein. Für eine Besucherstatistik ohne Cookies
+        wird Cloudflare Web Analytics genutzt (siehe „Hosting“).
         Im Browser werden nur zwei technisch notwendige Informationen im <code>localStorage</code> gespeichert:
         Ihre Sprachpräferenz (EN/DE) und ob Sie den Datenschutzhinweis geschlossen haben. Diese verlassen
         Ihr Gerät nicht und werden nicht übertragen. Schriftarten werden vom selben Server wie diese Website
         geladen; es werden dabei keine Daten an weitere Dritte (z.&nbsp;B. Google) übermittelt. Beim Versand
         einer E-Mail über die oben genannte Adresse werden die von Ihnen übermittelten Daten ausschließlich
-        zur Bearbeitung Ihrer Anfrage verwendet.
+        zur Bearbeitung Ihrer Anfrage verwendet (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO) und gelöscht,
+        sobald sie dafür nicht mehr benötigt werden, sofern keine gesetzlichen Aufbewahrungspflichten bestehen.
       </p>
 
       <h2>Hosting</h2>
@@ -169,6 +185,41 @@
         Grundlage unseres berechtigten Interesses an einer sicheren und zuverlässigen Bereitstellung dieser
         Website (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO). Weitere Informationen finden Sie in der
         <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">Datenschutzerklärung von GitHub</a>.
+      </p>
+      <p class="note">
+        Alle Aufrufe dieser Website werden zudem über das Netzwerk von Cloudflare ausgeliefert, einen Dienst
+        der Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA. Cloudflare verarbeitet dabei
+        Ihre IP-Adresse und technische Verbindungsdaten (z.&nbsp;B. aufgerufene Seite, Zeitpunkt,
+        Browsertyp), um die Website schnell und sicher auszuliefern und Angriffe abzuwehren. Cloudflare
+        schützt außerdem die auf dieser Website genannte E-Mail-Adresse vor dem automatischen Auslesen durch
+        Spam-Programme und kann Ihren Browser bitten, Verbindungsfehler an Cloudflare zu melden.
+      </p>
+      <p class="note">
+        Außerdem ist Cloudflare Web Analytics aktiv, damit wir sehen, wie oft die Seiten aufgerufen werden und
+        wie schnell sie laden. Dazu lädt Ihr Browser ein Skript von <code>static.cloudflareinsights.com</code>,
+        das Angaben zum Seitenaufruf und zur Ladezeit (z.&nbsp;B. aufgerufene Seite, verweisende Seite,
+        Browser- und Gerätetyp) an Cloudflare sendet. Nach Angaben von Cloudflare werden dafür weder Cookies
+        noch andere Speicher in Ihrem Browser verwendet, und einzelne Besucherinnen und Besucher werden nicht
+        verfolgt; wir sehen nur zusammengefasste Statistiken.
+      </p>
+      <p class="note">
+        Bei der Nutzung von Cloudflare können Daten in die USA übermittelt werden; Cloudflare ist nach dem
+        EU-US Data Privacy Framework zertifiziert. Die Verarbeitung erfolgt auf Grundlage unseres berechtigten
+        Interesses an einer sicheren, zuverlässigen und schnellen Bereitstellung dieser Website
+        (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO). Weitere Informationen finden Sie in der
+        <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Datenschutzerklärung von Cloudflare</a>.
+      </p>
+
+      <h2>Ihre Rechte</h2>
+      <p class="note">
+        Sie haben das Recht auf Auskunft über die zu Ihrer Person gespeicherten Daten (Art.&nbsp;15 DSGVO),
+        auf Berichtigung (Art.&nbsp;16), Löschung (Art.&nbsp;17), Einschränkung der Verarbeitung (Art.&nbsp;18)
+        und Datenübertragbarkeit (Art.&nbsp;20). Einer Verarbeitung auf Grundlage von
+        Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO können Sie aus Gründen, die sich aus Ihrer besonderen
+        Situation ergeben, widersprechen (Art.&nbsp;21). Wenden Sie sich dazu an die oben genannte
+        E-Mail-Adresse. Außerdem haben Sie das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu
+        beschweren (Art.&nbsp;77 DSGVO), zum Beispiel bei der Sächsischen Datenschutz- und
+        Transparenzbeauftragten.
       </p>
 
     </div>
