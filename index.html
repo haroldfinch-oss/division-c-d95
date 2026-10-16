@@ -1182,13 +1182,19 @@
         language: { en: 'German/English', de: 'Deutsch/Englisch' }
       },
       {
-        date: '2027-03-13', start: '09:00', end: '15:00',
+        date: '2027-03-13', start: 'TBD', end: 'TBD',
         name: 'Area C1 Speech Contest',
         location: { en: 'Berlin', de: 'Berlin' },
         language: { en: 'German/English', de: 'Deutsch/Englisch' }
       },
       {
-        date: '2027-03-20', start: '09:00', end: '18:00',
+        date: '2027-03-13', start: 'TBD', end: 'TBD',
+        name: 'Area C3 Speech Contest',
+        location: { en: 'TBD', de: 'TBD' },
+        language: { en: 'TBD', de: 'TBD' }
+      },
+      {
+        date: '2027-03-20', start: 'TBD', end: 'TBD',
         name: 'Area C2 Speech Contest',
         location: { en: 'Berlin', de: 'Berlin' },
         language: { en: 'German/English', de: 'Deutsch/Englisch' }
@@ -1237,10 +1243,11 @@
       return [];
     }
     // Renders one or more register buttons/links side by side for an event.
+    // Past events get none: their registration links have usually expired.
     // opts: { groupClass, btnClass, suffix (optional text appended, e.g. ' →'), stopProp (optional) }
     function registerButtonsHtml(e, opts) {
       var links = registerLinks(e);
-      if (!links.length) return '';
+      if (!links.length || parseDate(e.date) < _today) return '';
       var html = '<div class="' + opts.groupClass + '">';
       links.forEach(function (l) {
         var text = l.label ? l.label[currentLang] : TEXT.register[currentLang];
