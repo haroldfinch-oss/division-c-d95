@@ -37,5 +37,8 @@ document.querySelectorAll('.nav-links a').forEach(function (a) {
   a.addEventListener('click', function () { setNavOpen(false); });
 });
 
+// Keep the copyright year current
+document.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
+
 // Runs after any inline page scripts that follow this file, so onLangChange is defined by then.
 document.addEventListener('DOMContentLoaded', function () { setLang(currentLang); });

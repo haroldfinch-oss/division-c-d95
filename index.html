@@ -6,15 +6,24 @@
   <title>Division C | D95 Toastmasters</title>
   <link rel="icon" type="image/png" href="assets/tm-logo.png" />
   <meta name="description" content="District 95 Division C — Toastmasters clubs across the Germany Middle East region. Find your voice." />
-  <meta property="og:title" content="District 95 Division C" />
-  <meta property="og:description" content="Find your voice. — Toastmasters District 95, Division C (Germany Middle East)." />
+  <link rel="canonical" href="https://division-c.toastmasters-95.org/" />
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Toastmasters District 95 · Division C" />
+  <meta property="og:title" content="District 95 Division C" />
+  <meta property="og:description" content="Toastmasters clubs in Berlin, Brandenburg, Lower Saxony and Saxony. Find a club, see upcoming events and meet the Division C team." />
+  <meta property="og:url" content="https://division-c.toastmasters-95.org/" />
+  <meta property="og:image" content="https://division-c.toastmasters-95.org/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Toastmasters District 95, Division C" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#004165" />
   <link rel="preload" href="assets/fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/source-sans-3-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="assets/site.css" />
   <style>
     .team-avatar { font-family: var(--font-head); }
+    [id] { scroll-margin-top: 120px; }
     /* ── NAV (home page uses a taller bar with a larger logo) ── */
     nav {
       height: 110px;
@@ -961,99 +970,32 @@
       <a href="#contact" data-en="Contact" data-de="Kontakt">Contact</a>
       <a href="impressum.html">Impressum</a>
     </div>
-    <p>© 2026 Toastmasters District 95, Division C</p>
-    <p class="footer-disclaimer" data-en="The information on this website is for the sole use of Toastmasters' members, for Toastmasters business only. It is not to be used for solicitation and distribution of non-Toastmasters material or information." data-de="The information on this website is for the sole use of Toastmasters' members, for Toastmasters business only. It is not to be used for solicitation and distribution of non-Toastmasters material or information.">The information on this website is for the sole use of Toastmasters' members, for Toastmasters business only. It is not to be used for solicitation and distribution of non-Toastmasters material or information.</p>
+    <p>© <span data-year>2026</span> Toastmasters District 95, Division C</p>
+    <p class="footer-disclaimer">The information on this website is for the sole use of Toastmasters' members, for Toastmasters business only. It is not to be used for solicitation and distribution of non-Toastmasters material or information.</p>
   </footer>
   <!-- PRIVACY NOTICE BANNER -->
   <div id="privacy-banner" class="privacy-banner" role="region" aria-label="Privacy notice">
-    <p data-en="This site stores only your language preference in your browser — no tracking cookies, no third-party data." data-de="Diese Website speichert nur deine Spracheinstellung in deinem Browser — keine Tracking-Cookies, keine Daten an Dritte.">This site stores only your language preference in your browser — no tracking cookies, no third-party data.</p>
+    <p data-en="No tracking cookies or analytics. This site only remembers your language choice in your browser; our host, GitHub Pages, logs IP addresses for security." data-de="Keine Tracking-Cookies, keine Analyse. Diese Website merkt sich nur deine Spracheinstellung im Browser; unser Hoster GitHub Pages protokolliert IP-Adressen aus Sicherheitsgründen.">No tracking cookies or analytics. This site only remembers your language choice in your browser; our host, GitHub Pages, logs IP addresses for security.</p>
     <div class="privacy-actions">
       <a href="impressum.html" data-en="More info" data-de="Mehr Infos">More info</a>
       <button type="button" onclick="dismissPrivacyBanner()" data-en="Got it" data-de="Verstanden">Got it</button>
     </div>
   </div>
   <script src="assets/site.js"></script>
+  <script src="assets/events.js"></script>
   <script>
-    /* ══════════════════════════════════════════════════
-       EVENTS — add new events to this list.
-       date: 'YYYY-MM-DD'
-       name: stays the same in both languages (Toastmasters jargon)
-       location / language: { en: '...', de: '...' }
-       registerUrl: optional — adds a single Register button
-       registerUrls: optional — use instead of registerUrl when an event has
-         more than one registration link (e.g. separate DE/EN sessions).
-         Each entry: { label: { en: '...', de: '...' }, url: '...' }.
-         Buttons render side by side in the order listed.
-       ══════════════════════════════════════════════════ */
-    var EVENTS = [
-      {
-        date: '2026-08-08', start: '10:00', end: '16:00',
-        name: 'Area C4 Club Officer Training',
-        location: { en: 'Basislager Coworking, Leipzig', de: 'Basislager Coworking, Leipzig' },
-        language: { en: 'English', de: 'Englisch' },
-        registerUrl: 'https://forms.gle/njPS7H6gzFLDWwKi9'
-      },
-      {
-        date: '2026-08-23', start: '10:00', end: '16:00',
-        name: 'Area C3 Club Officer Training',
-        location: { en: 'Lernoase am Elm, Hinterm Hagen 26/27, Fallersleben', de: 'Lernoase am Elm, Hinterm Hagen 26/27, Fallersleben' },
-        language: { en: 'German', de: 'Deutsch' },
-        registerUrl: 'https://forms.gle/1A7bd2PfPMVwBV4c6'
-      },
-      {
-        date: '2026-08-30', start: '09:30', end: '15:30',
-        name: 'Last Chance COT!',
-        location: { en: 'Online', de: 'Online' },
-        registerUrls: [
-          { label: { en: 'Register (Deutsch)', de: 'Anmelden (Deutsch)' }, url: 'https://us06web.zoom.us/meeting/register/dM-dUyCxRZCiXo6fOIGtqg' },
-          { label: { en: 'Register (English)', de: 'Anmelden (Englisch)' }, url: 'https://us06web.zoom.us/meeting/register/bHgoNi0qRtOddLuxTtc65g' }
-        ],
-        language: { en: 'English/German', de: 'Englisch/Deutsch' }
-      },
-      {
-        date: '2026-11-28', start: '09:43', end: '18:29',
-        name: 'Toastmasters Tag',
-        location: { en: 'CVJM Jugendgästehaus Berlin', de: 'CVJM Jugendgästehaus Berlin' },
-        registerUrl: 'https://toastmasters-tag.de/',
-        language: { en: 'German/English', de: 'Deutsch/Englisch' }
-      },
-      {
-        date: '2026-06-20', start: '09:00', end: '18:00',
-        name: 'Area C1+C2 Club Officer Training',
-        location: { en: 'Berlin', de: 'Berlin' },
-        language: { en: 'German/English', de: 'Deutsch/Englisch' }
-      },
-      {
-        date: '2027-01-30', start: 'TBD', end: 'TBD',
-        name: 'Area C4 Club Officer Training',
-        location: { en: 'Quartier22 Dresden', de: 'Quartier22 Dresden' },
-        language: { en: 'German/English', de: 'Deutsch/Englisch' }
-      },
-      {
-        date: '2027-04-17', start: '09:00', end: '18:00',
-        name: 'Division Conference',
-        location: { en: 'Dresden', de: 'Dresden' },
-        language: { en: 'German/English', de: 'Deutsch/Englisch' }
-      },
-      {
-        date: '2027-01-23', start: '09:00', end: '18:00',
-        name: 'Area C1+C2 Club Officer Training',
-        location: { en: 'Berlin', de: 'Berlin' },
-        language: { en: 'German/English', de: 'Deutsch/Englisch' }
-      },
-      {
-        date: '2027-03-13', start: '09:00', end: '15:00',
-        name: 'Area C1 Speech Contest',
-        location: { en: 'Berlin', de: 'Berlin' },
-        language: { en: 'German/English', de: 'Deutsch/Englisch' }
-      },
-      {
-        date: '2027-03-20', start: '09:00', end: '18:00',
-        name: 'Area C2 Speech Contest',
-        location: { en: 'Berlin', de: 'Berlin' },
-        language: { en: 'German/English', de: 'Deutsch/Englisch' }
-      }
-    ];
+    // Events live in assets/events.js (loaded above); edit that file, not this one.
+    var LANG_NAMES = {
+      EN: { en: 'English', de: 'Englisch' },
+      DE: { en: 'German', de: 'Deutsch' }
+    };
+    var TBA = { en: 'Time to be announced', de: 'Uhrzeit folgt' };
+    // Keep only well-formed events so one typo can't break the whole calendar
+    EVENTS = (typeof EVENTS !== 'undefined' && Array.isArray(EVENTS) ? EVENTS : []).filter(function (e, i) {
+      var ok = e && /^\d{4}-\d{2}-\d{2}$/.test(e.date) && !isNaN(parseDate(e.date)) && e.name;
+      if (!ok && window.console) console.warn('Skipped event #' + (i + 1) + ' in assets/events.js: it needs a date (YYYY-MM-DD) and a name.', e);
+      return ok;
+    });
     var MONTHS_FULL = {
       en: ['January','February','March','April','May','June','July','August','September','October','November','December'],
       de: ['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember']
@@ -1082,6 +1024,30 @@
     function pad(n) { return (n < 10 ? '0' : '') + n; }
     function dateKey(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
     function eventsOn(key) { return EVENTS.filter(function (e) { return e.date === key; }); }
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; });
+    }
+    // A field may be plain text or { en: '…', de: '…' }
+    function localised(v) {
+      if (v === undefined || v === null) return '';
+      return typeof v === 'object' ? (v[currentLang] || v.en || '') : String(v);
+    }
+    // 'DE/EN' → 'German/English' (or 'Deutsch/Englisch'); unknown codes are shown as written
+    function languageText(v) {
+      if (typeof v !== 'string') return localised(v);
+      return v.split('/').map(function (code) {
+        var n = LANG_NAMES[code.trim().toUpperCase()];
+        return n ? n[currentLang] : code.trim();
+      }).join('/');
+    }
+    function timeText(e) {
+      if (!e.start) return TBA[currentLang];
+      return e.start + (e.end ? '–' + e.end : '');
+    }
+    // Joins the non-empty parts with " · "
+    function metaLine() {
+      return [].slice.call(arguments).filter(Boolean).map(escapeHtml).join(' · ');
+    }
     function formatLong(key) {
       var d = parseDate(key);
       if (currentLang === 'de') {
@@ -1103,10 +1069,10 @@
       if (!links.length) return '';
       var html = '<div class="' + opts.groupClass + '">';
       links.forEach(function (l) {
-        var text = l.label ? l.label[currentLang] : TEXT.register[currentLang];
+        var text = l.label ? localised(l.label) : TEXT.register[currentLang];
         if (opts.suffix) text += opts.suffix;
-        html += '<a href="' + l.url + '" class="' + opts.btnClass + '" target="_blank" rel="noopener"' +
-          (opts.stopProp ? ' onclick="event.stopPropagation();"' : '') + '>' + text + '</a>';
+        html += '<a href="' + escapeHtml(l.url) + '" class="' + opts.btnClass + '" target="_blank" rel="noopener"' +
+          (opts.stopProp ? ' onclick="event.stopPropagation();"' : '') + '>' + escapeHtml(text) + '</a>';
       });
       html += '</div>';
       return html;
@@ -1147,8 +1113,8 @@
         html += '<div class="cal-no-events">' + TEXT.noEventsDay[currentLang] + '</div>';
       } else {
         evs.forEach(function (e) {
-          html += '<div class="cal-event-item"><strong>' + e.name + '</strong>' +
-            e.start + '–' + e.end + ' · ' + e.language[currentLang] + ' · ' + e.location[currentLang] +
+          html += '<div class="cal-event-item"><strong>' + escapeHtml(e.name) + '</strong>' +
+            metaLine(timeText(e), languageText(e.language), localised(e.location)) +
             registerButtonsHtml(e, { groupClass: 'cal-register-group', btnClass: 'cal-register', suffix: ' →' }) +
             '</div>';
         });
@@ -1167,9 +1133,9 @@
         html += '<div class="event-card" data-date="' + e.date + '">' +
           '<div class="event-date"><span class="day">' + d.getDate() + '</span>' +
           '<span class="month">' + MONTHS_SHORT[currentLang][d.getMonth()] + '</span></div>' +
-          '<div class="event-details"><div class="event-name">' + e.name + '</div>' +
-          '<div class="event-meta">' + formatLong(e.date) + ' · ' + e.start + '–' + e.end + '</div>' +
-          '<div class="event-meta">' + e.location[currentLang] + ' · ' + e.language[currentLang] + '</div>' +
+          '<div class="event-details"><div class="event-name">' + escapeHtml(e.name) + '</div>' +
+          '<div class="event-meta">' + metaLine(formatLong(e.date), timeText(e)) + '</div>' +
+          '<div class="event-meta">' + metaLine(localised(e.location), languageText(e.language)) + '</div>' +
           registerButtonsHtml(e, { groupClass: 'event-register-group', btnClass: 'event-register-btn', stopProp: true }) +
           '</div></div>';
       });

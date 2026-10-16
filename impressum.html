@@ -5,10 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Impressum | District 95 · Division C | Toastmasters</title>
   <meta name="description" content="Impressum — District 95 Division C, Toastmasters." />
-  <meta property="og:title" content="Impressum — District 95 Division C" />
+  <link rel="canonical" href="https://division-c.toastmasters-95.org/impressum.html" />
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Toastmasters District 95 · Division C" />
+  <meta property="og:title" content="Impressum — District 95 Division C" />
+  <meta property="og:description" content="Impressum und Datenschutz — Toastmasters District 95, Division C." />
+  <meta property="og:url" content="https://division-c.toastmasters-95.org/impressum.html" />
+  <meta property="og:image" content="https://division-c.toastmasters-95.org/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Toastmasters District 95, Division C" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#004165" />
   <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/png" href="assets/tm-logo.png" />
   <link rel="preload" href="assets/fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/source-sans-3-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="assets/site.css" />
@@ -60,6 +70,8 @@
       color: var(--tm-muted);
       max-width: 600px;
     }
+
+    .note a { color: var(--tm-blue); font-weight: 600; }
 
     .note code {
       background: var(--tm-fair);
@@ -140,11 +152,23 @@
       <h2>Datenschutz</h2>
       <p class="note">
         Diese Website verwendet keine Analyse-Dienste und setzt von sich aus keine Tracking-Cookies ein.
-        Die einzige technisch notwendige Information, die im Browser gespeichert wird, ist Ihre
-        Sprachpräferenz (EN/DE) im <code>localStorage</code> — diese verlässt Ihr Gerät nicht und wird
-        nicht übertragen. Schriftarten werden direkt von diesem Webserver geladen; es werden dabei keine
-        Daten an Dritte (z.&nbsp;B. Google) übermittelt. Beim Versand einer E-Mail über die oben genannte Adresse werden die von Ihnen
-        übermittelten Daten ausschließlich zur Bearbeitung Ihrer Anfrage verwendet.
+        Im Browser werden nur zwei technisch notwendige Informationen im <code>localStorage</code> gespeichert:
+        Ihre Sprachpräferenz (EN/DE) und ob Sie den Datenschutzhinweis geschlossen haben. Diese verlassen
+        Ihr Gerät nicht und werden nicht übertragen. Schriftarten werden vom selben Server wie diese Website
+        geladen; es werden dabei keine Daten an weitere Dritte (z.&nbsp;B. Google) übermittelt. Beim Versand
+        einer E-Mail über die oben genannte Adresse werden die von Ihnen übermittelten Daten ausschließlich
+        zur Bearbeitung Ihrer Anfrage verwendet.
+      </p>
+
+      <h2>Hosting</h2>
+      <p class="note">
+        Diese Website wird über GitHub Pages bereitgestellt, einen Dienst der GitHub, Inc.,
+        88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Beim Aufruf der Website protokolliert
+        und speichert GitHub Ihre IP-Adresse zu Sicherheitszwecken, unabhängig davon, ob Sie bei GitHub
+        angemeldet sind. Dabei können Daten in die USA übermittelt werden. Die Verarbeitung erfolgt auf
+        Grundlage unseres berechtigten Interesses an einer sicheren und zuverlässigen Bereitstellung dieser
+        Website (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO). Weitere Informationen finden Sie in der
+        <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">Datenschutzerklärung von GitHub</a>.
       </p>
 
     </div>
@@ -156,9 +180,10 @@
       <a href="https://toastmasters-95.org" target="_blank" rel="noopener">District 95</a>
       <a href="https://www.toastmasters.org" target="_blank" rel="noopener">Toastmasters International</a>
       <a href="index.html#contact" data-en="Contact" data-de="Kontakt">Contact</a>
-      <a href="index.html" data-en="Back to site" data-de="Zurück zur Website">Back to site</a>
+      <a href="impressum.html">Impressum</a>
     </div>
-    <p>© 2026 Toastmasters District 95, Division C</p>
+    <p>© <span data-year>2026</span> Toastmasters District 95, Division C</p>
+    <p class="footer-disclaimer">The information on this website is for the sole use of Toastmasters' members, for Toastmasters business only. It is not to be used for solicitation and distribution of non-Toastmasters material or information.</p>
   </footer>
 
   <script src="assets/site.js"></script>
