@@ -67,6 +67,12 @@ var EVENTS = [
     ]
   },
   {
+    date: '2026-11-06', start: '18:30', end: '20:45',
+    name: 'Open House Event',
+    location: { en: 'HTWK Leipzig, Trefftz-Bau, Hörsaal 140 (Haus A, 1st floor)', de: 'HTWK Leipzig, Trefftz-Bau, Hörsaal 140 (Haus A, 1. OG)' },
+    language: 'EN/DE'
+  },
+  {
     date: '2026-11-28', start: '09:43', end: '18:29',
     name: 'Toastmasters Tag',
     location: 'CVJM Jugendgästehaus Berlin',
