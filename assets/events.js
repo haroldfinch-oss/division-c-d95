@@ -70,7 +70,11 @@ var EVENTS = [
     date: '2026-11-06', start: '18:30', end: '20:45',
     name: 'Open House Event',
     location: { en: 'HTWK Leipzig, Trefftz-Bau, Hörsaal 140 (Haus A, 1st floor)', de: 'HTWK Leipzig, Trefftz-Bau, Hörsaal 140 (Haus A, 1. OG)' },
-    language: 'EN/DE'
+    language: 'EN/DE',
+    registerUrls: [
+      { label: { en: 'Register', de: 'Anmelden' }, url: 'https://tinyurl.com/OpenHouseLeipzig' },
+      { label: { en: 'Agenda', de: 'Agenda' }, url: 'https://division-c.toastmasters-95.org/resources/open-house/open-house-leipzig-agenda.pdf' }
+    ]
   },
   {
     date: '2026-11-28', start: '09:43', end: '18:29',
