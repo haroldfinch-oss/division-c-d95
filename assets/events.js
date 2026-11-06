@@ -106,6 +106,10 @@ var EVENTS = [
     name: 'Area C3 Speech Contest'
   },
   {
+    date: '2027-03-13',
+    name: 'Area C4 Speech Contest'
+  },
+  {
     date: '2027-03-20',
     name: 'Area C2 Speech Contest',
     location: 'Berlin',
