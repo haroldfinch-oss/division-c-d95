@@ -84,10 +84,20 @@ var EVENTS = [
     registerUrl: 'https://toastmasters-tag.de/'
   },
   {
+    date: '2027-01-16',
+    name: 'Open House Event',
+    location: 'Berlin'
+  },
+  {
     date: '2027-01-23', start: '09:00', end: '18:00',
     name: 'Area C1+C2 Club Officer Training',
     location: 'Berlin',
     language: 'DE/EN'
+  },
+  {
+    date: '2027-01-30',
+    name: 'Area C3 Club Officer Training',
+    location: 'Göttingen'
   },
   {
     date: '2027-01-30',
@@ -100,10 +110,6 @@ var EVENTS = [
     name: 'Area C1 Speech Contest',
     location: 'Berlin',
     language: 'DE/EN'
-  },
-  {
-    date: '2027-03-13',
-    name: 'Area C3 Speech Contest'
   },
   {
     date: '2027-03-13',
