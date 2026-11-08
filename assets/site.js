@@ -34,6 +34,19 @@ function toggleNav() {
   setNavOpen(!document.getElementById('nav-links').classList.contains('open'));
 }
 
+// Header buttons (wired up here because the site's security policy blocks onclick="..." attributes)
+var navToggle = document.getElementById('nav-toggle');
+if (navToggle) navToggle.addEventListener('click', toggleNav);
+var langToggle = document.getElementById('lang-toggle');
+if (langToggle) langToggle.addEventListener('click', function () { setLang(currentLang === 'en' ? 'de' : 'en'); });
+
+// Hide images marked data-hide-on-error if they fail to load (for example a missing logo)
+document.querySelectorAll('img[data-hide-on-error]').forEach(function (img) {
+  function hide() { img.style.display = 'none'; }
+  if (img.complete && img.naturalWidth === 0) hide(); // already failed before this script ran
+  else img.addEventListener('error', hide);
+});
+
 // Close the mobile menu after tapping a link
 document.querySelectorAll('.nav-links a').forEach(function (a) {
   a.addEventListener('click', function () { setNavOpen(false); });
