@@ -72,8 +72,7 @@ var EVENTS = [
     location: { en: 'HTWK Leipzig, Trefftz-Bau, Hörsaal 140 (Haus A, 1st floor)', de: 'HTWK Leipzig, Trefftz-Bau, Hörsaal 140 (Haus A, 1. OG)' },
     language: 'EN/DE',
     registerUrls: [
-      { label: { en: 'Register', de: 'Anmelden' }, url: 'https://tinyurl.com/OpenHouseLeipzig' },
-      { label: { en: 'Agenda', de: 'Agenda' }, url: 'https://division-c.toastmasters-95.org/resources/open-house/open-house-leipzig-agenda.pdf' }
+      { label: { en: 'Register', de: 'Anmelden' }, url: 'https://tinyurl.com/OpenHouseLeipzig' }
     ]
   },
   {
